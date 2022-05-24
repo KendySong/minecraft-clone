@@ -10,7 +10,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 	glViewport(0, 0, windowSize.x, windowSize.y);
 	glEnable(GL_DEPTH_TEST);
-	//glEnable(GL_CULL_FACE);
+	glEnable(GL_CULL_FACE);
 	glClearColor(0, 0.41, 0.29, 1);
 
 	//Load shader
@@ -68,6 +68,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 		 -0.5,  0.5,  0.5
 	};
 
+	int modelLoc = 0;
 	unsigned int ebo = 0;
 	unsigned int vbo = 0;
 	unsigned int vao = 0;
@@ -78,18 +79,20 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	glUniformMatrix4fv(camera->viewLocation, 1, false, glm::value_ptr(camera->view));
 	camera->projectionLocation = glGetUniformLocation(shader.GetProgramShader(), "projection");
 	glUniformMatrix4fv(camera->projectionLocation, 1, false, glm::value_ptr(camera->projection));
+
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
+
 	glGenBuffers(1, &vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
 	glVertexAttribPointer(0, 3, GL_FLOAT, false, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
 	glm::mat4 model(1.0f);
 	model = glm::translate(model, glm::vec3(0.0f, 0.0, 2.0f));
-
-	int modelLoc = glGetUniformLocation(shader.GetProgramShader(), "model");
+	modelLoc = glGetUniformLocation(shader.GetProgramShader(), "model");
 	glUniformMatrix4fv(modelLoc, 1, false, glm::value_ptr(model));
 }
 
