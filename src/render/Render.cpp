@@ -73,7 +73,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	unsigned int vbo = 0;
 	unsigned int vao = 0;
 
-	camera = new Camera(window, windowSize.x, windowSize.y, 90, 0.1f, 100.0f, 0.4f, 0.01f, glm::vec3(0, 0, 0));
+	camera = new Camera(window, windowSize.x, windowSize.y, 90, 0.1f, 100.0f, 0.4f, 5.0f, glm::vec3(0, 0, 0));
 
 	camera->viewLocation = glGetUniformLocation(shader.GetProgramShader(), "view");
 	glUniformMatrix4fv(camera->viewLocation, 1, false, glm::value_ptr(camera->view));

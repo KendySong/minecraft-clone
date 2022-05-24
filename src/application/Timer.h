@@ -3,19 +3,18 @@
 #include <chrono>
 #endif
 
-#pragma once
 class Timer
 {
-private :
-	std::chrono::time_point<std::chrono::steady_clock> _start;
-	std::chrono::time_point<std::chrono::steady_clock> _end;
-	float _elapsedTime;
+private:
 	bool _isRunning;
+	std::chrono::time_point<std::chrono::system_clock> _start;
+	std::chrono::time_point<std::chrono::system_clock> _stop;
+	std::chrono::time_point<std::chrono::system_clock> _elapsed;
 
-public :
+public:
 	Timer();
 	void Start();
-	void Stop();
 	void Restart();
-	float GetElapsedTime();
+	void Stop();
+	double GetElapsedTime();
 };

@@ -1,34 +1,33 @@
 #include "Timer.h"
 
-Timer::Timer() 
+Timer::Timer()
 {
-	_elapsedTime = 0;
-	_isRunning = false;
+	Start();
 }
 
-void Timer::Start() 
+void Timer::Start()
 {
+	_start = std::chrono::system_clock::now();
 	_isRunning = true;
-	_start = std::chrono::steady_clock::now();
-}
-
-void Timer::Stop() 
-{
-	if (_isRunning)
-	{
-		_isRunning = false;
-		_end = std::chrono::steady_clock::now();
-	}
 }
 
 void Timer::Restart()
 {
-	this->Start();
+	Start();
 }
 
-float Timer::GetElapsedTime() 
+void Timer::Stop()
 {
-	_end = std::chrono::steady_clock::now();
-	_elapsedTime = std::chrono::duration_cast<std::chrono::milliseconds>(_end - _start).count();
-	return _elapsedTime;
+	_stop = std::chrono::system_clock::now();
+	_isRunning = false;
+}
+
+double Timer::GetElapsedTime()
+{
+	if (_isRunning)
+		_elapsed = std::chrono::system_clock::now();
+	else
+		_elapsed = _stop;
+
+	return std::chrono::duration_cast<std::chrono::microseconds>(_elapsed - _start).count() * 0.000001;
 }
