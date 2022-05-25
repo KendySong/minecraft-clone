@@ -1,5 +1,4 @@
 #include "Camera.h"
-#include <iostream>
 
 Camera* sub_camera;
 void mouse_callback(GLFWwindow* window, double x, double y);
