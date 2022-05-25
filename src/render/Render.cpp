@@ -25,7 +25,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	camera->projectionLocation = glGetUniformLocation(shader.GetProgramShader(), "projection");
 	glUniformMatrix4fv(camera->projectionLocation, 1, false, glm::value_ptr(camera->projection));
 
-	//Set cube vertices and vao/vbo 
+	//Set cube vertices
 	float vertices[]
 	{
 		//Back face
