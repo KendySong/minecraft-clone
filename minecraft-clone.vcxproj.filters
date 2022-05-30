@@ -16,6 +16,24 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{5ebb06db-ac42-4003-9b55-ec7a814f46c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Render">
+      <UniqueIdentifier>{106ea4b3-d876-4297-be77-390c6e5b3fac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\World">
+      <UniqueIdentifier>{08c84790-0bbd-46e2-adba-972bdf9265b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Application">
+      <UniqueIdentifier>{45216313-8b1e-423e-a67f-73360a124b30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Application">
+      <UniqueIdentifier>{9805d419-aaec-46f9-bad2-37f2e00f90c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Render">
+      <UniqueIdentifier>{a6e57c61-931a-4cf9-99e0-62f937e54e3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\World">
+      <UniqueIdentifier>{1d287371-2427-4729-933f-7fc1ef54863d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -24,42 +42,54 @@
     <ClCompile Include="src\glad.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="src\application\Window.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="src\render\Camera.cpp">
+      <Filter>Fichiers sources\Render</Filter>
     </ClCompile>
     <ClCompile Include="src\render\Render.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\Timer.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="src\render\Camera.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Render</Filter>
     </ClCompile>
     <ClCompile Include="src\render\Shader.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Render</Filter>
     </ClCompile>
     <ClCompile Include="src\world\World.cpp">
+      <Filter>Fichiers sources\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\Timer.cpp">
+      <Filter>Fichiers sources\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\Window.cpp">
+      <Filter>Fichiers sources\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\Block.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\Config.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\render\Camera.h">
+      <Filter>Fichiers d%27en-tête\Render</Filter>
+    </ClInclude>
     <ClInclude Include="src\render\Render.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\Timer.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\Window.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Render</Filter>
     </ClInclude>
     <ClInclude Include="src\render\Shader.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Render</Filter>
     </ClInclude>
-    <ClInclude Include="src\render\Camera.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="src\application\Timer.h">
+      <Filter>Fichiers d%27en-tête\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\Window.h">
+      <Filter>Fichiers d%27en-tête\Application</Filter>
     </ClInclude>
     <ClInclude Include="src\world\World.h">
+      <Filter>Fichiers d%27en-tête\World</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\Block.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\Config.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,10 +3,7 @@
 #include <fstream>
 #include <iostream>
 
-#ifndef P_OPENGL
-#define P_OPENGL
 #include <glad/glad.h>
-#endif
 
 #pragma once
 class Shader

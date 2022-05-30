@@ -80,8 +80,10 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	//VAO/VBO/Configure shaders
 	unsigned int vbo = 0;
 	unsigned int vao = 0;
+
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
+
 	glGenBuffers(1, &vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);

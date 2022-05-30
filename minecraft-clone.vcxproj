@@ -142,6 +142,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\application\Config.cpp" />
+    <ClCompile Include="src\world\Block.cpp" />
     <ClCompile Include="src\application\Timer.cpp" />
     <ClCompile Include="src\render\Camera.cpp" />
     <ClCompile Include="src\render\Render.cpp" />
@@ -152,6 +154,8 @@
     <ClCompile Include="src\world\World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\application\Config.h" />
+    <ClInclude Include="src\world\Block.h" />
     <ClInclude Include="src\application\Timer.h" />
     <ClInclude Include="src\render\Camera.h" />
     <ClInclude Include="src\render\Render.h" />

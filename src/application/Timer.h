@@ -1,8 +1,6 @@
-#ifndef P_TIMER
-#define P_TIMER
 #include <chrono>
-#endif
 
+#pragma once
 class Timer
 {
 private:

@@ -1,17 +1,10 @@
-#ifndef P_OPENGL
-#define P_OPENGL
+///Author : kndysong@gmail.com
+///Date : 30.05.2022
+///Summary : Render the world and manage camera
+
 #include <glad/glad.h>
-#endif
-
-#ifndef P_GLFW
-#define P_GLFW
 #include <glfw/glfw3.h>
-#endif
-
-#ifndef P_GLM
-#define P_GLM
 #include <glm/glm.hpp>
-#endif
 
 #include "Shader.h"
 #include "Camera.h"
@@ -19,6 +12,9 @@
 #pragma once
 class Render
 {
+private :
+	//Block _block;
+
 public:
 	Camera* camera;
 

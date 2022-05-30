@@ -1,7 +1,15 @@
 #include "application/Window.h"
+#include "application/Config.h"
+#include <string>
 
 int main() 
 {
-	Window window(1280, 720, "Minecraft clone");
+	Config config;
+	Window window
+	(
+		config.GetJsonConfig()["Program"]["width"], 
+		config.GetJsonConfig()["Program"]["height"], 
+		"Minecraft clone"
+	);
 	window.Run();
 }
