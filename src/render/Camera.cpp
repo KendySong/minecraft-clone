@@ -5,33 +5,33 @@ void mouse_callback(GLFWwindow* window, double x, double y);
 
 Camera::Camera(GLFWwindow* window, float iWidth, float iHeight, float iFov, float iNear, float iFar, float iSensitivity, float iSpeed, glm::vec3 iPosition)
 {	
-	width = iWidth;
-	height = iHeight;
-	fov = iFov;
-	near = iNear;
-	far = iFar;
-	sensitivity = iSensitivity;
-	speed = iSpeed;
-	position = iPosition;
+	_width = iWidth;
+	_height = iHeight;
+	_fov = iFov;
+	_near = iNear;
+	_far = iFar;
+	_sensitivity = iSensitivity;
+	_speed = iSpeed;
+	_position = iPosition;
 
 	sub_camera = this;
-	canRotate = false;
-	mousePositionX = 0;
-	mousePositionY = 0;
+	_canRotate = false;
+	_mousePositionX = 0;
+	_mousePositionY = 0;
 		
-	offsetX = 0;
-	offsetY = 0;	
-	pitch = 0;
-	yaw = 270;
-	lastX = iWidth / 2;
-	lastY = iHeight / 2;
+	_offsetX = 0;
+	_offsetY = 0;
+	_pitch = 0;
+	_yaw = 270;
+	_lastX = iWidth / 2;
+	_lastY = iHeight / 2;
 
-	up = glm::vec3(0.0f, 1.0f, 0.0f);
-	front = glm::vec3(0.0f, 0.0f, -1.0f);
-	direction = glm::vec3(0.0f, 0.0f, 0.0f);
+	_up = glm::vec3(0.0f, 1.0f, 0.0f);
+	_front = glm::vec3(0.0f, 0.0f, -1.0f);
+	_direction = glm::vec3(0.0f, 0.0f, 0.0f);
 	
 	glfwSetCursorPosCallback(window, mouse_callback);
-	view = glm::lookAt(position, position - front, up);
+	view = glm::lookAt(_position, _position - _front, _up);
 	projection = glm::perspective(glm::radians(iFov), iWidth / iHeight, iNear, iFar);
 
 	viewLocation = 0;
@@ -41,66 +41,66 @@ Camera::Camera(GLFWwindow* window, float iWidth, float iHeight, float iFov, floa
 void Camera::ProcessMovement(GLFWwindow* window, float deltaTime)
 {
 	if (glfwGetKey(window, GLFW_KEY_W))
-		position -= front * speed * deltaTime;
+		_position -= _front * _speed * deltaTime;
 
 	if (glfwGetKey(window, GLFW_KEY_A))
-		position += glm::normalize(glm::cross(front, up)) * speed * deltaTime;
+		_position += glm::normalize(glm::cross(_front, _up)) * _speed * deltaTime;
 
 	if (glfwGetKey(window, GLFW_KEY_S))
-		position += front * speed * deltaTime;
+		_position += _front * _speed * deltaTime;
 
 	if (glfwGetKey(window, GLFW_KEY_D))
-		position -= glm::normalize(glm::cross(front, up)) * speed * deltaTime;
+		_position -= glm::normalize(glm::cross(_front, _up)) * _speed * deltaTime;
 
 	if (glfwGetKey(window, GLFW_KEY_SPACE))
-		position.y += speed * deltaTime;
+		_position.y += _speed * deltaTime;
 
 	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT))
-		position.y -= speed * deltaTime;
+		_position.y -= _speed * deltaTime;
 
 	if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_2))
 	{		
 		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-		canRotate = true;
+		_canRotate = true;
 	}
 	else
 	{
 		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
-		glfwGetCursorPos(window, &mousePositionX, &mousePositionY);
-		lastX = mousePositionX;
-		lastY = mousePositionY;
-		canRotate = false;
+		glfwGetCursorPos(window, &_mousePositionX, &_mousePositionY);
+		_lastX = _mousePositionX;
+		_lastY = _mousePositionY;
+		_canRotate = false;
 	}
 
-	view = glm::lookAt(position, position - front, up);
-	projection = glm::perspective(glm::radians(fov), width / height, near, far);
+	view = glm::lookAt(_position, _position - _front, _up);
+	projection = glm::perspective(glm::radians(_fov), _width / _height, _near, _far);
 }
 
 void Camera::ProcessMouseInput(double x, double y) 
 {
-	if (canRotate)
+	if (_canRotate)
 	{
-		offsetX = x - lastX;
-		offsetY = y - lastY;
+		_offsetX = x - _lastX;
+		_offsetY = y - _lastY;
 
-		lastX = x;
-		lastY = y;
+		_lastX = x;
+		_lastY = y;
 
-		offsetX *= sensitivity;
-		offsetY *= sensitivity;
+		_offsetX *= _sensitivity;
+		_offsetY *= _sensitivity;
 
-		yaw += offsetX;
-		pitch += offsetY;
+		_yaw += _offsetX;
+		_pitch += _offsetY;
 
-		if (pitch > 89.0f)
-			pitch = 89.0f;
-		if (pitch < -89.0f)
-			pitch = -89.0f;
+		if (_pitch > 89.0f)
+			_pitch = 89.0f;
+		if (_pitch < -89.0f)
+			_pitch = -89.0f;
 
-		front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-		front.y = sin(glm::radians(pitch));
-		front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-		front = glm::normalize(front);
+		_front.x = cos(glm::radians(_yaw)) * cos(glm::radians(_pitch));
+		_front.y = sin(glm::radians(_pitch));
+		_front.z = sin(glm::radians(_yaw)) * cos(glm::radians(_pitch));
+		_front = glm::normalize(_front);
 	}
 }
 

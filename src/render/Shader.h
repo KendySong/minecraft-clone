@@ -1,13 +1,17 @@
+///Author : kndysong@gmail.com
+///Date : 30.05.2022
+///Summary : Load shader and compile them
+
 #include <string>
 #include <sstream>
 #include <fstream>
 #include <iostream>
-
 #include <glad/glad.h>
 
 #pragma once
 class Shader
 {
+	//Attributes and properties
 private :
 	unsigned int _vertexShader = 0;
 	unsigned int _fragmentShader = 0;
@@ -22,8 +26,21 @@ private :
 	const char* _fragmentSource = "";
 
 public : 
-
+	/// <summary>
+	/// Constructor
+	/// </summary>
+	/// <param name="vertexPath">Path of the vertex shader</param>
+	/// <param name="fragmentPath">Path of the fragment shader</param>
 	Shader(const char* vertexPath, const char* fragmentPath);
+
+	/// <summary>
+	/// Get the ID of the program shader
+	/// </summary>
+	/// <returns>ID of the program</returns>
 	unsigned int GetProgramShader();
+
+	/// <summary>
+	/// Set using of the shader
+	/// </summary>
 	void Use();
 };

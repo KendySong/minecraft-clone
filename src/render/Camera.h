@@ -12,39 +12,40 @@
 class Camera
 {
 	//Attributes and properties
-public :
-	float width;
-	float height;
-	float near;
-	float far;
+private :	
+	float _width;
+	float _height;
+	float _near;
+	float _far;
 
-	float yaw;
-	float pitch;
+	float _yaw;
+	float _pitch;
 
-	float lastX;
-	float lastY;
+	float _lastX;
+	float _lastY;
 
-	float offsetX;
-	float offsetY;
+	float _offsetX;
+	float _offsetY;
 
-	float fov;
-	float speed;
-	float sensitivity;
+	float _fov;
+	float _speed;
+	float _sensitivity;
 
-	glm::vec3 up;
-	glm::vec3 front;
-	glm::vec3 position;
-	glm::vec3 direction;
-	
+	glm::vec3 _up;
+	glm::vec3 _front;
+	glm::vec3 _position;
+	glm::vec3 _direction;
+		
+	bool _canRotate;
+	double _mousePositionX;
+	double _mousePositionY;
+
+public:
 	glm::mat4 view;
-	glm::mat4 projection;
-
 	int viewLocation;
-	int projectionLocation;
-	bool canRotate;
 
-	double mousePositionX;
-	double mousePositionY;
+	glm::mat4 projection;
+	int projectionLocation;
 
 	/// <summary>
 	/// Constructor
