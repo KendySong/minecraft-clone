@@ -1,6 +1,6 @@
 ///Author : kndysong@gmail.com
 ///Date : 15.04.2022
-///Summary : Load json settings into porgram
+///Summary : Load json settings into the program
 
 #include <fstream>
 #include <iostream>
