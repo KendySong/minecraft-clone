@@ -8,12 +8,14 @@
 
 #include "Shader.h"
 #include "Camera.h"
+#include "../world/World.h"
 
 #pragma once
 class Render
 {
 private :
-	//Block _block;
+	//World _world;
+
 public:
 	Camera* camera;
 
@@ -25,8 +27,8 @@ public:
 	/// <summary>
 	/// Load opengl for the current glfw window
 	/// </summary>
-	/// <param name="window"></param>
-	/// <param name="windowSize"></param>
+	/// <param name="window">Window to load opengl in</param>
+	/// <param name="windowSize">Size of the window</param>
 	void Load(GLFWwindow* window, glm::vec2 windowSize);
 
 	/// <summary>
