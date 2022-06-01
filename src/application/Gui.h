@@ -19,7 +19,7 @@ class Gui
 	//Attributes and properties
 private :
 	Timer _timer;
-	std::string framerate;
+	std::string _framerate;
 	unsigned int _fps;
 
 public :

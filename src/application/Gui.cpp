@@ -20,16 +20,15 @@ void Gui::CreateFrame()
 void Gui::DisplayData()
 {
 	_fps++;
-
 	ImGui::Begin("Render");
 	if (_timer.GetElapsedTime() > 1)
 	{
-		ImGui::Text(std::to_string(_fps).c_str());
+		_framerate = std::to_string(_fps) + " fps";
 		_fps = 0;
 		_timer.Restart();
 	}
 
-	ImGui::Text(std::to_string(_fps).c_str());
+	ImGui::Text(_framerate.c_str());
 	ImGui::End();
 }
 

@@ -12,6 +12,7 @@ Chunk::Chunk(glm::vec2 position)
 			{				
 				Block block(glm::vec3(x, y, z));
 				
+				/*
 				if (y == height - 1)				
 					block.indexOffset.push_back(24);
 				
@@ -25,7 +26,15 @@ Chunk::Chunk(glm::vec2 position)
 					block.indexOffset.push_back(6);								
 
 				if (z == position.y + 15)				
-					block.indexOffset.push_back(0);		
+					block.indexOffset.push_back(0);	
+
+				*/
+				block.indexOffset.push_back(0);
+				block.indexOffset.push_back(6);
+				block.indexOffset.push_back(12);
+				block.indexOffset.push_back(18);
+				block.indexOffset.push_back(24);
+				block.indexOffset.push_back(30);
 	
 				blocks.push_back(block);
 			}

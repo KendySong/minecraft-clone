@@ -108,12 +108,21 @@ void Render::RenderFrame()
 			glm::mat4 currentPosition(1.0f);
 			currentPosition = glm::translate(currentPosition, _world.displayChunks[i].blocks[j].position);
 			glUniformMatrix4fv(_locModel, 1, false, glm::value_ptr(currentPosition));
+			glDrawArrays(GL_TRIANGLES, 0, 36);
 
+			//Ditch instancing
+			//Organize region with chunk, remove useless faces and regroup all in 1 mesh => 1 draw call
+			//Frustrum culling chunks
+			
+			//Compress vertex
+
+			/*
 			//Draw visible faces
 			for (int k = 0; k < _world.displayChunks[i].blocks[j].indexOffset.size(); k++)
 			{
 				glDrawArrays(GL_TRIANGLES, _world.displayChunks[i].blocks[j].indexOffset[k], 6);
-			}			
+			}	
+			*/
 		}
 	}
 	_gui->DisplayData();
