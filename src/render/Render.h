@@ -2,10 +2,6 @@
 ///Date : 30.05.2022
 ///Summary : Render the world and manage camera
 
-#include <glad/glad.h>
-#include <glfw/glfw3.h>
-#include <glm/glm.hpp>
-
 #include "Shader.h"
 #include "Camera.h"
 #include "../world/World.h"
@@ -14,7 +10,8 @@
 class Render
 {
 private :
-	//World _world;
+	World _world;
+	int _locModel;
 
 public:
 	Camera* camera;
