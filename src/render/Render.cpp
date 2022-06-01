@@ -110,10 +110,12 @@ void Render::RenderFrame()
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-	glDrawArrays(GL_TRIANGLES, 0, 6);
+	glDrawArrays(GL_TRIANGLES, 30, 6);
 
-	//0-6 BACK
-	//6-6 FRONT
-	//
-	int a;
+	//0- 6	BACK
+	//6- 6	FRONT
+	//12-6	LEFT
+	//18-6	RIGHT
+	//26-6	BOT
+	//30-6	TOP
 }
