@@ -7,7 +7,7 @@ Chunk::Chunk(glm::vec2 position)
 	{
 		for (int z = position.y; z < position.y + 16; z++)
 		{
-			blocks.push_back(glm::vec3(x, 0, z));
+			blocks.push_back(Block(glm::vec3(x, 0, z)));
 		}
 	}
 }

@@ -10,14 +10,6 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	//Set cube vertices
 	float vertices[]
 	{
-		//Back face
-		-0.5, -0.5, -0.5,
-		0.5,  0.5, -0.5,
-		0.5, -0.5, -0.5,
-		0.5,  0.5, -0.5,
-		-0.5, -0.5, -0.5,
-		-0.5,  0.5, -0.5,
-
 		//Front face
 		-0.5, -0.5,  0.5,
 		0.5, -0.5,  0.5,
@@ -26,13 +18,13 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 		-0.5,  0.5,  0.5,
 		-0.5, -0.5,  0.5,
 
-		//Left face
-		-0.5,  0.5,  0.5,
+		//Back face
+		-0.5, -0.5, -0.5,
+		0.5,  0.5, -0.5,
+		0.5, -0.5, -0.5,
+		0.5,  0.5, -0.5,
+		-0.5, -0.5, -0.5,
 		-0.5,  0.5, -0.5,
-		-0.5, -0.5, -0.5,
-		-0.5, -0.5, -0.5,
-		-0.5, -0.5,  0.5,
-		-0.5,  0.5,  0.5,
 
 		//Right face
 		0.5,  0.5,  0.5,
@@ -42,13 +34,13 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 		0.5,  0.5,  0.5,
 		0.5, -0.5,  0.5,
 
-		//Bottom face
+		//Left face
+		-0.5,  0.5,  0.5,
+		-0.5,  0.5, -0.5,
 		-0.5, -0.5, -0.5,
-		0.5, -0.5, -0.5,
-		0.5, -0.5,  0.5,
-		0.5, -0.5,  0.5,
+		-0.5, -0.5, -0.5,
 		-0.5, -0.5,  0.5,
-		-0.5, -0.5, -0.5,
+		-0.5,  0.5,  0.5,
 
 		//Top face
 		-0.5,  0.5, -0.5,
@@ -56,14 +48,22 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 		0.5,  0.5, -0.5,
 		0.5,  0.5,  0.5,
 		-0.5,  0.5, -0.5,
-		-0.5,  0.5,  0.5
+		-0.5,  0.5,  0.5,
+
+		//Bottom face
+		-0.5, -0.5, -0.5,
+		0.5, -0.5, -0.5,
+		0.5, -0.5,  0.5,
+		0.5, -0.5,  0.5,
+		-0.5, -0.5,  0.5,
+		-0.5, -0.5, -0.5	
 	};
 
 	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 	glViewport(0, 0, windowSize.x, windowSize.y);
 
 	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_CULL_FACE);
+	//glEnable(GL_CULL_FACE);
 	glClearColor(0, 0.41, 0.29, 1);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -96,25 +96,22 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 
 void Render::RenderFrame() 
 {
-	//Implement block class
-	//Set chunk to set cube faces to draw
-
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	for (size_t i = 0; i < _world.displayChunks.size(); i++)
 	{
-		for (int j = 0; j < _world.displayChunks[i].blocks.size(); j++)
+		for (size_t j = 0; j < _world.displayChunks[i].blocks.size(); j++)
 		{
 			glm::mat4 currentPosition(1.0f);
-			currentPosition = glm::translate(currentPosition, _world.displayChunks[i].blocks[j]);
+			currentPosition = glm::translate(currentPosition, _world.displayChunks[i].blocks[j].pos);
 			glUniformMatrix4fv(_locModel, 1, false, glm::value_ptr(currentPosition));
 			glDrawArrays(GL_TRIANGLES, 0, 36);
 		}
 	}
 	
-	//0- 6	BACK
-	//6- 6	FRONT
-	//12-6	LEFT
-	//18-6	RIGHT
-	//26-6	BOT
-	//30-6	TOP
+	//0- 6	FRONT
+	//6- 6	BACK
+	//12-6	RIGHT
+	//18-6	LEFT
+	//26-6	TOP
+	//30-6	BOT
 }

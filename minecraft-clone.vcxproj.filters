@@ -93,16 +93,19 @@
       <Filter>Fichiers d%27en-tête\World</Filter>
     </ClInclude>
     <ClInclude Include="src\world\Block.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\Config.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\Gui.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\World</Filter>
     </ClInclude>
     <ClInclude Include="src\world\Chunk.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\World</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\Gui.h">
+      <Filter>Fichiers d%27en-tête\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\Config.h">
+      <Filter>Fichiers d%27en-tête\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\Direction.h">
+      <Filter>Fichiers d%27en-tête\World</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
