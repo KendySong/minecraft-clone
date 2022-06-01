@@ -5,11 +5,13 @@
 #include "Shader.h"
 #include "Camera.h"
 #include "../world/World.h"
+#include "../application/Gui.h"
 
 #pragma once
 class Render
 {
 private :
+	Gui* _gui;
 	World _world;
 	int _locModel;
 

@@ -4,6 +4,7 @@
 
 #include "../render/Render.h"
 #include "Timer.h"
+#include "Gui.h"
 
 #pragma once
 class Window
@@ -14,10 +15,11 @@ private :
 	unsigned int _width;
 	unsigned int _height;
 
-	Render _render;
-	GLFWwindow* _window;
+	Gui* _gui;
 	Timer _timerDeltaTime;
-
+	GLFWwindow* _window;
+	Render _render;
+	
 public :
 
 	/// <summary>

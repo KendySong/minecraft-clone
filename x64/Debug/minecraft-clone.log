@@ -1,13 +1,33 @@
-﻿  Render.cpp
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,43): warning C4244:  'argument' : conversion de 'T' en 'GLsizei', perte possible de données
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,43): warning C4244:         with
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,43): warning C4244:         [
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,43): warning C4244:             T=float
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,43): warning C4244:         ]
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,29): warning C4244:  'argument' : conversion de 'T' en 'GLsizei', perte possible de données
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,29): warning C4244:         with
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,29): warning C4244:         [
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,29): warning C4244:             T=float
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,29): warning C4244:         ]
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(67,31): warning C4305:  'argument' : troncation de 'double' à 'GLfloat'
-  minecraft-clone.vcxproj -> C:\Users\pl70jwz\Desktop\t\minecraft-clone\x64\Debug\minecraft-clone.exe
+﻿  Main.cpp
+  Gui.cpp
+  Window.cpp
+  Render.cpp
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\application\Window.cpp(24,74): warning C4244:  'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(63,43): warning C4244:  'argument' : conversion de 'T' en 'GLsizei', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(63,43): warning C4244:         with
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(63,43): warning C4244:         [
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(63,43): warning C4244:             T=float
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(63,43): warning C4244:         ]
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(63,29): warning C4244:  'argument' : conversion de 'T' en 'GLsizei', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(63,29): warning C4244:         with
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(63,29): warning C4244:         [
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(63,29): warning C4244:             T=float
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(63,29): warning C4244:         ]
+  Génération de code en cours...
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(67,31): warning C4305:  'argument' : troncation de 'double' à 'GLfloat'
+glfw3.lib(context.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(context.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(init.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(init.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(input.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(input.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(monitor.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(monitor.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(vulkan.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(vulkan.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(window.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(window.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(win32_init.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(win32_init.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(win32_joystick.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(win32_joystick.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(win32_monitor.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(win32_monitor.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(win32_time.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(win32_time.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(win32_thread.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(win32_thread.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(win32_window.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(win32_window.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(wgl_context.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(wgl_context.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(egl_context.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(egl_context.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+glfw3.lib(osmesa_context.obj) : warning LNK4099: PDB '' n'a pu Ûtre trouvÚ avec 'glfw3.lib(osmesa_context.obj)' ou sur ''á; l'objet sera liÚ sans informations de dÚbogage
+  minecraft-clone.vcxproj -> C:\Users\pl70jwz\Desktop\minecraft-clone\x64\Debug\minecraft-clone.exe

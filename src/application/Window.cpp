@@ -26,6 +26,7 @@ void Window::Run()
 		glUniformMatrix4fv(_render.camera->projectionLocation, 1, false, glm::value_ptr(_render.camera->projection));
 		_timerDeltaTime.Restart();
 
+		//Render world and gui
 		_render.RenderFrame();
 		glfwSwapBuffers(_window);
 	}

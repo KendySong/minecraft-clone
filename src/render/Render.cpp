@@ -73,7 +73,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	_locModel = glGetUniformLocation(shader.GetProgramShader(), "model");
 
 	//Instanciate camera
-	camera = new Camera(window, windowSize.x, windowSize.y, 90, 0.1f, 100.0f, 0.4f, 5.0f, glm::vec3(0, 0, 0));
+	camera = new Camera(window, windowSize.x, windowSize.y, 90, 0.1f, 1000.0f, 0.4f, 5.0f, glm::vec3(0, 0, 0));
 	camera->viewLocation = glGetUniformLocation(shader.GetProgramShader(), "view");
 	glUniformMatrix4fv(camera->viewLocation, 1, false, glm::value_ptr(camera->view));
 	camera->projectionLocation = glGetUniformLocation(shader.GetProgramShader(), "projection");
@@ -92,11 +92,14 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, false, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
+
+	_gui = new Gui(window);
 }
 
 void Render::RenderFrame() 
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	_gui->CreateFrame();
 	for (size_t i = 0; i < _world.displayChunks.size(); i++)
 	{
 		for (size_t j = 0; j < _world.displayChunks[i].blocks.size(); j++)
@@ -110,7 +113,9 @@ void Render::RenderFrame()
 			for (int k = 0; k < _world.displayChunks[i].blocks[j].indexOffset.size(); k++)
 			{
 				glDrawArrays(GL_TRIANGLES, _world.displayChunks[i].blocks[j].indexOffset[k], 6);
-			}
+			}			
 		}
 	}
+	_gui->DisplayData();
+	_gui->Render();
 }

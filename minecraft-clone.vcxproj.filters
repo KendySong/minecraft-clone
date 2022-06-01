@@ -34,6 +34,9 @@
     <Filter Include="Fichiers d%27en-tête\World">
       <UniqueIdentifier>{1d287371-2427-4729-933f-7fc1ef54863d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{762eaedb-3ee3-488b-8190-5f592360af91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -61,16 +64,37 @@
       <Filter>Fichiers sources\Application</Filter>
     </ClCompile>
     <ClCompile Include="src\world\Block.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\Config.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\Gui.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\World</Filter>
     </ClCompile>
     <ClCompile Include="src\world\Chunk.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\Config.cpp">
+      <Filter>Fichiers sources\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\Gui.cpp">
+      <Filter>Fichiers sources\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\include\imgui\imgui.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\include\imgui\imgui_demo.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\include\imgui\imgui_draw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\include\imgui\imgui_impl_glfw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\include\imgui\imgui_impl_opengl3.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\include\imgui\imgui_tables.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="libraries\include\imgui\imgui_widgets.cpp">
+      <Filter>ImGui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +130,33 @@
     </ClInclude>
     <ClInclude Include="src\world\Direction.h">
       <Filter>Fichiers d%27en-tête\World</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\include\imgui\imconfig.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\include\imgui\imgui.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\include\imgui\imgui_impl_glfw.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\include\imgui\imgui_impl_opengl3.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\include\imgui\imgui_impl_opengl3_loader.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\include\imgui\imgui_internal.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\include\imgui\imstb_rectpack.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\include\imgui\imstb_textedit.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="libraries\include\imgui\imstb_truetype.h">
+      <Filter>ImGui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
