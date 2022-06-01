@@ -101,17 +101,16 @@ void Render::RenderFrame()
 	{
 		for (size_t j = 0; j < _world.displayChunks[i].blocks.size(); j++)
 		{
+			//Set current position on shader
 			glm::mat4 currentPosition(1.0f);
-			currentPosition = glm::translate(currentPosition, _world.displayChunks[i].blocks[j].pos);
+			currentPosition = glm::translate(currentPosition, _world.displayChunks[i].blocks[j].position);
 			glUniformMatrix4fv(_locModel, 1, false, glm::value_ptr(currentPosition));
-			glDrawArrays(GL_TRIANGLES, 0, 36);
+
+			//Draw visible faces
+			for (int k = 0; k < _world.displayChunks[i].blocks[j].indexOffset.size(); k++)
+			{
+				glDrawArrays(GL_TRIANGLES, _world.displayChunks[i].blocks[j].indexOffset[k], 6);
+			}
 		}
 	}
-	
-	//0- 6	FRONT
-	//6- 6	BACK
-	//12-6	RIGHT
-	//18-6	LEFT
-	//26-6	TOP
-	//30-6	BOT
 }

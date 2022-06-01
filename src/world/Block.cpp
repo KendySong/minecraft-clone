@@ -1,6 +1,6 @@
 #include "Block.h"
 
-Block::Block(glm::vec3 position)
+Block::Block(glm::vec3 iPosition)
 {
-	pos = position;
+	position = iPosition;
 }

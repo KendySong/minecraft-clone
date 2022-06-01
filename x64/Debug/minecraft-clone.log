@@ -1,16 +1,4 @@
-﻿  Chunk.cpp
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\world\Chunk.cpp(6,13): warning C4244:  'initialisation' : conversion de 'T' en 'int', perte possible de données
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\world\Chunk.cpp(6,13): warning C4244:         with
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\world\Chunk.cpp(6,13): warning C4244:         [
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\world\Chunk.cpp(6,13): warning C4244:             T=float
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\world\Chunk.cpp(6,13): warning C4244:         ]
-  Block.cpp
-  Render.cpp
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\world\Chunk.cpp(8,14): warning C4244:  'initialisation' : conversion de 'T' en 'int', perte possible de données
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\world\Chunk.cpp(8,14): warning C4244:         with
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\world\Chunk.cpp(8,14): warning C4244:         [
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\world\Chunk.cpp(8,14): warning C4244:             T=float
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\world\Chunk.cpp(8,14): warning C4244:         ]
+﻿  Render.cpp
 C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,43): warning C4244:  'argument' : conversion de 'T' en 'GLsizei', perte possible de données
 C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,43): warning C4244:         with
 C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,43): warning C4244:         [
@@ -21,10 +9,5 @@ C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,29): warning
 C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,29): warning C4244:         [
 C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,29): warning C4244:             T=float
 C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(63,29): warning C4244:         ]
-  Window.cpp
 C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\render\Render.cpp(67,31): warning C4305:  'argument' : troncation de 'double' à 'GLfloat'
-  Main.cpp
-  World.cpp
-  Génération de code en cours...
-C:\Users\pl70jwz\Desktop\t\minecraft-clone\src\application\Window.cpp(24,74): warning C4244:  'argument' : conversion de 'double' en 'float', perte possible de données
   minecraft-clone.vcxproj -> C:\Users\pl70jwz\Desktop\t\minecraft-clone\x64\Debug\minecraft-clone.exe

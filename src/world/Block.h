@@ -11,7 +11,7 @@ class Block
 {
 	//Attributes and properties
 public :
-	glm::vec3 pos;
+	glm::vec3 position;
 	std::vector<int> indexOffset;
-	Block(glm::vec3 position);
+	Block(glm::vec3 iPosition);
 };
