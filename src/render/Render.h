@@ -31,6 +31,11 @@ public:
 	void Load(GLFWwindow* window, glm::vec2 windowSize);
 
 	/// <summary>
+	/// Upload block vertex and configure
+	/// </summary>
+	void UploadVertex();
+
+	/// <summary>
 	/// Make the render for the next frame
 	/// </summary>
 	void RenderFrame();

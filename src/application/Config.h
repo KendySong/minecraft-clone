@@ -9,11 +9,25 @@
 #pragma once
 class Config
 {
+	//Attributes and properties
 private :
 	nlohmann::json _config;
 
 public :
+	/// <summary>
+	/// Constructor
+	/// </summary>
+	/// <param name="jsonPath">Path of the json file</param>
 	Config(const char* jsonPath = "config.json");
+
+	/// <summary>
+	/// Destructor
+	/// </summary>
 	~Config();
+
+	/// <summary>
+	/// Getter for json parameters
+	/// </summary>
+	/// <returns>Json object</returns>
 	nlohmann::json GetJsonConfig();
 };

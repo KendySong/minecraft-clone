@@ -5,34 +5,34 @@ Render::Render()
 	
 }
 
-void Render::Load(GLFWwindow* window, glm::vec2 windowSize) 
+void Render::UploadVertex()
 {
 	//Set cube vertices
 	float vertices[]
 	{
 		//Front face
 		-0.5, -0.5,  0.5,
-		0.5, -0.5,  0.5,
-		0.5,  0.5,  0.5,
-		0.5,  0.5,  0.5,
+		 0.5, -0.5,  0.5,
+		 0.5,  0.5,  0.5,
+		 0.5,  0.5,  0.5,
 		-0.5,  0.5,  0.5,
 		-0.5, -0.5,  0.5,
 
 		//Back face
 		-0.5, -0.5, -0.5,
-		0.5,  0.5, -0.5,
-		0.5, -0.5, -0.5,
-		0.5,  0.5, -0.5,
+		 0.5,  0.5, -0.5,
+		 0.5, -0.5, -0.5,
+		 0.5,  0.5, -0.5,
 		-0.5, -0.5, -0.5,
 		-0.5,  0.5, -0.5,
 
 		//Right face
-		0.5,  0.5,  0.5,
-		0.5, -0.5, -0.5,
-		0.5,  0.5, -0.5,
-		0.5, -0.5, -0.5,
-		0.5,  0.5,  0.5,
-		0.5, -0.5,  0.5,
+		 0.5,  0.5,  0.5,
+		 0.5, -0.5, -0.5,
+		 0.5,  0.5, -0.5,
+		 0.5, -0.5, -0.5,
+		 0.5,  0.5,  0.5,
+		 0.5, -0.5,  0.5,
 
 		//Left face
 		-0.5,  0.5,  0.5,
@@ -44,21 +44,38 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 
 		//Top face
 		-0.5,  0.5, -0.5,
-		0.5,  0.5,  0.5,
-		0.5,  0.5, -0.5,
-		0.5,  0.5,  0.5,
+		 0.5,  0.5,  0.5,
+		 0.5,  0.5, -0.5,
+		 0.5,  0.5,  0.5,
 		-0.5,  0.5, -0.5,
 		-0.5,  0.5,  0.5,
 
 		//Bottom face
 		-0.5, -0.5, -0.5,
-		0.5, -0.5, -0.5,
-		0.5, -0.5,  0.5,
-		0.5, -0.5,  0.5,
+		 0.5, -0.5, -0.5,
+		 0.5, -0.5,  0.5,
+		 0.5, -0.5,  0.5,
 		-0.5, -0.5,  0.5,
-		-0.5, -0.5, -0.5	
+		-0.5, -0.5, -0.5
 	};
 
+	//VAO/VBO/Configure shaders
+	unsigned int vbo = 0;
+	unsigned int vao = 0;
+
+	glGenVertexArrays(1, &vao);
+	glBindVertexArray(vao);
+
+	glGenBuffers(1, &vbo);
+	glBindBuffer(GL_ARRAY_BUFFER, vbo);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+	glVertexAttribPointer(0, 3, GL_FLOAT, false, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+}
+
+void Render::Load(GLFWwindow* window, glm::vec2 windowSize) 
+{
 	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 	glViewport(0, 0, windowSize.x, windowSize.y);
 
@@ -66,6 +83,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	//glEnable(GL_CULL_FACE);
 	glClearColor(0, 0.41, 0.29, 1);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	UploadVertex();
 
 	//Load shader
 	Shader shader("shaders/cube.vert", "shaders/cube.frag");
@@ -78,20 +96,6 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	glUniformMatrix4fv(camera->viewLocation, 1, false, glm::value_ptr(camera->view));
 	camera->projectionLocation = glGetUniformLocation(shader.GetProgramShader(), "projection");
 	glUniformMatrix4fv(camera->projectionLocation, 1, false, glm::value_ptr(camera->projection));
-
-	//VAO/VBO/Configure shaders
-	unsigned int vbo = 0;
-	unsigned int vao = 0;
-	
-	glGenVertexArrays(1, &vao);
-	glBindVertexArray(vao);
-
-	glGenBuffers(1, &vbo);
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-	glVertexAttribPointer(0, 3, GL_FLOAT, false, 3 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(0);
 
 	_gui = new Gui(window);
 }
@@ -112,8 +116,7 @@ void Render::RenderFrame()
 
 			//Ditch instancing
 			//Organize region with chunk, remove useless faces and regroup all in 1 mesh => 1 draw call
-			//Frustrum culling chunks
-			
+			//Frustrum culling chunks			
 			//Compress vertex
 
 			/*
