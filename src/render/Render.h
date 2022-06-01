@@ -13,15 +13,20 @@ class Render
 private :
 	Gui* _gui;
 	World _world;
+	Camera* _camera;
 	int _locModel;
 
 public:
-	Camera* camera;
-
 	/// <summary>
 	/// Constructor
 	/// </summary>
 	Render();
+
+	/// <summary>
+	/// Getter of camera
+	/// </summary>
+	/// <returns>Pointer to camera</returns>
+	Camera* GetCamera();
 
 	/// <summary>
 	/// Load opengl for the current glfw window

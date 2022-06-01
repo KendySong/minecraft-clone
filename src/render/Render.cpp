@@ -5,6 +5,11 @@ Render::Render()
 	
 }
 
+Camera* Render::GetCamera() 
+{
+	return _camera;
+}
+
 void Render::UploadVertex()
 {
 	//Set cube vertices
@@ -91,11 +96,11 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	_locModel = glGetUniformLocation(shader.GetProgramShader(), "model");
 
 	//Instanciate camera
-	camera = new Camera(window, windowSize.x, windowSize.y, 90, 0.1f, 1000.0f, 0.4f, 5.0f, glm::vec3(0, 0, 0));
-	camera->viewLocation = glGetUniformLocation(shader.GetProgramShader(), "view");
-	glUniformMatrix4fv(camera->viewLocation, 1, false, glm::value_ptr(camera->view));
-	camera->projectionLocation = glGetUniformLocation(shader.GetProgramShader(), "projection");
-	glUniformMatrix4fv(camera->projectionLocation, 1, false, glm::value_ptr(camera->projection));
+	_camera = new Camera(window, windowSize.x, windowSize.y, 90, 0.1f, 1000.0f, 0.4f, 5.0f, glm::vec3(0, 0, 0));
+	_camera->viewLocation = glGetUniformLocation(shader.GetProgramShader(), "view");
+	glUniformMatrix4fv(_camera->viewLocation, 1, false, glm::value_ptr(_camera->view));
+	_camera->projectionLocation = glGetUniformLocation(shader.GetProgramShader(), "projection");
+	glUniformMatrix4fv(_camera->projectionLocation, 1, false, glm::value_ptr(_camera->projection));
 
 	_gui = new Gui(window);
 }

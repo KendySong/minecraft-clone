@@ -1,17 +1,31 @@
 ﻿  Main.cpp
+  Config.cpp
+  Gui.cpp
   Window.cpp
-C:\Users\kndys\Desktop\minecraft-clone\src\application\Window.cpp(24,74): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Users\kndys\Desktop\minecraft-clone\src\application\Window.cpp(24,11): error C2039: 'camera' n'est pas membre de 'Render'
+C:\Users\kndys\Desktop\minecraft-clone\src\render\Render.h(11): message : voir la déclaration de 'Render'
+C:\Users\kndys\Desktop\minecraft-clone\src\application\Window.cpp(25,30): error C2039: 'camera' n'est pas membre de 'Render'
+C:\Users\kndys\Desktop\minecraft-clone\src\render\Render.h(11): message : voir la déclaration de 'Render'
+C:\Users\kndys\Desktop\minecraft-clone\src\application\Window.cpp(25,85): error C2039: 'camera' n'est pas membre de 'Render'
+C:\Users\kndys\Desktop\minecraft-clone\src\render\Render.h(11): message : voir la déclaration de 'Render'
+C:\Users\kndys\Desktop\minecraft-clone\src\application\Window.cpp(25,67): error C2672: 'glm::value_ptr' : fonction correspondante surchargée introuvable
+C:\Users\kndys\Desktop\minecraft-clone\src\application\Window.cpp(25,98): error C2198: 'PFNGLUNIFORMMATRIX4FVPROC' : pas assez d'arguments pour un appel
+C:\Users\kndys\Desktop\minecraft-clone\src\application\Window.cpp(26,30): error C2039: 'camera' n'est pas membre de 'Render'
+C:\Users\kndys\Desktop\minecraft-clone\src\render\Render.h(11): message : voir la déclaration de 'Render'
+C:\Users\kndys\Desktop\minecraft-clone\src\application\Window.cpp(26,91): error C2039: 'camera' n'est pas membre de 'Render'
+C:\Users\kndys\Desktop\minecraft-clone\src\render\Render.h(11): message : voir la déclaration de 'Render'
+C:\Users\kndys\Desktop\minecraft-clone\src\application\Window.cpp(26,73): error C2672: 'glm::value_ptr' : fonction correspondante surchargée introuvable
+C:\Users\kndys\Desktop\minecraft-clone\src\application\Window.cpp(26,110): error C2198: 'PFNGLUNIFORMMATRIX4FVPROC' : pas assez d'arguments pour un appel
   Render.cpp
-C:\Users\kndys\Desktop\minecraft-clone\src\render\Render.cpp(81,43): warning C4244: 'argument' : conversion de 'T' en 'GLsizei', perte possible de données
+C:\Users\kndys\Desktop\minecraft-clone\src\render\Render.cpp(85,43): warning C4244: 'argument' : conversion de 'T' en 'GLsizei', perte possible de données
           with
           [
               T=float
           ]
-C:\Users\kndys\Desktop\minecraft-clone\src\render\Render.cpp(81,29): warning C4244: 'argument' : conversion de 'T' en 'GLsizei', perte possible de données
+C:\Users\kndys\Desktop\minecraft-clone\src\render\Render.cpp(85,29): warning C4244: 'argument' : conversion de 'T' en 'GLsizei', perte possible de données
           with
           [
               T=float
           ]
-C:\Users\kndys\Desktop\minecraft-clone\src\render\Render.cpp(85,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
+C:\Users\kndys\Desktop\minecraft-clone\src\render\Render.cpp(89,31): warning C4305: 'argument' : troncation de 'double' à 'GLfloat'
   Génération de code en cours...
-  minecraft-clone.vcxproj -> C:\Users\kndys\Desktop\minecraft-clone\x64\Debug\minecraft-clone.exe

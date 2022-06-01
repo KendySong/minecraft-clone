@@ -23,9 +23,25 @@ private :
 	unsigned int _fps;
 
 public :
+	/// <summary>
+	/// Constructor
+	/// </summary>
+	/// <param name="window">Window to display gui</param>
 	Gui(GLFWwindow* window);
+
+	/// <summary>
+	/// Create new frame for gui
+	/// </summary>
 	void CreateFrame();
+
+	/// <summary>
+	/// Manage and display program data
+	/// </summary>
 	void DisplayData();
+
+	/// <summary>
+	/// Render of gui window
+	/// </summary>
 	void Render();
 	
 };
