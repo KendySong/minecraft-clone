@@ -21,9 +21,9 @@ void Window::Run()
 	{
 		glfwPollEvents();
 
-		_render.camera->ProcessMovement(_window, _timerDeltaTime.GetElapsedTime());
-		glUniformMatrix4fv(_render.camera->viewLocation, 1, false, glm::value_ptr(_render.camera->view));
-		glUniformMatrix4fv(_render.camera->projectionLocation, 1, false, glm::value_ptr(_render.camera->projection));
+		_render.GetCamera()->ProcessMovement(_window, _timerDeltaTime.GetElapsedTime());
+		glUniformMatrix4fv(_render.GetCamera()->viewLocation, 1, false, glm::value_ptr(_render.GetCamera()->view));
+		glUniformMatrix4fv(_render.GetCamera()->projectionLocation, 1, false, glm::value_ptr(_render.GetCamera()->projection));
 		_timerDeltaTime.Restart();
 
 		//Render world and gui

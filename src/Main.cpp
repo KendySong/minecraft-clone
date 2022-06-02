@@ -11,4 +11,8 @@ int main()
 		"Minecraft clone"
 	);
 	window.Run();
+
+	//Ditch instancing
+	//Chunk with 1 draw call => transform block into single mesh
+	//Frustrum culling
 }
