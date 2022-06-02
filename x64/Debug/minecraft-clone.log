@@ -1,6 +1,2 @@
-﻿  Window.cpp
-C:\Users\kndys\Desktop\minecraft-clone\src\application\Window.cpp(24,79): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-  Main.cpp
-  Shader.cpp
-  Génération de code en cours...
+﻿  Main.cpp
   minecraft-clone.vcxproj -> C:\Users\kndys\Desktop\minecraft-clone\x64\Debug\minecraft-clone.exe
