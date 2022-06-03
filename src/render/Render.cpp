@@ -59,8 +59,8 @@ void Render::RenderFrame()
 	_gui->CreateFrame();
 	for (size_t i = 0; i < _world.displayChunks.size(); i++)
 	{
-		glBindVertexArray(_world.displayChunks[i].GetVao());
-		glDrawArrays(GL_TRIANGLES, 0, _world.displayChunks[i].vertex.size());
+		//glBindVertexArray(_world.displayChunks[i].GetVao());
+		glDrawArrays(GL_TRIANGLES, 0, _world.displayChunks[i].vertex.size() / 3);
 	}
 	_gui->DisplayData();
 	_gui->Render();
