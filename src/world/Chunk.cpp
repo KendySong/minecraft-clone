@@ -2,7 +2,76 @@
 
 Chunk::Chunk(glm::vec2 position)
 {
+	for (size_t x = 0; x < ChunkSize::Width; x++)
+	{
+		for (size_t y = 0; y < ChunkSize::Height; y++)
+		{
+			for (size_t z = 0; z < ChunkSize::Depth; z++)
+			{
+				AddNewBlock(vertex, glm::vec3(x, y, z));
+			}
+		}
+	}
 
+	glGenVertexArrays(1, &_vao);
+	glBindVertexArray(_vao);
+
+	glGenBuffers(1, &_vbo);
+	glBindBuffer(GL_ARRAY_BUFFER, _vbo);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertex.size(), &vertex.front(), GL_STATIC_DRAW);
+
+	glVertexAttribPointer(0, 3, GL_FLOAT, false, 3 * sizeof(float), (const void*)0);
+	glEnableVertexAttribArray(0);
+}
+
+void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position)
+{
+	float blockVertex[]
+	{
+		position.x - 0.5, position.y - 0.5,  position.z + 0.5,
+		position.x + 0.5, position.y - 0.5,  position.z + 0.5,
+		position.x + 0.5, position.y + 0.5,  position.z + 0.5,
+		position.x + 0.5, position.y + 0.5,  position.z + 0.5,
+		position.x - 0.5, position.y + 0.5,  position.z + 0.5,
+		position.x - 0.5, position.y - 0.5,  position.z + 0.5,
+
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,
+		position.x + 0.5, position.y + 0.5, position.z - 0.5,
+		position.x + 0.5, position.y - 0.5, position.z - 0.5,
+		position.x + 0.5, position.y + 0.5, position.z - 0.5,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,
+		position.x - 0.5, position.y + 0.5, position.z - 0.5,
+
+		position.x + 0.5, position.y + 0.5, position.z + 0.5,
+		position.x + 0.5, position.y - 0.5, position.z - 0.5,
+		position.x + 0.5, position.y + 0.5, position.z - 0.5,
+		position.x + 0.5, position.y - 0.5, position.z - 0.5,
+		position.x + 0.5, position.y + 0.5, position.z + 0.5,
+		position.x + 0.5, position.y - 0.5, position.z + 0.5,
+
+		position.x - 0.5, position.y + 0.5, position.z + 0.5,
+		position.x - 0.5, position.y + 0.5, position.z - 0.5,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,
+		position.x - 0.5, position.y - 0.5, position.z + 0.5,
+		position.x - 0.5, position.y + 0.5, position.z + 0.5,
+
+		position.x - 0.5, position.y + 0.5, position.z - 0.5,
+		position.x + 0.5, position.y + 0.5, position.z + 0.5,
+		position.x + 0.5, position.y + 0.5, position.z - 0.5,
+		position.x + 0.5, position.y + 0.5, position.z + 0.5,
+		position.x - 0.5, position.y + 0.5, position.z - 0.5,
+		position.x - 0.5, position.y + 0.5, position.z + 0.5,
+
+		position.x - 0.5, position.y - 0.5, position.x - 0.5,
+		position.x + 0.5, position.y - 0.5, position.x - 0.5,
+		position.x + 0.5, position.y - 0.5, position.x + 0.5,
+		position.x + 0.5, position.y - 0.5, position.x + 0.5,
+		position.x - 0.5, position.y - 0.5, position.x + 0.5,
+		position.x - 0.5, position.y - 0.5, position.x - 0.5
+	};
+
+	chunkMesh.insert(chunkMesh.end(), &blockVertex[0], &blockVertex[std::size(blockVertex)]);
 }
 
 unsigned int Chunk::GetVao()

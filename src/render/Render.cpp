@@ -42,6 +42,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	glUniformMatrix4fv(_camera->projectionLocation, 1, false, glm::value_ptr(_camera->projection));
 
 	_gui = new Gui(window);
+	_world.Load();
 }
 
 void Render::Update() 
@@ -56,7 +57,11 @@ void Render::RenderFrame()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	_gui->CreateFrame();
-	//Draw
+	for (size_t i = 0; i < _world.displayChunks.size(); i++)
+	{
+		glBindVertexArray(_world.displayChunks[i].GetVao());
+		glDrawArrays(GL_TRIANGLES, 0, _world.displayChunks[i].vertex.size());
+	}
 	_gui->DisplayData();
 	_gui->Render();
 }

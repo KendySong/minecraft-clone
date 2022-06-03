@@ -12,8 +12,10 @@ class World
 	//Attributes and properties
 private :
 	
+
 public :
 	std::vector<Chunk> displayChunks;
 
 	World();
+	void Load();
 };
