@@ -74,6 +74,7 @@ void Camera::ProcessMovement(GLFWwindow* window, float deltaTime)
 
 	view = glm::lookAt(_position, _position - _front, _up);
 	projection = glm::perspective(glm::radians(_fov), _width / _height, _near, _far);
+
 }
 
 void Camera::ProcessMouseInput(double x, double y) 

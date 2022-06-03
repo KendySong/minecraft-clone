@@ -7,6 +7,7 @@
 #include <glm/glm.hpp>
 
 #include "Block.h"
+#include "../render/Shader.h"
 
 #pragma once
 namespace ChunkSize
@@ -22,11 +23,10 @@ class Chunk
 private :
 	unsigned int _vao;
 	unsigned int _vbo;
-	unsigned int _shader;
 	std::vector<float> _vertex;
 
 public :
-	std::vector<Block> blocks;
+	std::vector<glm::vec3> blocks;
 
 	Chunk(glm::vec2 position);
 

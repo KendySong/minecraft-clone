@@ -2,20 +2,22 @@
 ///Date : 30.05.2022
 ///Summary : Render the world and manage camera
 
-
-
 #include "Shader.h"
 #include "Camera.h"
 #include "../world/World.h"
 #include "../application/Gui.h"
+#include "../application/Timer.h"
 
 #pragma once
 class Render
 {
 private :
+	Timer _deltaTimeTimer;
+	GLFWwindow* _window;
+	Camera* _camera;
 	Gui* _gui;
 	World _world;
-	Camera* _camera;
+	
 	int _locModel;
 	unsigned int _mainShader;
 
@@ -42,6 +44,8 @@ public:
 	/// Upload block vertex and configure
 	/// </summary>
 	void UploadVertex();
+
+	void Update();
 
 	/// <summary>
 	/// Make the render for the next frame

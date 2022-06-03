@@ -16,7 +16,6 @@ private :
 	unsigned int _height;
 
 	Gui* _gui;
-	Timer _timerDeltaTime;
 	GLFWwindow* _window;
 	Render _render;
 	

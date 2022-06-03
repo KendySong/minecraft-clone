@@ -2,8 +2,8 @@
 ///Date : 15.04.2022
 ///Summary : Load json settings into the program
 
-#include <fstream>
 #include <iostream>
+#include <fstream>
 #include <nlohmann/json.hpp>
 
 #pragma once
