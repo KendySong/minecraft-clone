@@ -1,0 +1,75 @@
+﻿  Main.cpp
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(14,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(14,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(14,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(14,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(15,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(15,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(15,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(15,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(16,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(16,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(16,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(16,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(17,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(17,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(17,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(17,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(18,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(18,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(18,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(18,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(19,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(19,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(19,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(19,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(50,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(50,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(50,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(50,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(51,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(51,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(51,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(51,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(52,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(52,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(52,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(52,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(53,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(53,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(53,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(53,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(54,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(54,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(54,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(54,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(55,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(55,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(55,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(55,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(64,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(64,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(64,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(64,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(65,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(65,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(65,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(65,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(66,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(66,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(66,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(66,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(67,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(67,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(67,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(67,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(68,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(68,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(68,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(68,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(69,14): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(69,14): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(69,32): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(69,32): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(69,32): warning C4244: C:\Users\pl70jwz\Desktop\batch-renderer\src\Main.cpp(21) : warning C4172: retourne l'adresse d'une variable locale ou : recVert temporaire
+  batch-renderer.vcxproj -> C:\Users\pl70jwz\Desktop\batch-renderer\x64\Debug\batch-renderer.exe
