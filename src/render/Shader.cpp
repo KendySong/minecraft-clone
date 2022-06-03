@@ -60,25 +60,13 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 		glGetShaderInfoLog(_fragmentShader, sizeof(logError), NULL, logError);
 		std::cout << logError << "\n";
 	}
-
-	//Create shader program
-	_programShader = glCreateProgram();
-	glAttachShader(_programShader, _vertexShader);
-	glAttachShader(_programShader, _fragmentShader);
-	glLinkProgram(_programShader);
-	glDetachShader(_programShader, _vertexShader);
-	glDetachShader(_programShader, _fragmentShader);
-	glDeleteShader(_vertexShader);
-	glDeleteShader(_fragmentShader);
-	
 }
 
-void Shader::Use()
+unsigned int Shader::CreateProgram() 
 {
-	glUseProgram(_programShader);
-}
-
-unsigned int Shader::GetProgramShader()
-{
-	return _programShader;
+	unsigned int programShader = glCreateProgram();
+	glAttachShader(programShader, _vertexShader);
+	glAttachShader(programShader, _fragmentShader);
+	glLinkProgram(programShader);
+	return programShader;
 }

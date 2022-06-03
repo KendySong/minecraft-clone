@@ -15,7 +15,6 @@ class Shader
 private :
 	unsigned int _vertexShader = 0;
 	unsigned int _fragmentShader = 0;
-	unsigned int _programShader = 0;
 
 	std::ifstream _shaderReader;
 	std::stringstream _vertexStream;
@@ -33,14 +32,5 @@ public :
 	/// <param name="fragmentPath">Path of the fragment shader</param>
 	Shader(const char* vertexPath, const char* fragmentPath);
 
-	/// <summary>
-	/// Get the ID of the program shader
-	/// </summary>
-	/// <returns>ID of the program</returns>
-	unsigned int GetProgramShader();
-
-	/// <summary>
-	/// Set using of the shader
-	/// </summary>
-	void Use();
+	unsigned int CreateProgram();
 };

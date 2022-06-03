@@ -2,6 +2,8 @@
 ///Date : 30.05.2022
 ///Summary : Render the world and manage camera
 
+
+
 #include "Shader.h"
 #include "Camera.h"
 #include "../world/World.h"
@@ -15,6 +17,7 @@ private :
 	World _world;
 	Camera* _camera;
 	int _locModel;
+	unsigned int _mainShader;
 
 public:
 	/// <summary>
