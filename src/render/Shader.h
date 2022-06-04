@@ -14,8 +14,9 @@ class Shader
 {
 	//Attributes and properties
 private :
-	unsigned int _vertexShader = 0;
-	unsigned int _fragmentShader = 0;
+	unsigned int _vertex;
+	unsigned int _fragment;
+	unsigned int _program;
 
 	std::ifstream _shaderReader;
 	std::stringstream _vertexStream;
@@ -25,6 +26,8 @@ private :
 	const char* _vertexSource = "";
 	const char* _fragmentSource = "";
 
+
+
 public : 
 	/// <summary>
 	/// Constructor
@@ -33,5 +36,5 @@ public :
 	/// <param name="fragmentPath">Path of the fragment shader</param>
 	Shader(const char* vertexPath, const char* fragmentPath);
 
-	unsigned int CreateProgram();
+	unsigned int GetProgram();
 };

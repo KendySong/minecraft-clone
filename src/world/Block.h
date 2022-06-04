@@ -13,5 +13,4 @@ public :
 	glm::vec3 position;
 	Block(glm::vec3 iPosition);
 
-	float* CreateMeshPosition(glm::vec3 position);
 };

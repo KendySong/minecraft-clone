@@ -8,7 +8,7 @@ Chunk::Chunk(glm::vec2 position)
 		{
 			for (size_t z = 0; z < ChunkSize::Depth; z++)
 			{
-				AddNewBlock(vertex, glm::vec3(x, y, z));
+				AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.y));
 			}
 		}
 	}
@@ -28,6 +28,7 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position)
 {
 	float blockVertex[]
 	{
+		//Front
 		position.x - 0.5, position.y - 0.5,  position.z + 0.5,
 		position.x + 0.5, position.y - 0.5,  position.z + 0.5,
 		position.x + 0.5, position.y + 0.5,  position.z + 0.5,
@@ -35,6 +36,7 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position)
 		position.x - 0.5, position.y + 0.5,  position.z + 0.5,
 		position.x - 0.5, position.y - 0.5,  position.z + 0.5,
 
+		//Back
 		position.x - 0.5, position.y - 0.5, position.z - 0.5,
 		position.x + 0.5, position.y + 0.5, position.z - 0.5,
 		position.x + 0.5, position.y - 0.5, position.z - 0.5,
@@ -42,6 +44,7 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position)
 		position.x - 0.5, position.y - 0.5, position.z - 0.5,
 		position.x - 0.5, position.y + 0.5, position.z - 0.5,
 
+		//Right
 		position.x + 0.5, position.y + 0.5, position.z + 0.5,
 		position.x + 0.5, position.y - 0.5, position.z - 0.5,
 		position.x + 0.5, position.y + 0.5, position.z - 0.5,
@@ -49,6 +52,7 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position)
 		position.x + 0.5, position.y + 0.5, position.z + 0.5,
 		position.x + 0.5, position.y - 0.5, position.z + 0.5,
 
+		//Left
 		position.x - 0.5, position.y + 0.5, position.z + 0.5,
 		position.x - 0.5, position.y + 0.5, position.z - 0.5,
 		position.x - 0.5, position.y - 0.5, position.z - 0.5,
@@ -56,6 +60,7 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position)
 		position.x - 0.5, position.y - 0.5, position.z + 0.5,
 		position.x - 0.5, position.y + 0.5, position.z + 0.5,
 
+		//Top
 		position.x - 0.5, position.y + 0.5, position.z - 0.5,
 		position.x + 0.5, position.y + 0.5, position.z + 0.5,
 		position.x + 0.5, position.y + 0.5, position.z - 0.5,
@@ -63,12 +68,13 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position)
 		position.x - 0.5, position.y + 0.5, position.z - 0.5,
 		position.x - 0.5, position.y + 0.5, position.z + 0.5,
 
-		position.x - 0.5, position.y - 0.5, position.x - 0.5,
-		position.x + 0.5, position.y - 0.5, position.x - 0.5,
-		position.x + 0.5, position.y - 0.5, position.x + 0.5,
-		position.x + 0.5, position.y - 0.5, position.x + 0.5,
-		position.x - 0.5, position.y - 0.5, position.x + 0.5,
-		position.x - 0.5, position.y - 0.5, position.x - 0.5
+		//Down
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,
+		position.x + 0.5, position.y - 0.5, position.z - 0.5,
+		position.x + 0.5, position.y - 0.5, position.z + 0.5,
+		position.x + 0.5, position.y - 0.5, position.z + 0.5,
+		position.x - 0.5, position.y - 0.5, position.z + 0.5,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5
 	};
 
 	chunkMesh.insert(chunkMesh.end(), &blockVertex[0], &blockVertex[std::size(blockVertex)]);

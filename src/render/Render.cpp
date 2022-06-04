@@ -2,8 +2,7 @@
 
 Render::Render() 
 {
-	_mainShader = 0;
-	_locModel = 0;
+
 }
 
 Camera* Render::GetCamera() 
@@ -30,15 +29,12 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 
 	//Load shader
 	Shader shader("shaders/cube.vert", "shaders/cube.frag");
-	_mainShader = shader.CreateProgram();
-	glUseProgram(_mainShader);
-	_locModel = glGetUniformLocation(_mainShader, "model");
+	glUseProgram(shader.GetProgram());
 
 	//Instanciate camera
-	_camera = new Camera(window, windowSize.x, windowSize.y, 90, 0.1f, 1000.0f, 0.4f, 5.0f, glm::vec3(0, 0, 0));
-	_camera->viewLocation = glGetUniformLocation(_mainShader, "view");
-	glUniformMatrix4fv(_camera->viewLocation, 1, false, glm::value_ptr(_camera->view));
-	_camera->projectionLocation = glGetUniformLocation(_mainShader, "projection");
+	_camera = new Camera(window, windowSize.x, windowSize.y, 90, 0.1f, 1000.0f, 0.4f, 15.0f, glm::vec3(0, 0, 0));
+	_camera->viewLocation = glGetUniformLocation(shader.GetProgram(), "view");
+	_camera->projectionLocation = glGetUniformLocation(shader.GetProgram(), "projection");
 	glUniformMatrix4fv(_camera->projectionLocation, 1, false, glm::value_ptr(_camera->projection));
 
 	_gui = new Gui(window);
@@ -47,19 +43,18 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 
 void Render::Update() 
 {
-	_camera->ProcessMovement(_window, _deltaTimeTimer.GetElapsedTime());
+	_camera->ProcessMovement(_window, _deltaTimeTimer.GetElapsedTime());	
 	glUniformMatrix4fv(_camera->viewLocation, 1, false, glm::value_ptr(_camera->view));
-	glUniformMatrix4fv(_camera->projectionLocation, 1, false, glm::value_ptr(_camera->projection));
 	_deltaTimeTimer.Restart();
 }
 
-void Render::RenderFrame() 
+void Render::RenderFrame()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	_gui->CreateFrame();
 	for (size_t i = 0; i < _world.displayChunks.size(); i++)
 	{
-		//glBindVertexArray(_world.displayChunks[i].GetVao());
+		glBindVertexArray(_world.displayChunks[i].GetVao());
 		glDrawArrays(GL_TRIANGLES, 0, _world.displayChunks[i].vertex.size() / 3);
 	}
 	_gui->DisplayData();

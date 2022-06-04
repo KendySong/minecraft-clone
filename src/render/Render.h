@@ -18,9 +18,6 @@ private :
 	Gui* _gui;
 	World _world;
 	
-	int _locModel;
-	unsigned int _mainShader;
-
 public:
 	/// <summary>
 	/// Constructor
@@ -45,6 +42,9 @@ public:
 	/// </summary>
 	void UploadVertex();
 
+	/// <summary>
+	/// Update for next frame
+	/// </summary>
 	void Update();
 
 	/// <summary>

@@ -4,11 +4,9 @@
 
 #include <iostream>
 #include <vector>
-
 #include <glm/glm.hpp>
-
+#include <glad/glad.h>
 #include "Block.h"
-#include "../render/Shader.h"
 
 #pragma once
 namespace ChunkSize
@@ -22,6 +20,7 @@ class Chunk
 {
 	//Attributes and properties
 private :
+
 	unsigned int _vao = 0;
 	unsigned int _vbo = 0;
 	
@@ -32,5 +31,6 @@ public :
 
 	Chunk(glm::vec2 position);
 	void AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position);
+
 	unsigned int GetVao();
 };

@@ -16,10 +16,10 @@ int main()
 	//Vertex buffer class
 
 	//Chunk with 1 draw call => transform block into single mesh
-		//Try https://dev.to/superfola/lets-render-chunks-of-voxels-with-opengl--47g9 https://www.youtube.com/watch?v=Th4huqR77rI
+		//Set shader foreach chunk
 		//GL_USAGE => GL_DYNAMIC | GL_STREAM
 			//std::vector for vbo and method for add faces, => vao foreach chunks
-		//Generate 1 vbo and vao foreach chunk
+
 
 	//Compress verticex
 	//Ditch instancing
