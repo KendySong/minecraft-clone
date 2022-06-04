@@ -10,12 +10,16 @@
 class World
 {
 	//Attributes and properties
-private :
-	
-
 public :
 	std::vector<Chunk> displayChunks;
 
+	/// <summary>
+	/// Constructor
+	/// </summary>
 	World();
+
+	/// <summary>
+	/// Load the map
+	/// </summary>
 	void Load();
 };

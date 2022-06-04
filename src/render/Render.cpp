@@ -10,11 +10,6 @@ Camera* Render::GetCamera()
 	return _camera;
 }
 
-void Render::UploadVertex()
-{
-
-}
-
 void Render::Load(GLFWwindow* window, glm::vec2 windowSize) 
 {
 	_window = window;
@@ -25,7 +20,6 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	glEnable(GL_CULL_FACE);
 	glClearColor(0, 0.41, 0.29, 1);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	UploadVertex();
 
 	//Load shader
 	Shader shader("shaders/cube.vert", "shaders/cube.frag");

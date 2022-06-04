@@ -14,15 +14,7 @@ int main()
 
 	//Index buffer class
 	//Vertex buffer class
-
-	//Chunk with 1 draw call => transform block into single mesh
-		//Set shader foreach chunk
-		//GL_USAGE => GL_DYNAMIC | GL_STREAM
-			//std::vector for vbo and method for add faces, => vao foreach chunks
-
-
-	//Compress verticex
-	//Ditch instancing
+	//Compress vertex
 	//Frustrum culling
 	//Occlusion culling
 }

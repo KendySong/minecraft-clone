@@ -63,9 +63,6 @@
     <ClCompile Include="src\application\Window.cpp">
       <Filter>Fichiers sources\Application</Filter>
     </ClCompile>
-    <ClCompile Include="src\world\Block.cpp">
-      <Filter>Fichiers sources\World</Filter>
-    </ClCompile>
     <ClCompile Include="src\world\Chunk.cpp">
       <Filter>Fichiers sources\World</Filter>
     </ClCompile>
@@ -114,9 +111,6 @@
       <Filter>Fichiers d%27en-tête\Application</Filter>
     </ClInclude>
     <ClInclude Include="src\world\World.h">
-      <Filter>Fichiers d%27en-tête\World</Filter>
-    </ClInclude>
-    <ClInclude Include="src\world\Block.h">
       <Filter>Fichiers d%27en-tête\World</Filter>
     </ClInclude>
     <ClInclude Include="src\world\Chunk.h">

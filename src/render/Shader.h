@@ -36,5 +36,8 @@ public :
 	/// <param name="fragmentPath">Path of the fragment shader</param>
 	Shader(const char* vertexPath, const char* fragmentPath);
 
+	/// <summary>
+	/// Getter of the shader program ID
+	/// </summary>
 	unsigned int GetProgram();
 };
