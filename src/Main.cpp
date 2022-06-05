@@ -14,7 +14,7 @@ int main()
 
 	//Index buffer class
 	//Vertex buffer class
-	//Compress vertex
+	//Compress vertex 
 	//Frustrum culling
 	//Occlusion culling
 }

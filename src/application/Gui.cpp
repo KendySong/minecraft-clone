@@ -17,7 +17,7 @@ void Gui::CreateFrame()
 	ImGui::NewFrame();
 }
 
-void Gui::DisplayData()
+void Gui::DisplayRenderData()
 {
 	_fps++;
 	ImGui::Begin("Render");
@@ -27,8 +27,16 @@ void Gui::DisplayData()
 		_fps = 0;
 		_timer.Restart();
 	}
+	ImGui::Text(_framerate.c_str());	
+	ImGui::End();
+}
 
-	ImGui::Text(_framerate.c_str());
+void Gui::ManageCamera(Camera* camera) 
+{
+	ImGui::Begin("Camera");
+	float cameraPos[]{ camera->position.x, camera->position.y ,camera->position.z };
+	ImGui::InputFloat3("Camera position", cameraPos);
+	ImGui::SliderFloat("Speed", &camera->speed, 1, 100);
 	ImGui::End();
 }
 

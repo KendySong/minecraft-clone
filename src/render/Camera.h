@@ -27,13 +27,8 @@ private :
 	float _offsetX;
 	float _offsetY;
 
-	float _fov;
-	float _speed;
-	float _sensitivity;
-
 	glm::vec3 _up;
 	glm::vec3 _front;
-	glm::vec3 _position;
 	glm::vec3 _direction;
 		
 	bool _canRotate;
@@ -41,6 +36,12 @@ private :
 	double _mousePositionY;
 
 public:
+	glm::vec3 position;
+
+	float sensitivity;
+	float speed;
+	float fov;	
+
 	glm::mat4 view;
 	int viewLocation;
 

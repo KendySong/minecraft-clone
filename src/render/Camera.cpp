@@ -7,12 +7,12 @@ Camera::Camera(GLFWwindow* window, float iWidth, float iHeight, float iFov, floa
 {	
 	_width = iWidth;
 	_height = iHeight;
-	_fov = iFov;
+	fov = iFov;
 	_near = iNear;
 	_far = iFar;
-	_sensitivity = iSensitivity;
-	_speed = iSpeed;
-	_position = iPosition;
+	sensitivity = iSensitivity;
+	speed = iSpeed;
+	position = iPosition;
 
 	sub_camera = this;
 	_canRotate = false;
@@ -31,7 +31,7 @@ Camera::Camera(GLFWwindow* window, float iWidth, float iHeight, float iFov, floa
 	_direction = glm::vec3(0.0f, 0.0f, 0.0f);
 	
 	glfwSetCursorPosCallback(window, mouse_callback);
-	view = glm::lookAt(_position, _position - _front, _up);
+	view = glm::lookAt(position, position - _front, _up);
 	projection = glm::perspective(glm::radians(iFov), iWidth / iHeight, iNear, iFar);
 
 	viewLocation = 0;
@@ -41,22 +41,22 @@ Camera::Camera(GLFWwindow* window, float iWidth, float iHeight, float iFov, floa
 void Camera::ProcessMovement(GLFWwindow* window, float deltaTime)
 {
 	if (glfwGetKey(window, GLFW_KEY_W))
-		_position -= _front * _speed * deltaTime;
+		position -= _front * speed * deltaTime;
 
 	if (glfwGetKey(window, GLFW_KEY_A))
-		_position += glm::normalize(glm::cross(_front, _up)) * _speed * deltaTime;
+		position += glm::normalize(glm::cross(_front, _up)) * speed * deltaTime;
 
 	if (glfwGetKey(window, GLFW_KEY_S))
-		_position += _front * _speed * deltaTime;
+		position += _front * speed * deltaTime;
 
 	if (glfwGetKey(window, GLFW_KEY_D))
-		_position -= glm::normalize(glm::cross(_front, _up)) * _speed * deltaTime;
+		position -= glm::normalize(glm::cross(_front, _up)) * speed * deltaTime;
 
 	if (glfwGetKey(window, GLFW_KEY_SPACE))
-		_position.y += _speed * deltaTime;
+		position.y += speed * deltaTime;
 
 	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT))
-		_position.y -= _speed * deltaTime;
+		position.y -= speed * deltaTime;
 
 	if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_2))
 	{		
@@ -72,7 +72,7 @@ void Camera::ProcessMovement(GLFWwindow* window, float deltaTime)
 		_canRotate = false;
 	}
 
-	view = glm::lookAt(_position, _position - _front, _up);
+	view = glm::lookAt(position, position - _front, _up);
 }
 
 void Camera::ProcessMouseInput(double x, double y) 
@@ -85,8 +85,8 @@ void Camera::ProcessMouseInput(double x, double y)
 		_lastX = x;
 		_lastY = y;
 
-		_offsetX *= _sensitivity;
-		_offsetY *= _sensitivity;
+		_offsetX *= sensitivity;
+		_offsetY *= sensitivity;
 
 		_yaw += _offsetX;
 		_pitch += _offsetY;

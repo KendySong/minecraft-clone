@@ -4,14 +4,15 @@
 
 #include <string>
 
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
 #include <imgui/imgui.h>
 #include <imgui/imgui_impl_glfw.h>
 #include <imgui/imgui_impl_opengl3.h>
 
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-
 #include "Timer.h"
+#include "../render/Camera.h"
 
 #pragma once
 class Gui 
@@ -37,11 +38,12 @@ public :
 	/// <summary>
 	/// Manage and display program data
 	/// </summary>
-	void DisplayData();
+	void DisplayRenderData();
+
+	void ManageCamera(Camera* camera);
 
 	/// <summary>
 	/// Render of gui window
 	/// </summary>
-	void Render();
-	
+	void Render();	
 };

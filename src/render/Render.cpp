@@ -51,6 +51,7 @@ void Render::RenderFrame()
 		glBindVertexArray(_world.displayChunks[i].GetVao());
 		glDrawArrays(GL_TRIANGLES, 0, _world.displayChunks[i].vertex.size() / 3);
 	}
-	_gui->DisplayData();
+	_gui->DisplayRenderData();
+	_gui->ManageCamera(_camera);
 	_gui->Render();
 }
