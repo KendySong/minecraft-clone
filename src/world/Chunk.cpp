@@ -22,6 +22,8 @@ Chunk::Chunk(glm::vec2 position)
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, false, 3 * sizeof(float), (const void*)0);
 	glEnableVertexAttribArray(0);
+
+	verticesDraw = vertex.size() / 3;
 }
 
 void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position)

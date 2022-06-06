@@ -24,6 +24,7 @@ private :
 	unsigned int _vbo = 0;
 	
 public :
+	unsigned int verticesDraw;
 	std::vector<float> vertex;
 	std::vector<glm::vec3> blocks;
 
