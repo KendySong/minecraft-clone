@@ -93,6 +93,12 @@
     <ClCompile Include="libraries\include\imgui\imgui_widgets.cpp">
       <Filter>ImGui</Filter>
     </ClCompile>
+    <ClCompile Include="src\render\stb_image.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\Texture.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\render\Camera.h">
@@ -151,6 +157,15 @@
     </ClInclude>
     <ClInclude Include="libraries\include\imgui\imstb_truetype.h">
       <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\VertexBuffer.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\stb_image.h">
+      <Filter>Fichiers d%27en-tête\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\Texture.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

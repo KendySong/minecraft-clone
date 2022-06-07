@@ -1,0 +1,15 @@
+﻿  glad.c
+  Main.cpp
+  Shader.cpp
+  stb_image.cpp
+  Texture.cpp
+  Génération de code en cours...
+Main.obj : error LNK2019: symbole externe non résolu _glfwInit référencé dans la fonction _main
+Main.obj : error LNK2019: symbole externe non résolu _glfwWindowHint référencé dans la fonction _main
+Main.obj : error LNK2019: symbole externe non résolu _glfwCreateWindow référencé dans la fonction _main
+Main.obj : error LNK2019: symbole externe non résolu _glfwWindowShouldClose référencé dans la fonction _main
+Main.obj : error LNK2019: symbole externe non résolu _glfwPollEvents référencé dans la fonction _main
+Main.obj : error LNK2019: symbole externe non résolu _glfwMakeContextCurrent référencé dans la fonction _main
+Main.obj : error LNK2019: symbole externe non résolu _glfwSwapBuffers référencé dans la fonction _main
+C:\Users\pl70jwz\Desktop\render-texture\libraries\lib\glfw3.lib : warning LNK4272: type d'ordinateur bibliothèque 'x64' en conflit avec le type d'ordinateur cible 'x86'
+C:\Users\pl70jwz\Desktop\render-texture\Debug\render-texture.exe : fatal error LNK1120: 7 externes non résolus

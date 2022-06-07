@@ -20,7 +20,6 @@ void Window::Run()
 	while (!glfwWindowShouldClose(_window))
 	{
 		glfwPollEvents();
-
 		_render.Update();
 
 		//Render world and gui

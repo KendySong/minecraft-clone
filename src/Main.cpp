@@ -12,9 +12,10 @@ int main()
 	);
 	window.Run();
 
-	//Index buffer class
+	//Textures
 	//Vertex buffer class
-	//Compress vertex 
+	//Singleton
+
 	//Frustrum culling
 	//Occlusion culling
 }

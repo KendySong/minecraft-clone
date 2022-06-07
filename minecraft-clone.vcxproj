@@ -149,6 +149,7 @@
     <ClCompile Include="libraries\include\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="libraries\include\imgui\imgui_tables.cpp" />
     <ClCompile Include="libraries\include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="src\render\stb_image.cpp" />
     <ClCompile Include="src\world\Chunk.cpp" />
     <ClCompile Include="src\application\Gui.cpp" />
     <ClCompile Include="src\application\Config.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\render\Shader.cpp" />
     <ClCompile Include="src\world\World.cpp" />
+    <ClCompile Include="src\render\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libraries\include\imgui\imconfig.h" />
@@ -171,6 +173,7 @@
     <ClInclude Include="libraries\include\imgui\imstb_rectpack.h" />
     <ClInclude Include="libraries\include\imgui\imstb_textedit.h" />
     <ClInclude Include="libraries\include\imgui\imstb_truetype.h" />
+    <ClInclude Include="src\render\stb_image.h" />
     <ClInclude Include="src\world\Direction.h" />
     <ClInclude Include="src\world\Chunk.h" />
     <ClInclude Include="src\application\Gui.h" />
@@ -181,6 +184,8 @@
     <ClInclude Include="src\application\Window.h" />
     <ClInclude Include="src\render\Shader.h" />
     <ClInclude Include="src\world\World.h" />
+    <ClInclude Include="src\render\VertexBuffer.h" />
+    <ClInclude Include="src\render\Texture.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\cube.frag" />

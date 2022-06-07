@@ -79,6 +79,11 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position)
 		position.x - 0.5, position.y - 0.5, position.z - 0.5
 	};
 
+	VertexBuffer cubeMesh[]
+	{
+		{glm::vec3(0, 0, 0), glm::vec2(0, 0)}
+	};
+
 	chunkMesh.insert(chunkMesh.end(), &blockVertex[0], &blockVertex[std::size(blockVertex)]);
 }
 
