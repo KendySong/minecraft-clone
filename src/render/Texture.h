@@ -13,16 +13,12 @@ class Texture
 {
 	//Attributes and properties
 private :
-	unsigned int _textureID;
-
-
 	int _width;
 	int _height;
 	int _channel;
 
-
 public :
+	unsigned int textureID;
 	Texture(const char* texturePath);
-
 };
 

@@ -9,4 +9,5 @@ struct VertexBuffer
 {
 	glm::vec3 position;
 	glm::vec2 texUV;
+	glm::vec1 texID;
 };

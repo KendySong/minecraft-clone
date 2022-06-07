@@ -19,7 +19,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
 	glClearColor(0, 0.41, 0.29, 1);
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 	//Load shader
 	Shader shader("shaders/cube.vert", "shaders/cube.frag");
@@ -33,6 +33,15 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 
 	_gui = new Gui(window);
 	_world.Load();
+
+	int grassSlot = 0;
+	Texture grass("textures/grass.png");
+	glActiveTexture(GL_TEXTURE0 + grassSlot);
+	glBindTexture(GL_TEXTURE_2D, grass.textureID);
+
+	int samplerLoc = glGetUniformLocation(grass.textureID, "sampler");
+	int texturesID[]{0};
+	glUniform1iv(samplerLoc, 1, texturesID);
 }
 
 void Render::Update() 

@@ -2,8 +2,8 @@
 
 Texture::Texture(const char* texturePath)
 {
-	glGenTextures(1, &_textureID);
-	glBindTexture(GL_TEXTURE_2D, _textureID);
+	glGenTextures(1, &textureID);
+	glBindTexture(GL_TEXTURE_2D, textureID);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);

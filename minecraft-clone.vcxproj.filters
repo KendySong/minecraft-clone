@@ -93,11 +93,11 @@
     <ClCompile Include="libraries\include\imgui\imgui_widgets.cpp">
       <Filter>ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\render\stb_image.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="src\render\Texture.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\stb_image.cpp">
+      <Filter>Fichiers sources\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -165,7 +165,7 @@
       <Filter>Fichiers d%27en-tête\Render</Filter>
     </ClInclude>
     <ClInclude Include="src\render\Texture.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

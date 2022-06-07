@@ -20,8 +20,14 @@ Chunk::Chunk(glm::vec2 position)
 	glBindBuffer(GL_ARRAY_BUFFER, _vbo);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertex.size(), &vertex.front(), GL_STATIC_DRAW);
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, false, 3 * sizeof(float), (const void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, false, 6 * sizeof(float), (const void*)0);
 	glEnableVertexAttribArray(0);
+
+	glVertexAttribPointer(1, 2, GL_FLOAT, false, 6 * sizeof(float), (const void*)(3 * sizeof(float)));
+	glEnableVertexAttribArray(1);
+
+	glVertexAttribPointer(2, 1, GL_FLOAT, false, 6 * sizeof(float), (const void*)(5 * sizeof(float)));
+	glEnableVertexAttribArray(2);	
 
 	verticesDraw = vertex.size() / 3;
 }
@@ -31,57 +37,52 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position)
 	float blockVertex[]
 	{
 		//Front
-		position.x - 0.5, position.y - 0.5,  position.z + 0.5,
-		position.x + 0.5, position.y - 0.5,  position.z + 0.5,
-		position.x + 0.5, position.y + 0.5,  position.z + 0.5,
-		position.x + 0.5, position.y + 0.5,  position.z + 0.5,
-		position.x - 0.5, position.y + 0.5,  position.z + 0.5,
-		position.x - 0.5, position.y - 0.5,  position.z + 0.5,
+		position.x - 0.5, position.y - 0.5,  position.z + 0.5,  0.25, 0.333333,		0.0f,
+		position.x + 0.5, position.y - 0.5,  position.z + 0.5,  0.5,  0.333333,		0.0f,
+		position.x + 0.5, position.y + 0.5,  position.z + 0.5,	0.5,  0.666666,		0.0f,
+		position.x + 0.5, position.y + 0.5,  position.z + 0.5,	0.5,  0.666666,		0.0f,
+		position.x - 0.5, position.y + 0.5,  position.z + 0.5,  0.25, 0.666666,		0.0f,
+		position.x - 0.5, position.y - 0.5,  position.z + 0.5,  0.25, 0.666666,		0.0f,
 
 		//Back
-		position.x - 0.5, position.y - 0.5, position.z - 0.5,
-		position.x + 0.5, position.y + 0.5, position.z - 0.5,
-		position.x + 0.5, position.y - 0.5, position.z - 0.5,
-		position.x + 0.5, position.y + 0.5, position.z - 0.5,
-		position.x - 0.5, position.y - 0.5, position.z - 0.5,
-		position.x - 0.5, position.y + 0.5, position.z - 0.5,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.333333,		0.0f,
+		position.x + 0.5, position.y + 0.5, position.z - 0.5,	1.0,  0.666666,		0.0f,
+		position.x + 0.5, position.y - 0.5, position.z - 0.5,	1.0,  0.333333,		0.0f,
+		position.x + 0.5, position.y + 0.5, position.z - 0.5,	1.0,  0.666666,		0.0f,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.333333,		0.0f,
+		position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.75, 0.666666,		0.0f,
 
 		//Right
-		position.x + 0.5, position.y + 0.5, position.z + 0.5,
-		position.x + 0.5, position.y - 0.5, position.z - 0.5,
-		position.x + 0.5, position.y + 0.5, position.z - 0.5,
-		position.x + 0.5, position.y - 0.5, position.z - 0.5,
-		position.x + 0.5, position.y + 0.5, position.z + 0.5,
-		position.x + 0.5, position.y - 0.5, position.z + 0.5,
+		position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.666666,		0.0f,
+		position.x + 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.333333,		0.0f,
+		position.x + 0.5, position.y + 0.5, position.z - 0.5,	0.75, 0.666666,		0.0f,
+		position.x + 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.333333,		0.0f,
+		position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.666666,		0.0f,
+		position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.5,  0.333333,		0.0f,
 
 		//Left
-		position.x - 0.5, position.y + 0.5, position.z + 0.5,
-		position.x - 0.5, position.y + 0.5, position.z - 0.5,
-		position.x - 0.5, position.y - 0.5, position.z - 0.5,
-		position.x - 0.5, position.y - 0.5, position.z - 0.5,
-		position.x - 0.5, position.y - 0.5, position.z + 0.5,
-		position.x - 0.5, position.y + 0.5, position.z + 0.5,
+		position.x - 0.5, position.y + 0.5, position.z + 0.5,	0.25, 0.666666,		0.0f,
+		position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.0,  0.666666,		0.0f,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.0,  0.333333,		0.0f,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.0,  0.333333,		0.0f,
+		position.x - 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.333333,		0.0f,
+		position.x - 0.5, position.y + 0.5, position.z + 0.5,	0.25, 0.666666,		0.0f,
 
 		//Top
-		position.x - 0.5, position.y + 0.5, position.z - 0.5,
-		position.x + 0.5, position.y + 0.5, position.z + 0.5,
-		position.x + 0.5, position.y + 0.5, position.z - 0.5,
-		position.x + 0.5, position.y + 0.5, position.z + 0.5,
-		position.x - 0.5, position.y + 0.5, position.z - 0.5,
-		position.x - 0.5, position.y + 0.5, position.z + 0.5,
+		position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.25, 1.0,			0.0f,
+		position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.666666,		0.0f,
+		position.x + 0.5, position.y + 0.5, position.z - 0.5,	0.5,  1.0,			0.0f,
+		position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.666666,		0.0f,
+		position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.25, 1.0,			0.0f,
+		position.x - 0.5, position.y + 0.5, position.z + 0.5,	0.25, 0.666666,		0.0f,
 
 		//Down
-		position.x - 0.5, position.y - 0.5, position.z - 0.5,
-		position.x + 0.5, position.y - 0.5, position.z - 0.5,
-		position.x + 0.5, position.y - 0.5, position.z + 0.5,
-		position.x + 0.5, position.y - 0.5, position.z + 0.5,
-		position.x - 0.5, position.y - 0.5, position.z + 0.5,
-		position.x - 0.5, position.y - 0.5, position.z - 0.5
-	};
-
-	VertexBuffer cubeMesh[]
-	{
-		{glm::vec3(0, 0, 0), glm::vec2(0, 0)}
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.5,  0.333333,		0.0f,
+		position.x + 0.5, position.y - 0.5, position.z - 0.5,	0.25, 0.333333,		0.0f,
+		position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.0,			0.0f,
+		position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.0,			0.0f,
+		position.x - 0.5, position.y - 0.5, position.z + 0.5,	0.5,  0.0,			0.0f,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.5,  0.333333,		0.0f
 	};
 
 	chunkMesh.insert(chunkMesh.end(), &blockVertex[0], &blockVertex[std::size(blockVertex)]);
