@@ -42,7 +42,7 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float
 		position.x + 0.5, position.y + 0.5,  position.z + 0.5,	0.5,  0.666666,		textureID,
 		position.x + 0.5, position.y + 0.5,  position.z + 0.5,	0.5,  0.666666,		textureID,
 		position.x - 0.5, position.y + 0.5,  position.z + 0.5,  0.25, 0.666666,		textureID,
-		position.x - 0.5, position.y - 0.5,  position.z + 0.5,  0.25, 0.666666,		textureID,
+		position.x - 0.5, position.y - 0.5,  position.z + 0.5,  0.25, 0.333333,		textureID,
 
 		//Back
 		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.333333,		textureID,
@@ -67,7 +67,7 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float
 		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.0,  0.333333,		textureID,
 		position.x - 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.333333,		textureID,
 		position.x - 0.5, position.y + 0.5, position.z + 0.5,	0.25, 0.666666,		textureID,
-
+		
 		//Top
 		position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.25, 1.0,			textureID,
 		position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.666666,		textureID,
@@ -82,7 +82,7 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float
 		position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.0,			textureID,
 		position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.0,			textureID,
 		position.x - 0.5, position.y - 0.5, position.z + 0.5,	0.5,  0.0,			textureID,
-		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.5,  0.333333,		textureID
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.5,  0.333333,		textureID	
 	};	
 
 	/*

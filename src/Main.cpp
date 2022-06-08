@@ -20,15 +20,16 @@ int main()
 	);
 	window.Run();
 
-	//Getter setter with reference
-	
 	//Faces
-	//Singleton
 	//Chunk management
 	//Procedural gen
 	//Light
-
+	
+	//Config class
 	//Vertex buffer class
+	//Getter setter with reference
+
 	//Frustrum culling
 	//Occlusion culling
+
 }
