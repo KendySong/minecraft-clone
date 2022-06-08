@@ -34,13 +34,15 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	_gui = new Gui(window);
 	_world.Load();
 
-	int grassSlot = 0;
-	Texture grass("textures/grass.png");
-	glActiveTexture(GL_TEXTURE0 + grassSlot);
-	glBindTexture(GL_TEXTURE_2D, grass.textureID);
+	//Load texture
+	Texture grass("textures/grass.png", 0);
 
-	int samplerLoc = glGetUniformLocation(grass.textureID, "sampler");
-	int texturesID[]{0};
+	//Assign slots
+	grass.AssignSlot();
+
+	//Set samplers into shader
+	int samplerLoc = glGetUniformLocation(shader.GetProgram(), "sampler");
+	int texturesID[2] = {0};			
 	glUniform1iv(samplerLoc, 1, texturesID);
 }
 

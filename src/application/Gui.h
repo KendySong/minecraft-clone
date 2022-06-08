@@ -22,6 +22,7 @@ private :
 	Timer _timer;
 	std::string _framerate;
 	unsigned int _fps;
+	bool _wireframe;
 
 public :
 	/// <summary>

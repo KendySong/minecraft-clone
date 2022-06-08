@@ -8,6 +8,7 @@ Gui::Gui(GLFWwindow* window)
 	ImGui::StyleColorsDark();
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 330");
+	_wireframe = false;
 }
 
 void Gui::CreateFrame() 
@@ -21,6 +22,8 @@ void Gui::DisplayRenderData()
 {
 	_fps++;
 	ImGui::Begin("Render");
+
+	//FPS
 	if (_timer.GetElapsedTime() > 1)
 	{
 		_framerate = std::to_string(_fps) + " fps";
@@ -28,6 +31,17 @@ void Gui::DisplayRenderData()
 		_timer.Restart();
 	}
 	ImGui::Text(_framerate.c_str());	
+
+	//Render mode
+	ImGui::Checkbox("Wireframe Render", &_wireframe);
+	if (ImGui::Button("Apply"))
+	{
+		if (_wireframe)
+			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		else 
+			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	}
+
 	ImGui::End();
 }
 

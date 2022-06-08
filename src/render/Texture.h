@@ -18,7 +18,9 @@ private :
 	int _channel;
 
 public :
+	int shaderSlot;
 	unsigned int textureID;
-	Texture(const char* texturePath);
+	Texture(const char* texturePath, int slot);
+	void AssignSlot();
 };
 

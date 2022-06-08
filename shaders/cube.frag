@@ -4,7 +4,7 @@ in float v_texID;
 
 out vec4 outputColor;
 
-uniform sampler2D sampler[1];
+uniform sampler2D sampler[2];
 
 void main()
 {

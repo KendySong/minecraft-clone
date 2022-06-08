@@ -12,8 +12,8 @@ int main()
 	);
 	window.Run();
 
-	//Textures
 	//Vertex buffer class
+	//Faces
 	//Singleton
 
 	//Frustrum culling

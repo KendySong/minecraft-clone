@@ -8,7 +8,7 @@ Chunk::Chunk(glm::vec2 position)
 		{
 			for (size_t z = 0; z < ChunkSize::Depth; z++)
 			{
-				AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.y));
+				AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.y), 0);
 			}
 		}
 	}
@@ -32,57 +32,57 @@ Chunk::Chunk(glm::vec2 position)
 	verticesDraw = vertex.size() / 3;
 }
 
-void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position)
+void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID)
 {
 	float blockVertex[]
 	{
-		//Front
-		position.x - 0.5, position.y - 0.5,  position.z + 0.5,  0.25, 0.333333,		0.0f,
-		position.x + 0.5, position.y - 0.5,  position.z + 0.5,  0.5,  0.333333,		0.0f,
-		position.x + 0.5, position.y + 0.5,  position.z + 0.5,	0.5,  0.666666,		0.0f,
-		position.x + 0.5, position.y + 0.5,  position.z + 0.5,	0.5,  0.666666,		0.0f,
-		position.x - 0.5, position.y + 0.5,  position.z + 0.5,  0.25, 0.666666,		0.0f,
-		position.x - 0.5, position.y - 0.5,  position.z + 0.5,  0.25, 0.666666,		0.0f,
+		//Front													//Texture UV		
+		position.x - 0.5, position.y - 0.5,  position.z + 0.5,  0.25, 0.333333,		textureID,
+		position.x + 0.5, position.y - 0.5,  position.z + 0.5,  0.5,  0.333333,		textureID,
+		position.x + 0.5, position.y + 0.5,  position.z + 0.5,	0.5,  0.666666,		textureID,
+		position.x + 0.5, position.y + 0.5,  position.z + 0.5,	0.5,  0.666666,		textureID,
+		position.x - 0.5, position.y + 0.5,  position.z + 0.5,  0.25, 0.666666,		textureID,
+		position.x - 0.5, position.y - 0.5,  position.z + 0.5,  0.25, 0.666666,		textureID,
 
 		//Back
-		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.333333,		0.0f,
-		position.x + 0.5, position.y + 0.5, position.z - 0.5,	1.0,  0.666666,		0.0f,
-		position.x + 0.5, position.y - 0.5, position.z - 0.5,	1.0,  0.333333,		0.0f,
-		position.x + 0.5, position.y + 0.5, position.z - 0.5,	1.0,  0.666666,		0.0f,
-		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.333333,		0.0f,
-		position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.75, 0.666666,		0.0f,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.333333,		textureID,
+		position.x + 0.5, position.y + 0.5, position.z - 0.5,	1.0,  0.666666,		textureID,
+		position.x + 0.5, position.y - 0.5, position.z - 0.5,	1.0,  0.333333,		textureID,
+		position.x + 0.5, position.y + 0.5, position.z - 0.5,	1.0,  0.666666,		textureID,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.333333,		textureID,
+		position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.75, 0.666666,		textureID,
 
 		//Right
-		position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.666666,		0.0f,
-		position.x + 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.333333,		0.0f,
-		position.x + 0.5, position.y + 0.5, position.z - 0.5,	0.75, 0.666666,		0.0f,
-		position.x + 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.333333,		0.0f,
-		position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.666666,		0.0f,
-		position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.5,  0.333333,		0.0f,
+		position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.666666,		textureID,
+		position.x + 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.333333,		textureID,
+		position.x + 0.5, position.y + 0.5, position.z - 0.5,	0.75, 0.666666,		textureID,
+		position.x + 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.333333,		textureID,
+		position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.666666,		textureID,
+		position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.5,  0.333333,		textureID,
 
 		//Left
-		position.x - 0.5, position.y + 0.5, position.z + 0.5,	0.25, 0.666666,		0.0f,
-		position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.0,  0.666666,		0.0f,
-		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.0,  0.333333,		0.0f,
-		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.0,  0.333333,		0.0f,
-		position.x - 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.333333,		0.0f,
-		position.x - 0.5, position.y + 0.5, position.z + 0.5,	0.25, 0.666666,		0.0f,
+		position.x - 0.5, position.y + 0.5, position.z + 0.5,	0.25, 0.666666,		textureID,
+		position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.0,  0.666666,		textureID,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.0,  0.333333,		textureID,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.0,  0.333333,		textureID,
+		position.x - 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.333333,		textureID,
+		position.x - 0.5, position.y + 0.5, position.z + 0.5,	0.25, 0.666666,		textureID,
 
 		//Top
-		position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.25, 1.0,			0.0f,
-		position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.666666,		0.0f,
-		position.x + 0.5, position.y + 0.5, position.z - 0.5,	0.5,  1.0,			0.0f,
-		position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.666666,		0.0f,
-		position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.25, 1.0,			0.0f,
-		position.x - 0.5, position.y + 0.5, position.z + 0.5,	0.25, 0.666666,		0.0f,
+		position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.25, 1.0,			textureID,
+		position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.666666,		textureID,
+		position.x + 0.5, position.y + 0.5, position.z - 0.5,	0.5,  1.0,			textureID,
+		position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.666666,		textureID,
+		position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.25, 1.0,			textureID,
+		position.x - 0.5, position.y + 0.5, position.z + 0.5,	0.25, 0.666666,		textureID,
 
 		//Down
-		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.5,  0.333333,		0.0f,
-		position.x + 0.5, position.y - 0.5, position.z - 0.5,	0.25, 0.333333,		0.0f,
-		position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.0,			0.0f,
-		position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.0,			0.0f,
-		position.x - 0.5, position.y - 0.5, position.z + 0.5,	0.5,  0.0,			0.0f,
-		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.5,  0.333333,		0.0f
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.5,  0.333333,		textureID,
+		position.x + 0.5, position.y - 0.5, position.z - 0.5,	0.25, 0.333333,		textureID,
+		position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.0,			textureID,
+		position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.0,			textureID,
+		position.x - 0.5, position.y - 0.5, position.z + 0.5,	0.5,  0.0,			textureID,
+		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.5,  0.333333,		textureID
 	};
 
 	chunkMesh.insert(chunkMesh.end(), &blockVertex[0], &blockVertex[std::size(blockVertex)]);

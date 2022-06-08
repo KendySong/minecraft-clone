@@ -1,1 +1,16 @@
-﻿  minecraft-clone.vcxproj -> C:\Users\kndys\Desktop\minecraft-clone\x64\Debug\minecraft-clone.exe
+﻿  Main.cpp
+  Render.cpp
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,43): warning C4244:  'argument' : conversion de 'T' en 'GLsizei', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,43): warning C4244:         with
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,43): warning C4244:         [
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,43): warning C4244:             T=float
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,43): warning C4244:         ]
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,29): warning C4244:  'argument' : conversion de 'T' en 'GLsizei', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,29): warning C4244:         with
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,29): warning C4244:         [
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,29): warning C4244:             T=float
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,29): warning C4244:         ]
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(21,31): warning C4305:  'argument' : troncation de 'double' à 'GLfloat'
+  Génération de code en cours...
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(51,66): warning C4244:  'argument' : conversion de 'double' en 'float', perte possible de données
+  minecraft-clone.vcxproj -> C:\Users\pl70jwz\Desktop\minecraft-clone\x64\Debug\minecraft-clone.exe
