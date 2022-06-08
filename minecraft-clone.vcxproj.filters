@@ -164,9 +164,6 @@
     <ClInclude Include="src\render\Texture.h">
       <Filter>Fichiers d%27en-tête\Render</Filter>
     </ClInclude>
-    <ClInclude Include="src\render\VertexBuffer.h">
-      <Filter>Fichiers d%27en-tête\Render</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\cube.frag">

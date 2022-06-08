@@ -85,59 +85,6 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float
 		position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.5,  0.333333,		textureID	
 	};	
 
-	/*
-	VertexBuffer blockVertex[]
-	{
-		//Front
-		{glm::vec3(position.x - 0.5, position.y - 0.5,  position.z + 0.5),  glm::vec2(0.25, 0.333333),		textureID},
-		{glm::vec3(position.x + 0.5, position.y - 0.5,  position.z + 0.5),	glm::vec2(0.5,  0.333333),		textureID},
-		{glm::vec3(position.x + 0.5, position.y + 0.5,  position.z + 0.5),	glm::vec2(0.5,  0.666666),		textureID},
-		{glm::vec3(position.x + 0.5, position.y + 0.5,  position.z + 0.5),	glm::vec2(0.5,  0.666666),		textureID},
-		{glm::vec3(position.x - 0.5, position.y + 0.5,  position.z + 0.5),  glm::vec2(0.25, 0.666666),		textureID},
-		{glm::vec3(position.x - 0.5, position.y - 0.5,  position.z + 0.5),  glm::vec2(0.25, 0.666666),		textureID},
-
-		//Back
-		{glm::vec3(position.x - 0.5, position.y - 0.5, position.z - 0.5),	glm::vec2(0.75, 0.333333),		textureID},
-		{glm::vec3(position.x + 0.5, position.y + 0.5, position.z - 0.5),	glm::vec2(1.0,  0.666666),		textureID},
-		{glm::vec3(position.x + 0.5, position.y - 0.5, position.z - 0.5),	glm::vec2(1.0,  0.333333),		textureID},
-		{glm::vec3(position.x + 0.5, position.y + 0.5, position.z - 0.5),	glm::vec2(1.0,  0.666666),		textureID},
-		{glm::vec3(position.x - 0.5, position.y - 0.5, position.z - 0.5),	glm::vec2(0.75, 0.333333),		textureID},
-		{glm::vec3(position.x - 0.5, position.y + 0.5, position.z - 0.5),	glm::vec2(0.75, 0.666666),		textureID},
-
-		//Right
-		{glm::vec3(position.x + 0.5, position.y + 0.5, position.z + 0.5),	glm::vec2(0.5,  0.666666),		textureID},
-		{glm::vec3(position.x + 0.5, position.y - 0.5, position.z - 0.5),	glm::vec2(0.75, 0.333333),		textureID},
-		{glm::vec3(position.x + 0.5, position.y + 0.5, position.z - 0.5),	glm::vec2(0.75, 0.666666),		textureID},
-		{glm::vec3(position.x + 0.5, position.y - 0.5, position.z - 0.5),	glm::vec2(0.75, 0.333333),		textureID},
-		{glm::vec3(position.x + 0.5, position.y + 0.5, position.z + 0.5),	glm::vec2(0.5,  0.666666),		textureID},
-		{glm::vec3(position.x + 0.5, position.y - 0.5, position.z + 0.5),	glm::vec2(0.5,  0.333333),		textureID},
-
-		//Left
-		{glm::vec3(position.x - 0.5, position.y + 0.5, position.z + 0.5),	glm::vec2(0.25, 0.666666),		textureID},
-		{glm::vec3(position.x - 0.5, position.y + 0.5, position.z - 0.5),	glm::vec2(0.0,  0.666666),		textureID},
-		{glm::vec3(position.x - 0.5, position.y - 0.5, position.z - 0.5),	glm::vec2(0.0,  0.333333),		textureID},
-		{glm::vec3(position.x - 0.5, position.y - 0.5, position.z - 0.5),	glm::vec2(0.0,  0.333333),		textureID},
-		{glm::vec3(position.x - 0.5, position.y - 0.5, position.z + 0.5),	glm::vec2(0.25, 0.333333),		textureID},
-		{glm::vec3(position.x - 0.5, position.y + 0.5, position.z + 0.5),	glm::vec2(0.25, 0.666666),		textureID},
-
-		//Top
-		{glm::vec3(position.x - 0.5, position.y + 0.5, position.z - 0.5),	glm::vec2(0.25, 1.0),			textureID},
-		{glm::vec3(position.x + 0.5, position.y + 0.5, position.z + 0.5),	glm::vec2(0.5,  0.666666),		textureID},
-		{glm::vec3(position.x + 0.5, position.y + 0.5, position.z - 0.5),	glm::vec2(0.5,  1.0),			textureID},
-		{glm::vec3(position.x + 0.5, position.y + 0.5, position.z + 0.5),	glm::vec2(0.5,  0.666666),		textureID},
-		{glm::vec3(position.x - 0.5, position.y + 0.5, position.z - 0.5),	glm::vec2(0.25, 1.0),			textureID},
-		{glm::vec3(position.x - 0.5, position.y + 0.5, position.z + 0.5),	glm::vec2(0.25, 0.666666),		textureID},
-
-		//Down
-		{glm::vec3(position.x - 0.5, position.y - 0.5, position.z - 0.5),	glm::vec2(0.5,  0.333333),		textureID},
-		{glm::vec3(position.x + 0.5, position.y - 0.5, position.z - 0.5),	glm::vec2(0.25, 0.333333),		textureID},
-		{glm::vec3(position.x + 0.5, position.y - 0.5, position.z + 0.5),	glm::vec2(0.25, 0.0),			textureID},
-		{glm::vec3(position.x + 0.5, position.y - 0.5, position.z + 0.5),	glm::vec2(0.25, 0.0),			textureID},
-		{glm::vec3(position.x - 0.5, position.y - 0.5, position.z + 0.5),	glm::vec2(0.5,  0.0),			textureID},
-		{glm::vec3(position.x - 0.5, position.y - 0.5, position.z - 0.5),	glm::vec2(0.5,  0.333333),		textureID}
-	};
-	*/
-
 	chunkMesh.insert(chunkMesh.end(), &blockVertex[0], &blockVertex[std::size(blockVertex)]);
 }
 

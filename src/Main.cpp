@@ -12,7 +12,11 @@ int main()
 	);
 	window.Run();
 
-	//Faces
+	//Optimization
+		//Faces
+			//3D array represent chunk and block position for check faces
+		//Greedy mesh
+
 	//Chunk management
 	//Procedural gen
 	//Light

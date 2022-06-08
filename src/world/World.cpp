@@ -15,3 +15,8 @@ void World::Load()
 		}
 	}
 }
+
+void World::ManageChunk(glm::vec3 playerPosition)
+{
+
+}

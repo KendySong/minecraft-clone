@@ -8,8 +8,6 @@
 #include <glad/glad.h>
 #include <glm/glm.hpp>
 
-#include "../render/VertexBuffer.h"
-
 #pragma once
 namespace ChunkSize
 {

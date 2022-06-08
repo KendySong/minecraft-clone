@@ -3,6 +3,7 @@
 ///Summary : Manage chunk display, and generate new chunks
 
 #include <vector>
+#include <glm/glm.hpp>
 
 #include "Chunk.h"
 
@@ -22,4 +23,6 @@ public :
 	/// Load the map
 	/// </summary>
 	void Load();
+
+	void ManageChunk(glm::vec3 playerPosition);
 };
