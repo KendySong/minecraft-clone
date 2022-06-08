@@ -53,7 +53,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 void Render::Update() 
 {
 	//Manage camera
-	_camera->ProcessMovement(_window, _deltaTimeTimer.GetElapsedTime());	
+	_camera->ProcessMovement(_window, _deltaTimeTimer.GetElapsedTime());
 	glUniformMatrix4fv(_camera->viewLocation, 1, false, glm::value_ptr(_camera->view));
 	_deltaTimeTimer.Restart();
 

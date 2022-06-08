@@ -33,7 +33,7 @@ void Gui::DisplayRenderData(float& renderDistance)
 	ImGui::Text(_framerate.c_str());	
 
 	//Render distance
-	ImGui::SliderFloat("Render distance", &renderDistance, 10, 100);
+	ImGui::SliderFloat("Render distance", &renderDistance, 10, 1000);
 
 	//Render mode
 	ImGui::Checkbox("Wireframe Render", &_wireframe);
