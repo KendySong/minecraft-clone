@@ -1,14 +1,6 @@
 #include "application/Window.h"
 #include "application/Config.h"
 
-struct Person
-{
-	int age;
-	int id;
-	float strengh;
-};
-
-
 int main() 
 {	
 	Config config;

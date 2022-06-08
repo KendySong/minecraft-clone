@@ -40,7 +40,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 		3) Add texture slots into uniform sampler
 		4) Change sampler array size
 	*/
-	Texture grass("textures/grass-minecraft.png", 0);
+	Texture grass("textures/grass.png", 0);
 	grass.AssignSlot();
 
 	int samplerLoc = glGetUniformLocation(shader.GetProgram(), "sampler");
