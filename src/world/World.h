@@ -12,7 +12,9 @@ class World
 {
 	//Attributes and properties
 public :
+	float renderDistance;
 	std::vector<Chunk> displayChunks;
+	std::vector<Chunk> hiddenChunks;
 
 	/// <summary>
 	/// Constructor
@@ -24,5 +26,5 @@ public :
 	/// </summary>
 	void Load();
 
-	void ManageChunk(glm::vec3 playerPosition);
+	void ManageChunk(const glm::vec3& playerPosition);
 };

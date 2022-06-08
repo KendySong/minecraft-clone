@@ -18,7 +18,7 @@ void Gui::CreateFrame()
 	ImGui::NewFrame();
 }
 
-void Gui::DisplayRenderData()
+void Gui::DisplayRenderData(float& renderDistance)
 {
 	_fps++;
 	ImGui::Begin("Render");
@@ -31,6 +31,9 @@ void Gui::DisplayRenderData()
 		_timer.Restart();
 	}
 	ImGui::Text(_framerate.c_str());	
+
+	//Render distance
+	ImGui::SliderFloat("Render distance", &renderDistance, 10, 100);
 
 	//Render mode
 	ImGui::Checkbox("Wireframe Render", &_wireframe);

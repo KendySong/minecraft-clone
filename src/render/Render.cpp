@@ -41,18 +41,24 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 		4) Change sampler array size
 	*/
 	Texture grass("textures/grass.png", 0);
+	Texture dirt("textures/dirt.png", 1);
 	grass.AssignSlot();
+	dirt.AssignSlot();
 
 	int samplerLoc = glGetUniformLocation(shader.GetProgram(), "sampler");
-	int texturesID[2] = {0};			
-	glUniform1iv(samplerLoc, 1, texturesID);
+	int texturesID[2] = {0, 1};
+	glUniform1iv(samplerLoc, 2, texturesID);
 }
 
 void Render::Update() 
 {
+	//Manage camera
 	_camera->ProcessMovement(_window, _deltaTimeTimer.GetElapsedTime());	
 	glUniformMatrix4fv(_camera->viewLocation, 1, false, glm::value_ptr(_camera->view));
 	_deltaTimeTimer.Restart();
+
+	//Manage world
+	_world.ManageChunk(_camera->position);
 }
 
 void Render::RenderFrame()
@@ -64,7 +70,7 @@ void Render::RenderFrame()
 		glBindVertexArray(_world.displayChunks[i].GetVao());
 		glDrawArrays(GL_TRIANGLES, 0, _world.displayChunks[i].verticesDraw);
 	}
-	_gui->DisplayRenderData();
+	_gui->DisplayRenderData(_world.renderDistance);
 	_gui->ManageCamera(_camera);
 	_gui->Render();
 }

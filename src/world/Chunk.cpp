@@ -2,13 +2,26 @@
 
 Chunk::Chunk(glm::vec2 position)
 {
+	unsigned int chunkWidthMid = ChunkSize::Width / 2;
+	unsigned int chunkHeightMid = ChunkSize::Depth / 2;
+	midPosition.x = position.x + chunkWidthMid;
+	midPosition.y = position.y + chunkHeightMid;
+
+	//Create chunk mesh
 	for (size_t x = 0; x < ChunkSize::Width; x++)
-	{
-		for (size_t y = 0; y < ChunkSize::Height; y++)
+	{	
+		for (size_t z = 0; z < ChunkSize::Depth; z++)
 		{
-			for (size_t z = 0; z < ChunkSize::Depth; z++)
+			for (size_t y = 0; y < ChunkSize::Height; y++)
 			{
-				AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.y), 0);
+				if (y == ChunkSize::Height - 1)
+				{
+					AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.y), 0);
+				}
+				else 
+				{
+					AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.y), 1);
+				}
 			}
 		}
 	}

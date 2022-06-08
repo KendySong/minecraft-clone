@@ -39,7 +39,7 @@ public :
 	/// <summary>
 	/// Manage and display program data
 	/// </summary>
-	void DisplayRenderData();
+	void DisplayRenderData(float& renderDistance);
 
 	void ManageCamera(Camera* camera);
 

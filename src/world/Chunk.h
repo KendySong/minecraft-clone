@@ -3,6 +3,7 @@
 ///Summary : Contain 16x16x16 block's data
 
 #include <iostream>
+#include <chrono>
 #include <vector>
 
 #include <glad/glad.h>
@@ -24,6 +25,7 @@ private :
 	unsigned int _vbo = 0;
 	
 public :
+	glm::vec2 midPosition;
 	unsigned int verticesDraw;
 	std::vector<float> vertex;
 	std::vector<glm::vec3> blocks;
