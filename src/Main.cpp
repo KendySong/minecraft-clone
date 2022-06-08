@@ -1,6 +1,14 @@
 #include "application/Window.h"
 #include "application/Config.h"
 
+struct Person
+{
+	int age;
+	int id;
+	float strengh;
+};
+
+
 int main() 
 {	
 	Config config;
@@ -12,10 +20,15 @@ int main()
 	);
 	window.Run();
 
-	//Vertex buffer class
+	//Getter setter with reference
+	
 	//Faces
 	//Singleton
+	//Chunk management
+	//Procedural gen
+	//Light
 
+	//Vertex buffer class
 	//Frustrum culling
 	//Occlusion culling
 }

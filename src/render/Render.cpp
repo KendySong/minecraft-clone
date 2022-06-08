@@ -18,7 +18,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
-	glClearColor(0, 0.41, 0.29, 1);
+	glClearColor(0.5254, 0.6901, 1, 1);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 	//Load shader
@@ -34,13 +34,15 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	_gui = new Gui(window);
 	_world.Load();
 
-	//Load texture
+	/*
+		1) Instanciate textures with path and slot number
+		2) Assign all new textures
+		3) Add texture slots into uniform sampler
+		4) Change sampler array size
+	*/
 	Texture grass("textures/grass.png", 0);
-
-	//Assign slots
 	grass.AssignSlot();
 
-	//Set samplers into shader
 	int samplerLoc = glGetUniformLocation(shader.GetProgram(), "sampler");
 	int texturesID[2] = {0};			
 	glUniform1iv(samplerLoc, 1, texturesID);

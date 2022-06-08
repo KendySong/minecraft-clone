@@ -13,12 +13,12 @@ class Texture
 {
 	//Attributes and properties
 private :
+	int _slot;
 	int _width;
 	int _height;
 	int _channel;
 
-public :
-	int shaderSlot;
+public :	
 	unsigned int textureID;
 	Texture(const char* texturePath, int slot);
 	void AssignSlot();
