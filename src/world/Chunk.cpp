@@ -1,11 +1,13 @@
 #include "Chunk.h"
 
-Chunk::Chunk(glm::vec2 position)
+Chunk::Chunk(glm::vec3 position)
 {
+	cornerPosition = position;
+
 	unsigned int chunkWidthMid = ChunkSize::Width / 2;
-	unsigned int chunkHeightMid = ChunkSize::Depth / 2;
+	unsigned int chunkDepthMid = ChunkSize::Depth / 2;
 	midPosition.x = position.x + chunkWidthMid;
-	midPosition.y = position.y + chunkHeightMid;
+	midPosition.z = position.z + chunkDepthMid;
 
 	//Create chunk mesh
 	for (size_t x = 0; x < ChunkSize::Width; x++)
@@ -16,11 +18,11 @@ Chunk::Chunk(glm::vec2 position)
 			{
 				if (y == ChunkSize::Height - 1)
 				{
-					AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.y), 0);
+					AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.z), 0);
 				}
 				else 
 				{
-					AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.y), 1);
+					AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.z), 1);
 				}
 			}
 		}

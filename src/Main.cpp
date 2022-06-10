@@ -17,7 +17,7 @@ int main()
 	//Optimization
 		//Faces
 			//3D array represent chunk and block position for check faces
-
+		//World chunk management size of display chunk vector
 	
 	
 	//Light

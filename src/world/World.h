@@ -3,6 +3,7 @@
 ///Summary : Manage chunk display, and generate new chunks
 
 #include <vector>
+
 #include <glm/glm.hpp>
 
 #include "Chunk.h"
@@ -38,5 +39,5 @@ public :
 	/// <param name="playerPosition">Position of the player</param>
 	/// <param name="chunkPosition">Position of the chunk</param>
 	/// <returns>Approximative distance</returns>
-	float GetDistanceChunkPlayer(glm::vec3 playerPosition, glm::vec2 chunkPosition);
+	float GetDistanceChunkPlayer(glm::vec3 playerPosition, glm::vec3 chunkPosition);
 };

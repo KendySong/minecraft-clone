@@ -25,7 +25,8 @@ private :
 	unsigned int _vbo = 0;
 	
 public :
-	glm::vec2 midPosition;
+	glm::vec3 cornerPosition;
+	glm::vec3 midPosition;
 	unsigned int verticesDraw;
 	std::vector<float> vertex;
 	std::vector<glm::vec3> blocks;
@@ -34,7 +35,7 @@ public :
 	/// Constructor
 	/// </summary>
 	/// <param name="position">Position fo the chunk</param>
-	Chunk(glm::vec2 position);
+	Chunk(glm::vec3 position);
 
 	/// <summary>
 	/// Add new block into chunk mesh
