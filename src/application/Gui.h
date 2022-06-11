@@ -23,6 +23,7 @@ private :
 	std::string _framerate;
 	unsigned int _fps;
 	bool _wireframe;
+	bool _faceCulling;
 
 public :
 	/// <summary>

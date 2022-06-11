@@ -3,6 +3,7 @@
 
 int main() 
 {	
+	srand(time(nullptr));
 	Config config;
 	Window window
 	(

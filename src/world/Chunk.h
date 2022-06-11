@@ -42,7 +42,7 @@ public :
 	/// </summary>
 	/// <param name="chunkMesh">Mesh of the chunk to add the block</param>
 	/// <param name="position">Position into the mesh</param>
-	void AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID);
+	void AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender);
 
 	/// <summary>
 	/// Getter of vao for draw call

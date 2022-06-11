@@ -4,11 +4,12 @@ Gui::Gui(GLFWwindow* window)
 {
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO();
+	//ImGuiIO& io = ImGui::GetIO();
 	ImGui::StyleColorsDark();
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 330");
 	_wireframe = false;
+	_faceCulling = false;
 }
 
 void Gui::CreateFrame() 
@@ -37,12 +38,19 @@ void Gui::DisplayRenderData(float& renderDistance)
 
 	//Render mode
 	ImGui::Checkbox("Wireframe Render", &_wireframe);
+	ImGui::Checkbox("Face culling", &_faceCulling);
+
 	if (ImGui::Button("Apply"))
 	{
 		if (_wireframe)
 			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		else 
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
+		if (_faceCulling)
+			glEnable(GL_CULL_FACE);
+		else
+			glDisable(GL_CULL_FACE);
 	}
 
 	ImGui::End();
