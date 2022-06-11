@@ -1,3 +1,0 @@
-﻿  Main.cpp
-  c1xx: fatal error C1083: Impossible d'ouvrir le fichier source : 'Main.cpp' : No such file or directory
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(429,5): error MSB6006: Arrêt de "CL.exe" avec le code 2.
