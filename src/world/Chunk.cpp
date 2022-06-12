@@ -70,7 +70,7 @@ Chunk::Chunk(glm::vec3 position)
 				else
 					faceToRender[5] = !chunkCoordinate[x][y - 1][z];
 				
-				AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.z), 0, faceToRender);									
+				AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.z), 0, faceToRender);							
 			}
 		}
 	}
