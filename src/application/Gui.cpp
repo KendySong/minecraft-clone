@@ -10,6 +10,15 @@ Gui::Gui(GLFWwindow* window)
 	ImGui_ImplOpenGL3_Init("#version 330");
 	_wireframe = false;
 	_faceCulling = false;
+
+	//Select gpu
+	test = glGetString(GL_RENDERER);
+
+	//GPU
+		//GPU vram
+		//GpU full vram
+	//Opengl version
+
 }
 
 void Gui::CreateFrame() 
@@ -23,6 +32,8 @@ void Gui::DisplayRenderData(float& renderDistance)
 {
 	_fps++;
 	ImGui::Begin("Render");
+
+	ImGui::Text("d");
 
 	//FPS
 	if (_timer.GetElapsedTime() > 1)
