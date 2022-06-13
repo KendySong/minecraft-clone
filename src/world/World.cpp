@@ -5,19 +5,19 @@ World::World()
 	renderDistance = 250;
 	srand(time(nullptr));
 	_fastNoise = new FastNoiseLite(rand());
-	_fastNoise->SetNoiseType(FastNoiseLite::NoiseType::NoiseType_OpenSimplex2);
+	_fastNoise->SetNoiseType(FastNoiseLite::NoiseType::NoiseType_OpenSimplex2S);
 	_fastNoise->SetFractalType(FastNoiseLite::FractalType::FractalType_FBm);
 
 	_fastNoise->SetFractalLacunarity(2);
 	_fastNoise->SetFrequency(0.01);
-	_fastNoise->SetFractalOctaves(4);
+	_fastNoise->SetFractalOctaves(5);
 }
 
 void World::Load() 
-{
-	for (size_t z = 0; z < 16 * 20; z += ChunkSize::Depth)
+{	
+	for (size_t z = 0; z < ChunkSize::Depth * 20; z += ChunkSize::Depth)
 	{
-		for (size_t x = 0; x < 16 * 20; x += ChunkSize::Width)
+		for (size_t x = 0; x < ChunkSize::Width * 20; x += ChunkSize::Width)
 		{
 			displayChunks.push_back(Chunk(glm::vec3(x, 0, z), _fastNoise));
 		}
