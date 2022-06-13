@@ -1,13 +1,13 @@
 ﻿  Main.cpp
-C:\Users\pl70jwz\Desktop\minecraft-clone\proceduralGen\src\Main.cpp(31,12): warning C4244:  'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-C:\Users\pl70jwz\Desktop\minecraft-clone\proceduralGen\src\Main.cpp(50,51): warning C4244:  'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Users\pl70jwz\Desktop\minecraft-clone\proceduralGen\src\Main.cpp(50,43): warning C4244:  'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Users\pl70jwz\Desktop\minecraft-clone\proceduralGen\src\Main.cpp(50,35): warning C4244:  'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Users\pl70jwz\Desktop\minecraft-clone\proceduralGen\src\Main.cpp(50,22): warning C4244:  'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\pl70jwz\Desktop\minecraft-clone\proceduralGen\src\Main.cpp(50,19): warning C4244:  'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\pl70jwz\Desktop\minecraft-clone\proceduralGen\src\Main.cpp(87,53): warning C4244:  'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Users\pl70jwz\Desktop\minecraft-clone\proceduralGen\src\Main.cpp(87,45): warning C4244:  'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Users\pl70jwz\Desktop\minecraft-clone\proceduralGen\src\Main.cpp(87,37): warning C4244:  'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
-C:\Users\pl70jwz\Desktop\minecraft-clone\proceduralGen\src\Main.cpp(87,24): warning C4244:  'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\pl70jwz\Desktop\minecraft-clone\proceduralGen\src\Main.cpp(87,21): warning C4244:  'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-  proceduralGen.vcxproj -> C:\Users\pl70jwz\Desktop\minecraft-clone\proceduralGen\x64\Debug\proceduralGen.exe
+C:\Users\pl70jwz\Desktop\procedural\minecraft-clone\proceduralGen\src\Main.cpp(30,12): warning C4244:  'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+C:\Users\pl70jwz\Desktop\procedural\minecraft-clone\proceduralGen\src\Main.cpp(52,51): warning C4244:  'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Users\pl70jwz\Desktop\procedural\minecraft-clone\proceduralGen\src\Main.cpp(52,43): warning C4244:  'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Users\pl70jwz\Desktop\procedural\minecraft-clone\proceduralGen\src\Main.cpp(52,35): warning C4244:  'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Users\pl70jwz\Desktop\procedural\minecraft-clone\proceduralGen\src\Main.cpp(52,22): warning C4244:  'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\pl70jwz\Desktop\procedural\minecraft-clone\proceduralGen\src\Main.cpp(52,19): warning C4244:  'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\pl70jwz\Desktop\procedural\minecraft-clone\proceduralGen\src\Main.cpp(92,53): warning C4244:  'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Users\pl70jwz\Desktop\procedural\minecraft-clone\proceduralGen\src\Main.cpp(92,45): warning C4244:  'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Users\pl70jwz\Desktop\procedural\minecraft-clone\proceduralGen\src\Main.cpp(92,37): warning C4244:  'argument' : conversion de 'float' en 'sf::Uint8', perte possible de données
+C:\Users\pl70jwz\Desktop\procedural\minecraft-clone\proceduralGen\src\Main.cpp(92,24): warning C4244:  'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\pl70jwz\Desktop\procedural\minecraft-clone\proceduralGen\src\Main.cpp(92,21): warning C4244:  'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+  proceduralGen.vcxproj -> C:\Users\pl70jwz\Desktop\procedural\minecraft-clone\proceduralGen\x64\Debug\proceduralGen.exe

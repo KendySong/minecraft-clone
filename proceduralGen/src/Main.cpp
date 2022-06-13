@@ -21,32 +21,34 @@ int main()
 
 	int offsetX = 0;
 	int offsetY = 0;
-	int octaves = 5;
-	float frequency = 0.025f;
 
-	float amplitude = 1.5;
-	float persistance = 0;
+	int octaves = 5;
+	float frequency = 0.01f;
+	float lacunarity = 2;
 
 	//Create and init image
-	srand(time(NULL));
+	srand(time(nullptr));
 	int seed = rand();
 
 	sf::Image image;
-	FastNoiseLite noise(seed);
+	
 
 	image.create(WIDTH, HEIGHT, sf::Color::Red);
-	noise.SetNoiseType(FastNoiseLite::NoiseType::NoiseType_Perlin);
+	FastNoiseLite noise(seed);
+
+	noise.SetNoiseType(FastNoiseLite::NoiseType::NoiseType_OpenSimplex2);
+	noise.SetFractalType(FastNoiseLite::FractalType::FractalType_FBm);
+
 	noise.SetFrequency(frequency);
-
-
+	noise.SetFractalOctaves(octaves);
+	noise.SetFractalLacunarity(lacunarity);
 	for (float y = 0; y < HEIGHT; y++)
 	{
 		for (float x = 0; x < WIDTH; x++)
 		{
 			float height = noise.GetNoise(x, y);
-
-			height = height * 255;
 			
+			height *= 255;
 			image.setPixel(x, y, sf::Color(height, height, height));
 		}
 	}
@@ -71,19 +73,22 @@ int main()
 		ImGui::Text(std::to_string(seed).c_str());
 		ImGui::SliderInt("OffsetX", &offsetX, -1000, 1000);
 		ImGui::SliderInt("OffsetY", &offsetY, -1000, 1000);
-		ImGui::SliderFloat("Frequency", &frequency, 0.01f, 1);
-		ImGui::SliderFloat("Amplitude", &amplitude, 0.1f, 100);
+		ImGui::SliderFloat("Frequency", &frequency, 0.001f, 0.5f);
+		ImGui::SliderFloat("Lacunarity", &lacunarity, 1, 100);
+		ImGui::SliderInt("Octaves", &octaves, 1, 20);
 
 		if (ImGui::Button("Apply"))
 		{
 			noise.SetFrequency(frequency);
+			noise.SetFractalOctaves(octaves);
+			noise.SetFractalLacunarity(lacunarity);
 			for (float y = 0; y < HEIGHT; y++)
 			{
 				for (float x = 0; x < WIDTH; x++)
 				{
-					float height = noise.GetNoise(x + offsetX, y + offsetY);
+					float height = noise.GetNoise(x, y);
+
 					height *= 255;
-					height *= amplitude;
 					image.setPixel(x, y, sf::Color(height, height, height));
 				}
 			}
