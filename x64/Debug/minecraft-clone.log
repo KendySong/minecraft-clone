@@ -1,0 +1,279 @@
+﻿  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_glfw.cpp
+  imgui_impl_opengl3.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  stb_image.cpp
+  Chunk.cpp
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(94,34): warning C4267:  '=' : conversion de 'size_t' en 'unsigned int', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(104,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(104,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(104,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(104,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(104,52): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(104,52): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(110,3): warning C4305:  'initialisation' : troncation de 'double' à 'float'
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(105,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(105,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(105,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(105,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(105,52): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(105,52): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(106,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(106,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(106,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(106,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(106,52): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(106,52): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(107,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(107,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(107,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(107,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(107,52): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(107,52): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(108,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(108,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(108,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(108,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(108,52): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(108,52): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(109,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(109,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(109,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(109,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(109,52): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(109,52): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(119,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(119,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(119,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(119,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(119,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(119,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(125,3): warning C4305:  'initialisation' : troncation de 'double' à 'float'
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(120,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(120,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(120,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(120,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(120,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(120,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(121,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(121,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(121,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(121,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(121,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(121,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(122,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(122,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(122,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(122,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(122,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(122,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(123,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(123,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(123,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(123,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(123,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(123,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(124,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(124,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(124,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(124,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(124,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(124,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(134,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(134,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(134,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(134,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(134,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(134,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(140,3): warning C4305:  'initialisation' : troncation de 'double' à 'float'
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(135,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(135,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(135,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(135,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(135,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(135,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(136,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(136,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(136,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(136,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(136,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(136,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(137,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(137,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(137,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(137,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(137,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(137,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(138,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(138,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(138,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(138,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(138,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(138,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(139,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(139,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(139,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(139,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(139,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(139,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(149,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(149,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(149,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(149,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(149,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(149,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(155,3): warning C4305:  'initialisation' : troncation de 'double' à 'float'
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(150,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(150,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(150,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(150,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(150,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(150,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(151,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(151,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(151,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(151,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(151,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(151,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(152,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(152,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(152,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(152,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(152,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(152,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(153,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(153,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(153,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(153,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(153,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(153,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(154,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(154,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(154,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(154,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(154,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(154,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(164,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(164,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(164,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(164,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(164,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(164,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(165,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(165,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(165,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(165,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(165,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(165,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(170,3): warning C4305:  'initialisation' : troncation de 'double' à 'float'
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(166,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(166,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(166,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(166,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(166,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(166,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(167,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(167,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(167,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(167,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(167,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(167,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(168,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(168,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(168,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(168,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(168,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(168,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(169,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(169,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(169,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(169,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(169,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(169,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(179,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(179,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(179,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(179,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(179,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(179,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(185,3): warning C4305:  'initialisation' : troncation de 'double' à 'float'
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(180,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(180,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(180,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(180,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(180,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(180,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(181,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(181,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(181,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(181,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(181,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(181,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(182,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(182,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(182,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(182,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(182,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(182,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(183,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(183,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(183,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(183,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(183,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(183,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(184,15): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(184,15): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(184,33): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(184,33): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(184,51): warning C4838:  la conversion de 'double' en 'float' requiert une conversion restrictive
+  Gui.cpp
+  Config.cpp
+  Timer.cpp
+  Camera.cpp
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\world\Chunk.cpp(184,51): warning C4244:  'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Camera.cpp(70,12): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Camera.cpp(71,12): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Camera.cpp(82,16): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Camera.cpp(83,16): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Camera.cpp(85,12): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
+  Render.cpp
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Camera.cpp(86,12): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,43): warning C4244:  'argument' : conversion de 'T' en 'GLsizei', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,43): warning C4244:         with
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,43): warning C4244:         [
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,43): warning C4244:             T=float
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,43): warning C4244:         ]
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,29): warning C4244:  'argument' : conversion de 'T' en 'GLsizei', perte possible de données
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,29): warning C4244:         with
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,29): warning C4244:         [
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,29): warning C4244:             T=float
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(17,29): warning C4244:         ]
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(21,35): warning C4305:  'argument' : troncation de 'double' à 'GLfloat'
+  Window.cpp
+  Main.cpp
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\render\Render.cpp(56,66): warning C4244:  'argument' : conversion de 'double' en 'float', perte possible de données
+  Shader.cpp
+  World.cpp
+  Texture.cpp
+  Génération de code en cours...
+C:\Users\pl70jwz\Desktop\minecraft-clone\src\Main.cpp(6,12): warning C4244:  'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  glad.c
+glfw3.lib(context.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(context.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(init.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(init.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(input.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(input.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(monitor.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(monitor.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(vulkan.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(vulkan.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(window.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(window.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(win32_init.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(win32_init.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(win32_joystick.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(win32_joystick.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(win32_monitor.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(win32_monitor.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(win32_time.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(win32_time.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(win32_thread.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(win32_thread.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(win32_window.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(win32_window.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(wgl_context.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(wgl_context.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(egl_context.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(egl_context.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+glfw3.lib(osmesa_context.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'glfw3.lib(osmesa_context.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
+  minecraft-clone.vcxproj -> C:\Users\pl70jwz\Desktop\minecraft-clone\x64\Debug\minecraft-clone.exe

@@ -68,5 +68,8 @@
     <ClInclude Include="libraries\include\ImGui\imstb_truetype.h">
       <Filter>ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="libraries\include\FastNoiseLite\FastNoiseLite.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
