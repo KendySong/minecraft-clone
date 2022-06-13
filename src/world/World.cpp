@@ -5,6 +5,12 @@ World::World()
 	renderDistance = 250;
 	srand(time(nullptr));
 	_fastNoise = new FastNoiseLite(rand());
+	_fastNoise->SetNoiseType(FastNoiseLite::NoiseType::NoiseType_OpenSimplex2);
+	_fastNoise->SetFractalType(FastNoiseLite::FractalType::FractalType_FBm);
+
+	_fastNoise->SetFractalLacunarity(2);
+	_fastNoise->SetFrequency(0.01);
+	_fastNoise->SetFractalOctaves(4);
 }
 
 void World::Load() 

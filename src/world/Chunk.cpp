@@ -14,15 +14,15 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 	for (size_t x = 0; x < ChunkSize::Width; x++)
 	{
 		for (size_t z = 0; z < ChunkSize::Depth; z++)
-		{	
+		{
 			heightMap[x][z] = fastNoise->GetNoise((float)x + position.x, (float)z + position.z);
-			heightMap[x][z] = std::abs(heightMap[x][z]) * 10;
+			heightMap[x][z] = std::abs(heightMap[x][z]) * 30;
 			heightMap[x][z]++;
 		}
 	}
 
 	//Create 3D array for face check
-	bool chunkCoordinate[ChunkSize::Width][ChunkSize::Height][ChunkSize::Depth] = {false}; //False if empty  //True if block
+	bool chunkCoordinate[ChunkSize::Width][ChunkSize::Height][ChunkSize::Depth] = {false}; //False => Empty
 	for (size_t x = 0; x < ChunkSize::Width; x++)
 		for (size_t z = 0; z < ChunkSize::Depth; z++)
 			for (size_t y = 0; y < heightMap[x][z]; y++)
