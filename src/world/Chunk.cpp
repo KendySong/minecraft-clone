@@ -1,6 +1,6 @@
 #include "Chunk.h"
 
-Chunk::Chunk(glm::vec3 position)
+Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 {
 	cornerPosition = position;
 
@@ -8,12 +8,18 @@ Chunk::Chunk(glm::vec3 position)
 	unsigned int chunkDepthMid = ChunkSize::Depth / 2;
 	midPosition.x = position.x + chunkWidthMid;
 	midPosition.z = position.z + chunkDepthMid;
-
+	
 	//Init height map
-	int heightMap[ChunkSize::Width][ChunkSize::Depth];
+	float heightMap[ChunkSize::Width][ChunkSize::Depth];
 	for (size_t x = 0; x < ChunkSize::Width; x++)
+	{
 		for (size_t z = 0; z < ChunkSize::Depth; z++)
-			heightMap[x][z] = rand() % 5 + 1;
+		{	
+			heightMap[x][z] = fastNoise->GetNoise((float)x + position.x, (float)z + position.z);
+			heightMap[x][z] = std::abs(heightMap[x][z]) * 25;
+			heightMap[x][z]++;
+		}
+	}
 
 	//Create 3D array for face check
 	bool chunkCoordinate[ChunkSize::Width][ChunkSize::Height][ChunkSize::Depth] = {false}; //False if empty  //True if block
@@ -28,16 +34,7 @@ Chunk::Chunk(glm::vec3 position)
 		for (size_t z = 0; z < ChunkSize::Depth; z++)
 		{
 			for (size_t y = 0; y < heightMap[x][z]; y++)
-			{		
-				/*
-				front	0
-				back	1
-				right	2
-				left	3
-				top		4
-				bot		5
-				*/
-
+			{
 				bool faceToRender[6];
 		
 				if (z == ChunkSize::Depth - 1)
@@ -70,7 +67,7 @@ Chunk::Chunk(glm::vec3 position)
 				else
 					faceToRender[5] = !chunkCoordinate[x][y - 1][z];
 				
-				AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.z), 0, faceToRender);							
+				AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.z), 0, faceToRender);				
 			}
 		}
 	}

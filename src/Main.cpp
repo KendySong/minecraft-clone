@@ -3,7 +3,6 @@
 
 int main() 
 {	
-	srand(time(nullptr));
 	Config config;
 	Window window
 	(
@@ -17,17 +16,15 @@ int main()
 	//Procedural gen
 	//Optimization
 		//Faces
-			//3D array represent chunk and block position for check faces
+			//Remove border chunk faces
 		//World chunk management size of display chunk vector
 	
 	
 	//Light
-	
 	//Config class
 	//Vertex buffer class
 	//Getter setter with reference
 
 	//Frustrum culling
 	//Occlusion culling
-
 }

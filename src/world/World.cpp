@@ -3,17 +3,19 @@
 World::World() 
 {
 	renderDistance = 250;
+	srand(time(nullptr));
+	_fastNoise = new FastNoiseLite(rand());
 }
 
 void World::Load() 
 {
-	for (size_t z = 0; z < 16 * 3; z += ChunkSize::Depth)
+	for (size_t z = 0; z < 16 * 4; z += ChunkSize::Depth)
 	{
-		for (size_t x = 0; x < 16 * 3; x += ChunkSize::Width)
+		for (size_t x = 0; x < 16 * 4; x += ChunkSize::Width)
 		{
-			displayChunks.push_back(Chunk(glm::vec3(x, 0, z)));
+			displayChunks.push_back(Chunk(glm::vec3(x, 0, z), _fastNoise));
 		}
-	}	
+	}
 }
 
 void World::ManageChunk(const glm::vec3& playerPosition)
@@ -39,10 +41,12 @@ void World::ManageChunk(const glm::vec3& playerPosition)
 	}
 
 	//Create new chunks
+	/*
 	for (size_t i = 0; i < displayChunks.size(); i++)
 	{
 		
 	}
+	*/
 }
 
 float World::GetDistanceChunkPlayer(glm::vec3 playerPosition, glm::vec3 chunkPosition)

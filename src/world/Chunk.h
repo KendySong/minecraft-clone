@@ -9,11 +9,13 @@
 #include <glad/glad.h>
 #include <glm/glm.hpp>
 
+#include <FastNoiseLite/FastNoiseLite.h>
+
 #pragma once
 namespace ChunkSize
 {
 	const unsigned int Width = 16;
-	const unsigned int Height = 16;
+	const unsigned int Height = 255;
 	const unsigned int Depth = 16;
 }
 
@@ -35,7 +37,7 @@ public :
 	/// Constructor
 	/// </summary>
 	/// <param name="position">Position fo the chunk</param>
-	Chunk(glm::vec3 position);
+	Chunk(glm::vec3 position, FastNoiseLite* fastNoise);
 
 	/// <summary>
 	/// Add new block into chunk mesh

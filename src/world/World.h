@@ -2,15 +2,20 @@
 ///Date : 31.05.2022
 ///Summary : Manage chunk display, and generate new chunks
 
+#include <iostream>
 #include <vector>
 
 #include <glm/glm.hpp>
+#include <FastNoiseLite/FastNoiseLite.h>
 
 #include "Chunk.h"
 
 #pragma once
 class World
 {
+private :
+	FastNoiseLite* _fastNoise;
+
 	//Attributes and properties
 public :
 	float renderDistance;
