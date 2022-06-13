@@ -9,9 +9,9 @@ World::World()
 
 void World::Load() 
 {
-	for (size_t z = 0; z < 16 * 4; z += ChunkSize::Depth)
+	for (size_t z = 0; z < 16 * 20; z += ChunkSize::Depth)
 	{
-		for (size_t x = 0; x < 16 * 4; x += ChunkSize::Width)
+		for (size_t x = 0; x < 16 * 20; x += ChunkSize::Width)
 		{
 			displayChunks.push_back(Chunk(glm::vec3(x, 0, z), _fastNoise));
 		}

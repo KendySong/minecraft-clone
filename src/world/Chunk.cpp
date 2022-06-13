@@ -9,14 +9,14 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 	midPosition.x = position.x + chunkWidthMid;
 	midPosition.z = position.z + chunkDepthMid;
 	
-	//Init height map
+	//Generate heightmap
 	float heightMap[ChunkSize::Width][ChunkSize::Depth];
 	for (size_t x = 0; x < ChunkSize::Width; x++)
 	{
 		for (size_t z = 0; z < ChunkSize::Depth; z++)
 		{	
 			heightMap[x][z] = fastNoise->GetNoise((float)x + position.x, (float)z + position.z);
-			heightMap[x][z] = std::abs(heightMap[x][z]) * 25;
+			heightMap[x][z] = std::abs(heightMap[x][z]) * 10;
 			heightMap[x][z]++;
 		}
 	}
