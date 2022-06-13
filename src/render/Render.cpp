@@ -15,11 +15,9 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	_window = window;
 	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 	glViewport(0, 0, windowSize.x, windowSize.y);
-
 	glEnable(GL_DEPTH_TEST);
-	//glEnable(GL_CULL_FACE);
+	glEnable(GL_CULL_FACE);
 	glClearColor(0.5254, 0.6901, 1, 1);
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 	//Load shader
 	Shader shader("shaders/cube.vert", "shaders/cube.frag");

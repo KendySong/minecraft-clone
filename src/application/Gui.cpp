@@ -9,16 +9,15 @@ Gui::Gui(GLFWwindow* window)
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 330");
 	_wireframe = false;
-	_faceCulling = false;
+	_faceCulling = true;
 
-	//Select gpu
-	test = glGetString(GL_RENDERER);
-
-	//GPU
-		//GPU vram
-		//GpU full vram
-	//Opengl version
-
+	const GLubyte* gpuName = glGetString(GL_RENDERER);
+	const GLubyte* versionName = glGetString(GL_VERSION);
+	for (size_t i = 0; i < 40; i++)
+	{
+		gpu += gpuName[i];
+		version += versionName[i];
+	}
 }
 
 void Gui::CreateFrame() 
@@ -33,7 +32,8 @@ void Gui::DisplayRenderData(float& renderDistance)
 	_fps++;
 	ImGui::Begin("Render");
 
-	ImGui::Text("d");
+	ImGui::Text(gpu.c_str());
+	ImGui::Text(version.c_str());
 
 	//FPS
 	if (_timer.GetElapsedTime() > 1)

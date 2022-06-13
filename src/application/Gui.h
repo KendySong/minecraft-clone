@@ -4,8 +4,6 @@
 
 #include <string>
 
-#include <windows.h>
-
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -21,8 +19,8 @@ class Gui
 {
 	//Attributes and properties
 private :
-
-	const GLubyte* test;
+	std::string gpu;
+	std::string version;
 
 	Timer _timer;
 	std::string _framerate;
