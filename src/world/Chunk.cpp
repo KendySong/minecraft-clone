@@ -89,6 +89,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 	glEnableVertexAttribArray(2);
 
 	verticesDraw = vertex.size() / 3;
+	vertex.clear();
 }
 
 void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender)

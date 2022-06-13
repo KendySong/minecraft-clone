@@ -16,12 +16,8 @@ World::World()
 void World::Load() 
 {	
 	for (size_t z = 0; z < ChunkSize::Depth * 20; z += ChunkSize::Depth)
-	{
 		for (size_t x = 0; x < ChunkSize::Width * 20; x += ChunkSize::Width)
-		{
 			displayChunks.push_back(Chunk(glm::vec3(x, 0, z), _fastNoise));
-		}
-	}
 }
 
 void World::ManageChunk(const glm::vec3& playerPosition)
@@ -58,8 +54,5 @@ void World::ManageChunk(const glm::vec3& playerPosition)
 float World::GetDistanceChunkPlayer(glm::vec3 playerPosition, glm::vec3 chunkPosition)
 {
 	//Approximated distance for heigher performance
-	float distX = std::abs(playerPosition.x - chunkPosition.x);
-	float distY = std::abs(playerPosition.z - chunkPosition.z);
-
-	return distX + distY;
+	return std::abs(playerPosition.x - chunkPosition.x) + std::abs(playerPosition.z - chunkPosition.z);
 }
