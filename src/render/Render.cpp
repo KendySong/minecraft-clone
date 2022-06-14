@@ -10,28 +10,19 @@ Camera* Render::GetCamera()
 	return _camera;
 }
 
-void Render::Load(GLFWwindow* window, glm::vec2 windowSize) 
+void Render::LoadShader() 
 {
-	_window = window;
-	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-	glViewport(0, 0, windowSize.x, windowSize.y);
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_CULL_FACE);
-	glClearColor(0.5254, 0.6901, 1, 1);
-
 	//Load shader
-	Shader shader("shaders/cube.vert", "shaders/cube.frag");
-	glUseProgram(shader.GetProgram());
+	_shader = new Shader("shaders/cube.vert", "shaders/cube.frag");
+	glUseProgram(_shader->GetProgram());
 
-	//Instanciate camera
-	_camera = new Camera(window, windowSize.x, windowSize.y, 90, 0.1f, 1000.0f, 0.4f, 15.0f, glm::vec3(0, 0, 0));
-	_camera->viewLocation = glGetUniformLocation(shader.GetProgram(), "view");
-	_camera->projectionLocation = glGetUniformLocation(shader.GetProgram(), "projection");
-	glUniformMatrix4fv(_camera->projectionLocation, 1, false, glm::value_ptr(_camera->projection));
+	glm::vec3 lightPosition(10, 10, 10);
+	int lightPositionUniform = glGetUniformLocation(_shader->GetProgram(), "lightPosition");
+	glUniform3f(lightPositionUniform, lightPosition.x, lightPosition.y, lightPosition.z);
+}
 
-	_gui = new Gui(window);
-	_world.Load();
-
+void Render::LoadTextures(int shaderID)
+{
 	/*
 		1) Instanciate textures with path and slot number
 		2) Assign all new textures
@@ -45,9 +36,31 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	dirt.AssignSlot();
 	sand.AssignSlot();
 
-	int samplerLoc = glGetUniformLocation(shader.GetProgram(), "sampler");
-	int texturesID[] = {0, 1, 2};
+	int samplerLoc = glGetUniformLocation(shaderID, "sampler");
+	int texturesID[] = { 0, 1, 2 };
 	glUniform1iv(samplerLoc, 3, texturesID);
+}
+
+void Render::Load(GLFWwindow* window, glm::vec2 windowSize) 
+{
+	_window = window;
+	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+	glViewport(0, 0, windowSize.x, windowSize.y);
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
+	glClearColor(0.5254, 0.6901, 1, 1);
+
+	LoadShader();
+	LoadTextures(_shader->GetProgram());
+
+	//Instanciate camera
+	_camera = new Camera(window, windowSize.x, windowSize.y, 90, 0.1f, 1000.0f, 0.4f, 15.0f, glm::vec3(0, 0, 0));
+	_camera->viewLocation = glGetUniformLocation(_shader->GetProgram(), "view");
+	_camera->projectionLocation = glGetUniformLocation(_shader->GetProgram(), "projection");
+	glUniformMatrix4fv(_camera->projectionLocation, 1, false, glm::value_ptr(_camera->projection));
+
+	_gui = new Gui(window);
+	_world.Load();	
 }
 
 void Render::Update() 

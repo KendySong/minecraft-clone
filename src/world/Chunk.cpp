@@ -81,14 +81,17 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 	glBindBuffer(GL_ARRAY_BUFFER, _vbo);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertex.size(), &vertex.front(), GL_STATIC_DRAW);
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, false, 24, (const void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, false, 36, (const void*)0);
 	glEnableVertexAttribArray(0);
 
-	glVertexAttribPointer(1, 2, GL_FLOAT, false, 24, (const void*)(12));
+	glVertexAttribPointer(1, 2, GL_FLOAT, false, 36, (const void*)(12));
 	glEnableVertexAttribArray(1);
 
-	glVertexAttribPointer(2, 1, GL_FLOAT, false, 24, (const void*)(20));
+	glVertexAttribPointer(2, 3, GL_FLOAT, false, 36, (const void*)(20));
 	glEnableVertexAttribArray(2);
+
+	glVertexAttribPointer(3, 1, GL_FLOAT, false, 36, (const void*)(32));
+	glEnableVertexAttribArray(3);
 
 	verticesDraw = vertex.size() / 3;
 	vertex.clear();
@@ -101,12 +104,12 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float
 	{
 		float frontFace[]
 		{
-			position.x - 0.5, position.y - 0.5,  position.z + 0.5,  0.25, 0.3333333333,		textureID,
-			position.x + 0.5, position.y - 0.5,  position.z + 0.5,  0.5,  0.3333333333,		textureID,
-			position.x + 0.5, position.y + 0.5,  position.z + 0.5,	0.5,  0.6666666666,		textureID,
-			position.x + 0.5, position.y + 0.5,  position.z + 0.5,	0.5,  0.6666666666,		textureID,
-			position.x - 0.5, position.y + 0.5,  position.z + 0.5,  0.25, 0.6666666666,		textureID,
-			position.x - 0.5, position.y - 0.5,  position.z + 0.5,  0.25, 0.3333333333,		textureID
+			position.x - 0.5, position.y - 0.5,  position.z + 0.5,		0.25, 0.3333333333,		0.0, 0.0, 1.0,		textureID,
+			position.x + 0.5, position.y - 0.5,  position.z + 0.5,		0.5,  0.3333333333,		0.0, 0.0, 1.0,		textureID,
+			position.x + 0.5, position.y + 0.5,  position.z + 0.5,		0.5,  0.6666666666,		0.0, 0.0, 1.0,		textureID,
+			position.x + 0.5, position.y + 0.5,  position.z + 0.5,		0.5,  0.6666666666,		0.0, 0.0, 1.0,		textureID,
+			position.x - 0.5, position.y + 0.5,  position.z + 0.5,		0.25, 0.6666666666,		0.0, 0.0, 1.0,		textureID,
+			position.x - 0.5, position.y - 0.5,  position.z + 0.5,		0.25, 0.3333333333,		0.0, 0.0, 1.0,		textureID
 		};
 		chunkMesh.insert(chunkMesh.end(), &frontFace[0], &frontFace[std::size(frontFace)]);
 	}
@@ -116,12 +119,12 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float
 	{
 		float backFace[]
 		{
-			position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.3333333333,		textureID,
-			position.x + 0.5, position.y + 0.5, position.z - 0.5,	1.0,  0.6666666666,		textureID,
-			position.x + 0.5, position.y - 0.5, position.z - 0.5,	1.0,  0.3333333333,		textureID,
-			position.x + 0.5, position.y + 0.5, position.z - 0.5,	1.0,  0.6666666666,		textureID,
-			position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.3333333333,		textureID,
-			position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.75, 0.6666666666,		textureID
+			position.x - 0.5, position.y - 0.5,		position.z - 0.5,	0.75, 0.3333333333,		0.0, 0.0, -1.0,		textureID,
+			position.x + 0.5, position.y + 0.5,		position.z - 0.5,	1.0,  0.6666666666,		0.0, 0.0, -1.0,		textureID,
+			position.x + 0.5, position.y - 0.5,		position.z - 0.5,	1.0,  0.3333333333,		0.0, 0.0, -1.0,		textureID,
+			position.x + 0.5, position.y + 0.5,		position.z - 0.5,	1.0,  0.6666666666,		0.0, 0.0, -1.0,		textureID,
+			position.x - 0.5, position.y - 0.5,		position.z - 0.5,	0.75, 0.3333333333,		0.0, 0.0, -1.0,		textureID,
+			position.x - 0.5, position.y + 0.5,		position.z - 0.5,	0.75, 0.6666666666,		0.0, 0.0, -1.0,		textureID
 		};
 		chunkMesh.insert(chunkMesh.end(), &backFace[0], &backFace[std::size(backFace)]);
 	}
@@ -131,12 +134,12 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float
 	{
 		float rightFace[]
 		{
-			position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.6666666666,		textureID,
-			position.x + 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.3333333333,		textureID,
-			position.x + 0.5, position.y + 0.5, position.z - 0.5,	0.75, 0.6666666666,		textureID,
-			position.x + 0.5, position.y - 0.5, position.z - 0.5,	0.75, 0.3333333333,		textureID,
-			position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.6666666666,		textureID,
-			position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.5,  0.3333333333,		textureID
+			position.x + 0.5, position.y + 0.5, position.z + 0.5,		0.5,  0.6666666666,		1.0, 0.0, 0.0,		textureID,
+			position.x + 0.5, position.y - 0.5, position.z - 0.5,		0.75, 0.3333333333,		1.0, 0.0, 0.0,		textureID,
+			position.x + 0.5, position.y + 0.5, position.z - 0.5,		0.75, 0.6666666666,		1.0, 0.0, 0.0,		textureID,
+			position.x + 0.5, position.y - 0.5, position.z - 0.5,		0.75, 0.3333333333,		1.0, 0.0, 0.0,		textureID,
+			position.x + 0.5, position.y + 0.5, position.z + 0.5,		0.5,  0.6666666666,		1.0, 0.0, 0.0,		textureID,
+			position.x + 0.5, position.y - 0.5, position.z + 0.5,		0.5,  0.3333333333,		1.0, 0.0, 0.0,		textureID
 		};
 		chunkMesh.insert(chunkMesh.end(), &rightFace[0], &rightFace[std::size(rightFace)]);
 	}
@@ -146,12 +149,12 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float
 	{
 		float leftFace[]
 		{
-			position.x - 0.5, position.y + 0.5, position.z + 0.5,	0.25, 0.6666666666,		textureID,
-			position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.0,  0.6666666666,		textureID,
-			position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.0,  0.3333333333,		textureID,
-			position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.0,  0.3333333333,		textureID,
-			position.x - 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.3333333333,		textureID,
-			position.x - 0.5, position.y + 0.5, position.z + 0.5,	0.25, 0.6666666666,		textureID
+			position.x - 0.5, position.y + 0.5, position.z + 0.5,		0.25, 0.6666666666,		-1.0, 0.0, 0.0,		textureID,
+			position.x - 0.5, position.y + 0.5, position.z - 0.5,		0.0,  0.6666666666,		-1.0, 0.0, 0.0,		textureID,
+			position.x - 0.5, position.y - 0.5, position.z - 0.5,		0.0,  0.3333333333,		-1.0, 0.0, 0.0,		textureID,
+			position.x - 0.5, position.y - 0.5, position.z - 0.5,		0.0,  0.3333333333,		-1.0, 0.0, 0.0,		textureID,
+			position.x - 0.5, position.y - 0.5, position.z + 0.5,		0.25, 0.3333333333,		-1.0, 0.0, 0.0,		textureID,
+			position.x - 0.5, position.y + 0.5, position.z + 0.5,		0.25, 0.6666666666,		-1.0, 0.0, 0.0,		textureID
 		};
 		chunkMesh.insert(chunkMesh.end(), &leftFace[0], &leftFace[std::size(leftFace)]);
 	}
@@ -161,12 +164,12 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float
 	{
 		float topFace[]
 		{			
-			position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.25, 1.0,				textureID,
-			position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.6666666666,		textureID,
-			position.x + 0.5, position.y + 0.5, position.z - 0.5,	0.5,  1.0,				textureID,
-			position.x + 0.5, position.y + 0.5, position.z + 0.5,	0.5,  0.6666666666,		textureID,
-			position.x - 0.5, position.y + 0.5, position.z - 0.5,	0.25, 1.0,				textureID,
-			position.x - 0.5, position.y + 0.5, position.z + 0.5,	0.25, 0.6666666666,		textureID
+			position.x - 0.5, position.y + 0.5, position.z - 0.5,		0.25, 1.0,				0.0, 1.0, 0.0,		textureID,
+			position.x + 0.5, position.y + 0.5, position.z + 0.5,		0.5,  0.6666666666,		0.0, 1.0, 0.0,		textureID,
+			position.x + 0.5, position.y + 0.5, position.z - 0.5,		0.5,  1.0,				0.0, 1.0, 0.0,		textureID,
+			position.x + 0.5, position.y + 0.5, position.z + 0.5,		0.5,  0.6666666666,		0.0, 1.0, 0.0,		textureID,
+			position.x - 0.5, position.y + 0.5, position.z - 0.5,		0.25, 1.0,				0.0, 1.0, 0.0,		textureID,
+			position.x - 0.5, position.y + 0.5, position.z + 0.5,		0.25, 0.6666666666,		0.0, 1.0, 0.0,		textureID
 		};
 		chunkMesh.insert(chunkMesh.end(), &topFace[0], &topFace[std::size(topFace)]);
 	}
@@ -176,12 +179,12 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float
 	{
 		float botFace[]
 		{
-			position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.5,  0.3333333333,		textureID,
-			position.x + 0.5, position.y - 0.5, position.z - 0.5,	0.25, 0.3333333333,		textureID,
-			position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.0,				textureID,
-			position.x + 0.5, position.y - 0.5, position.z + 0.5,	0.25, 0.0,				textureID,
-			position.x - 0.5, position.y - 0.5, position.z + 0.5,	0.5,  0.0,				textureID,
-			position.x - 0.5, position.y - 0.5, position.z - 0.5,	0.5,  0.3333333333,		textureID
+			position.x - 0.5, position.y - 0.5, position.z - 0.5,		0.5,  0.3333333333,		0.0, -1.0, 0.0,		textureID,
+			position.x + 0.5, position.y - 0.5, position.z - 0.5,		0.25, 0.3333333333,		0.0, -1.0, 0.0,		textureID,
+			position.x + 0.5, position.y - 0.5, position.z + 0.5,		0.25, 0.0,				0.0, -1.0, 0.0,		textureID,
+			position.x + 0.5, position.y - 0.5, position.z + 0.5,		0.25, 0.0,				0.0, -1.0, 0.0,		textureID,
+			position.x - 0.5, position.y - 0.5, position.z + 0.5,		0.5,  0.0,				0.0, -1.0, 0.0,		textureID,
+			position.x - 0.5, position.y - 0.5, position.z - 0.5,		0.5,  0.3333333333,		0.0, -1.0, 0.0,		textureID
 		};
 		chunkMesh.insert(chunkMesh.end(), &botFace[0], &botFace[std::size(botFace)]);
 	}

@@ -18,6 +18,7 @@ private :
 	Camera* _camera;
 	Gui* _gui;
 	World _world;
+	Shader* _shader;
 	
 public:
 	/// <summary>
@@ -30,6 +31,10 @@ public:
 	/// </summary>
 	/// <returns>Pointer to camera</returns>
 	Camera* GetCamera();
+
+	void LoadShader();
+
+	void LoadTextures(int shaderID);	
 
 	/// <summary>
 	/// Load opengl for the current glfw window
