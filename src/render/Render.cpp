@@ -16,7 +16,7 @@ void Render::LoadShader()
 	_shader = new Shader("shaders/cube.vert", "shaders/cube.frag");
 	glUseProgram(_shader->GetProgram());
 
-	glm::vec3 lightPosition(10, 10, 10);
+	glm::vec3 lightPosition(160, 100, 160);
 	int lightPositionUniform = glGetUniformLocation(_shader->GetProgram(), "lightPosition");
 	glUniform3f(lightPositionUniform, lightPosition.x, lightPosition.y, lightPosition.z);
 }
@@ -77,6 +77,7 @@ void Render::Update()
 void Render::RenderFrame()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 	_gui->CreateFrame();
 	for (size_t i = 0; i < _world.displayChunks.size(); i++)
 	{

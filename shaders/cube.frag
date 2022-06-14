@@ -20,8 +20,8 @@ void main()
     vec3 lightDirection = normalize(lightPosition - v_fragPosition);
 
     //Calculate light color on fragment
-    vec3 lightColor = vec3(1, 1, 1);
-    float difference = max(dot(normalizeSurface, lightDirection), 0.0);
+    vec3 lightColor = vec3(0.8, 0.8, 0.8);
+    float difference = max(dot(normalizeSurface, lightDirection), 0);
     vec3 diffuse = difference * lightColor;
 
     //Set texture with ligth
