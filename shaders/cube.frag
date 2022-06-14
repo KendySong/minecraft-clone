@@ -15,20 +15,15 @@ void main()
     int samplerID = int(v_texID);
     outputColor = texture(sampler[samplerID], v_texUV);
 
-    //Calculate direction between light and fragment
+    //Calculate light direction
     vec3 normalizeSurface = normalize(v_normal);
     vec3 lightDirection = normalize(lightPosition - v_fragPosition);
 
+    //Calculate light color on fragment
     vec3 lightColor = vec3(1, 1, 1);
     float difference = max(dot(normalizeSurface, lightDirection), 0.0);
     vec3 diffuse = difference * lightColor;
 
-    vec3 result = (lightColor + diffuse) * texture(sampler[samplerID], v_texUV).xyz;
-    outputColor = vec4(result, 1.0);
-
-/*  //Basic light
-	float lightStrengh = 0.0f;
-    vec4 lighColor = vec4(1, 1, 1, 1);
-	outputColor = mix(texture(sampler[samplerID], v_texUV), lighColor, lightStrengh);
-*/   
+    //Set texture with ligth
+    outputColor = vec4((lightColor + diffuse) * texture(sampler[samplerID], v_texUV).xyz, 1);
 }
