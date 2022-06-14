@@ -35,8 +35,9 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 		{
 			for (size_t y = 0; y < heightMap[x][z]; y++)
 			{
-				bool faceToRender[6];
-		
+				int textureID = 0;
+				bool faceToRender[6];			
+
 				if (z == ChunkSize::Depth - 1)
 					faceToRender[0] = true;
 				else
@@ -66,12 +67,13 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 					faceToRender[5] = true;
 				else
 					faceToRender[5] = !chunkCoordinate[x][y - 1][z];
-				
-				AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.z), 0, faceToRender);				
+
+				//Set texture			
+				AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.z), textureID, faceToRender);
 			}
 		}
 	}
-
+	
 	glGenVertexArrays(1, &_vao);
 	glBindVertexArray(_vao);
 
