@@ -13,17 +13,12 @@ int main()
 	window.Run();
 
 	//Chunk management
-	//Procedural gen
+	//Add tree
+
 	//Optimization
 		//Faces
 			//Remove border chunk faces
 		//World chunk management size of display chunk vector
-	
-	
-	//Light
-	//Config class
-	//Vertex buffer class
-	//Getter setter with reference
 
 	//Frustrum culling
 	//Occlusion culling

@@ -18,6 +18,7 @@ private :
 
 	//Attributes and properties
 public :
+	Chunk* nearestChunk;
 	float renderDistance;
 	std::vector<Chunk> displayChunks;
 	std::vector<Chunk> hiddenChunks;

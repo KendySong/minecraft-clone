@@ -6,7 +6,7 @@ in vec3 v_normal;
 in vec3 v_fragPosition;
 
 uniform vec3 lightPosition;
-uniform sampler2D sampler[2];
+uniform sampler2D sampler[3];
 
 out vec4 outputColor;
 

@@ -1,5 +1,10 @@
 #include "Chunk.h"
 
+Chunk::Chunk() 
+{
+
+}
+
 Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 {
 	cornerPosition = position;
@@ -16,7 +21,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 		for (size_t z = 0; z < ChunkSize::Depth; z++)
 		{
 			heightMap[x][z] = fastNoise->GetNoise((float)x + position.x, (float)z + position.z);
-			heightMap[x][z] = std::abs(heightMap[x][z]) * 30;
+			heightMap[x][z] = std::abs(heightMap[x][z]) * 40;
 			heightMap[x][z]++;
 		}
 	}
@@ -36,12 +41,19 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 			for (size_t y = 0; y < heightMap[x][z]; y++)
 			{
 				float textureID = 1;
-				bool faceToRender[6];			
+				bool faceToRender[6];
+
+				//Set block texture
+				if (!chunkCoordinate[x][y + 1][z])
+					textureID = 0;
+
+				if (y < 4)
+					textureID = 2;				
 
 				if (z == ChunkSize::Depth - 1)
 					faceToRender[0] = true;
 				else
-					faceToRender[0] = !chunkCoordinate[x][y][z + 1];
+					faceToRender[0] = !chunkCoordinate[x][y][z + 1];	
 
 				if (z == 0)
 					faceToRender[1] = true;
@@ -66,10 +78,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 				if (y == 0)
 					faceToRender[5] = true;
 				else
-					faceToRender[5] = !chunkCoordinate[x][y - 1][z];
-
-				if (!chunkCoordinate[x][y + 1][z])				
-					textureID = 0;				
+					faceToRender[5] = !chunkCoordinate[x][y - 1][z];			
 
 				//Set texture			
 				AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.z), textureID, faceToRender);
@@ -110,13 +119,13 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float
 			position.x - 0.5, position.y - 0.5,  position.z + 0.5,		0.375, 0,		0.0, 0.0, 1.0,		textureID,
 			position.x + 0.5, position.y - 0.5,  position.z + 0.5,		0.625, 0,		0.0, 0.0, 1.0,		textureID,
 			position.x + 0.5, position.y + 0.5,  position.z + 0.5,		0.625, 1,		0.0, 0.0, 1.0,		textureID,
-			
+
 			position.x + 0.5, position.y + 0.5,  position.z + 0.5,		0.625, 1,		0.0, 0.0, 1.0,		textureID,
 			position.x - 0.5, position.y + 0.5,  position.z + 0.5,		0.375, 1,		0.0, 0.0, 1.0,		textureID,
 			position.x - 0.5, position.y - 0.5,  position.z + 0.5,		0.375, 0,		0.0, 0.0, 1.0,		textureID
 		};
 		chunkMesh.insert(chunkMesh.end(), &frontFace[0], &frontFace[std::size(frontFace)]);
-	}
+	}	
 	
 	//Back
 	if (faceToRender[1])

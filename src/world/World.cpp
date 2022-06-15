@@ -9,7 +9,7 @@ World::World()
 	_fastNoise->SetFractalType(FastNoiseLite::FractalType::FractalType_FBm);
 
 	_fastNoise->SetFractalLacunarity(2);
-	_fastNoise->SetFrequency(0.01);
+	_fastNoise->SetFrequency(0.008);
 	_fastNoise->SetFractalOctaves(5);
 }
 
@@ -23,9 +23,15 @@ void World::Load()
 void World::ManageChunk(const glm::vec3& playerPosition)
 {
 	//Check too far chunks
+	nearestChunk = &displayChunks[0];
 	for (size_t i = 0; i < displayChunks.size(); i++)
 	{	
-		if (GetDistanceChunkPlayer(playerPosition, displayChunks[i].midPosition) > renderDistance)
+		//Get nearest chunk for create new chunks
+		float distance = GetDistanceChunkPlayer(playerPosition, displayChunks[i].midPosition);
+		if (distance < GetDistanceChunkPlayer(playerPosition, nearestChunk->midPosition))		
+			nearestChunk = &displayChunks[i];
+
+		if (distance > renderDistance)
 		{
 			hiddenChunks.push_back(displayChunks[i]);
 			displayChunks.erase(displayChunks.begin() + i);		
@@ -43,12 +49,6 @@ void World::ManageChunk(const glm::vec3& playerPosition)
 	}
 
 	//Create new chunks
-	/*
-	for (size_t i = 0; i < displayChunks.size(); i++)
-	{
-		
-	}
-	*/
 }
 
 float World::GetDistanceChunkPlayer(glm::vec3 playerPosition, glm::vec3 chunkPosition)

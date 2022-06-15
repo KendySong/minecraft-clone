@@ -30,14 +30,16 @@ void Render::LoadTextures(int shaderID)
 		4) Change sampler array size
 	*/
 	Texture grass("textures/grass.png", 0);
-	Texture dirt("textures/dirt.png", 1);
+	Texture dirt ("textures/dirt.png",  1);
+	Texture sand ("textures/sand.png",  2);
 
 	grass.AssignSlot();
 	dirt.AssignSlot();
+	sand.AssignSlot();
 
 	int samplerLoc = glGetUniformLocation(shaderID, "sampler");
-	int texturesID[] = { 0, 1};
-	glUniform1iv(samplerLoc, 2, texturesID);
+	int texturesID[] = { 0, 1, 2};
+	glUniform1iv(samplerLoc, 3, texturesID);
 }
 
 void Render::Load(GLFWwindow* window, glm::vec2 windowSize) 

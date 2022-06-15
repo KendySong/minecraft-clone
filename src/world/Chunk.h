@@ -33,17 +33,14 @@ public :
 	std::vector<float> vertex;
 	std::vector<glm::vec3> blocks;
 
+	Chunk();
+
 	/// <summary>
 	/// Constructor
 	/// </summary>
 	/// <param name="position">Position fo the chunk</param>
 	Chunk(glm::vec3 position, FastNoiseLite* fastNoise);
 
-	/// <summary>
-	/// Add new block into chunk mesh
-	/// </summary>
-	/// <param name="chunkMesh">Mesh of the chunk to add the block</param>
-	/// <param name="position">Position into the mesh</param>
 	void AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender);
 
 	/// <summary>
