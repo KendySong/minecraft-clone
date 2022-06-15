@@ -29,9 +29,10 @@ void Render::LoadTextures(int shaderID)
 		3) Add texture slots into uniform sampler
 		4) Change sampler array size
 	*/
-	Texture grass("textures/grass.png", 0);
+	Texture grass("textures/test-texture.png", 0);
 	Texture dirt("textures/dirt.png", 1);
 	Texture sand("textures/sand.png", 2);
+
 	grass.AssignSlot();
 	dirt.AssignSlot();
 	sand.AssignSlot();
