@@ -7,7 +7,7 @@ Gui::Gui(GLFWwindow* window)
 	ImGuiIO& io = ImGui::GetIO();
 	ImGui::StyleColorsDark();
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
-	ImGui_ImplOpenGL3_Init("#version 330");
+	ImGui_ImplOpenGL3_Init("#version 450");
 	_wireframe = false;
 	_faceCulling = true;
 

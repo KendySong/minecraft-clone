@@ -1,4 +1,4 @@
-#version 330
+#version 450
 in vec2 v_texUV;
 in float v_texID;
 
@@ -6,14 +6,13 @@ in vec3 v_normal;
 in vec3 v_fragPosition;
 
 uniform vec3 lightPosition;
-uniform sampler2D sampler[3];
+uniform sampler2D sampler[2];
 
 out vec4 outputColor;
 
 void main()
 {
     int samplerID = int(v_texID);
-    outputColor = texture(sampler[samplerID], v_texUV);
 
     //Calculate light direction
     vec3 normalizeSurface = normalize(v_normal);

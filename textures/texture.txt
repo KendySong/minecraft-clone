@@ -1,0 +1,7 @@
+herbe
+terre
+eau
+bois
+feuille
+sable
+pierre
