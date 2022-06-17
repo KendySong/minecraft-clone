@@ -55,6 +55,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 				if (y < 4)
 					textureID = 2;				
 
+				//Check face to render
 				if (z == ChunkSize::DEPTH - 1)
 					faceToRender[0] = true;
 				else
@@ -90,7 +91,14 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 			}
 		}
 	}
+
+	bool faceToRender[] = {true};
+	for (size_t i = 25; i < 30; i++)
+	{
+		AddNewBlock(_vertex, glm::vec3(midPosition.x, i, midPosition.z), 3, faceToRender);
+	}
 	
+
 	PrepareRender();
 }
 

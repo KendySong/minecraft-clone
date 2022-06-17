@@ -15,10 +15,12 @@ class Render
 private :
 	Timer _deltaTimeTimer;
 	GLFWwindow* _window;
-	Camera* _camera;
+
 	Gui* _gui;
+
 	World _world;
 	Shader* _shader;
+	Camera* _camera;
 	
 public:
 	/// <summary>
