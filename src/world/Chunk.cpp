@@ -5,20 +5,25 @@ Chunk::Chunk()
 
 }
 
-Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
+Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 {
+	north = neighbor[0];
+	south = neighbor[1];
+	east  = neighbor[2];
+	west  = neighbor[3];
+
 	cornerPosition = position;
 
-	unsigned int chunkWidthMid = ChunkSize::Width / 2;
-	unsigned int chunkDepthMid = ChunkSize::Depth / 2;
+	unsigned int chunkWidthMid = ChunkSize::WIDTH / 2;
+	unsigned int chunkDepthMid = ChunkSize::DEPTH / 2;
 	midPosition.x = position.x + chunkWidthMid;
 	midPosition.z = position.z + chunkDepthMid;
 	
 	//Generate heightmap
-	float heightMap[ChunkSize::Width][ChunkSize::Depth];
-	for (size_t x = 0; x < ChunkSize::Width; x++)
+	float heightMap[ChunkSize::WIDTH][ChunkSize::DEPTH];
+	for (size_t x = 0; x < ChunkSize::WIDTH; x++)
 	{
-		for (size_t z = 0; z < ChunkSize::Depth; z++)
+		for (size_t z = 0; z < ChunkSize::DEPTH; z++)
 		{
 			heightMap[x][z] = fastNoise->GetNoise((float)x + position.x, (float)z + position.z);
 			heightMap[x][z] = std::abs(heightMap[x][z]) * 40;
@@ -27,16 +32,16 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 	}
 
 	//Create 3D array for face check
-	bool chunkCoordinate[ChunkSize::Width][ChunkSize::Height][ChunkSize::Depth] = {false}; //False => Empty
-	for (size_t x = 0; x < ChunkSize::Width; x++)
-		for (size_t z = 0; z < ChunkSize::Depth; z++)
+	bool chunkCoordinate[ChunkSize::WIDTH][ChunkSize::HEIGHT][ChunkSize::DEPTH] = {false}; //False => Empty
+	for (size_t x = 0; x < ChunkSize::WIDTH; x++)
+		for (size_t z = 0; z < ChunkSize::DEPTH; z++)
 			for (size_t y = 0; y < heightMap[x][z]; y++)
 				chunkCoordinate[x][y][z] = true;
 
 	//Create chunk mesh
-	for (size_t x = 0; x < ChunkSize::Width; x++)
+	for (size_t x = 0; x < ChunkSize::WIDTH; x++)
 	{	
-		for (size_t z = 0; z < ChunkSize::Depth; z++)
+		for (size_t z = 0; z < ChunkSize::DEPTH; z++)
 		{
 			for (size_t y = 0; y < heightMap[x][z]; y++)
 			{
@@ -50,7 +55,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 				if (y < 4)
 					textureID = 2;				
 
-				if (z == ChunkSize::Depth - 1)
+				if (z == ChunkSize::DEPTH - 1)
 					faceToRender[0] = true;
 				else
 					faceToRender[0] = !chunkCoordinate[x][y][z + 1];	
@@ -60,7 +65,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 				else
 					faceToRender[1] = !chunkCoordinate[x][y][z - 1];
 					
-				if (x == ChunkSize::Width - 1)
+				if (x == ChunkSize::WIDTH - 1)
 					faceToRender[2] = true;
 				else
 					faceToRender[2] = !chunkCoordinate[x + 1][y][z];
@@ -81,17 +86,22 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 					faceToRender[5] = !chunkCoordinate[x][y - 1][z];			
 
 				//Set texture			
-				AddNewBlock(vertex, glm::vec3(x + position.x, y, z + position.z), textureID, faceToRender);
+				AddNewBlock(_vertex, glm::vec3(x + position.x, y, z + position.z), textureID, faceToRender);
 			}
 		}
 	}
 	
+	PrepareRender();
+}
+
+void Chunk::PrepareRender() 
+{
 	glGenVertexArrays(1, &_vao);
 	glBindVertexArray(_vao);
 
 	glGenBuffers(1, &_vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, _vbo);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertex.size(), &vertex.front(), GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * _vertex.size(), &_vertex.front(), GL_STATIC_DRAW);
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, false, 36, (const void*)0);
 	glEnableVertexAttribArray(0);
@@ -105,8 +115,8 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise)
 	glVertexAttribPointer(3, 1, GL_FLOAT, false, 36, (const void*)(32));
 	glEnableVertexAttribArray(3);
 
-	verticesDraw = vertex.size() / 3;
-	vertex.clear();
+	verticesDraw = _vertex.size() / 3;
+	_vertex.clear();
 }
 
 void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender)

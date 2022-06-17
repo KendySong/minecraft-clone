@@ -76,6 +76,14 @@ void Gui::ManageCamera(Camera* camera)
 	ImGui::End();
 }
 
+void Gui::DisplayWorldData(size_t nbChunkRendering)
+{
+	ImGui::Begin("World");
+	chunkRender = "Number of chunks in render " + std::to_string(nbChunkRendering);
+	ImGui::Text(chunkRender.c_str());
+	ImGui::End();
+}
+
 void Gui::Render() 
 {
 	ImGui::Render();

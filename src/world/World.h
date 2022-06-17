@@ -3,6 +3,7 @@
 ///Summary : Manage chunk display, and generate new chunks
 
 #include <iostream>
+#include <algorithm>
 #include <vector>
 
 #include <glm/glm.hpp>
@@ -20,6 +21,8 @@ private :
 public :
 	Chunk* nearestChunk;
 	float renderDistance;
+	std::vector<glm::vec3> chunksPositions;
+	std::vector<Chunk> borderMapChunk;
 	std::vector<Chunk> displayChunks;
 	std::vector<Chunk> hiddenChunks;
 

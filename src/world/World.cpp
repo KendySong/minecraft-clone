@@ -2,7 +2,7 @@
 
 World::World() 
 {
-	renderDistance = 250;
+	renderDistance = 40;
 	srand(time(nullptr));
 	_fastNoise = new FastNoiseLite(rand());
 	_fastNoise->SetNoiseType(FastNoiseLite::NoiseType::NoiseType_OpenSimplex2S);
@@ -15,9 +15,11 @@ World::World()
 
 void World::Load() 
 {	
-	for (size_t z = 0; z < ChunkSize::Depth * 20; z += ChunkSize::Depth)
-		for (size_t x = 0; x < ChunkSize::Width * 20; x += ChunkSize::Width)
-			displayChunks.push_back(Chunk(glm::vec3(x, 0, z), _fastNoise));
+	bool firstChunkNeighbor[] = {false, false, false, false};
+	Chunk firstChunk(glm::vec3(0, 0, 0), _fastNoise, firstChunkNeighbor);
+	displayChunks.push_back(firstChunk);
+	borderMapChunk.push_back(firstChunk);
+	chunksPositions.push_back(firstChunk.cornerPosition);
 }
 
 void World::ManageChunk(const glm::vec3& playerPosition)
@@ -28,13 +30,13 @@ void World::ManageChunk(const glm::vec3& playerPosition)
 	{	
 		//Get nearest chunk for create new chunks
 		float distance = GetDistanceChunkPlayer(playerPosition, displayChunks[i].midPosition);
-		if (distance < GetDistanceChunkPlayer(playerPosition, nearestChunk->midPosition))		
+		if (distance < GetDistanceChunkPlayer(playerPosition, nearestChunk->midPosition))
 			nearestChunk = &displayChunks[i];
 
 		if (distance > renderDistance)
 		{
 			hiddenChunks.push_back(displayChunks[i]);
-			displayChunks.erase(displayChunks.begin() + i);		
+			displayChunks.erase(displayChunks.begin() + i);
 		}
 	}
 
@@ -48,7 +50,84 @@ void World::ManageChunk(const glm::vec3& playerPosition)
 		}
 	}
 
-	//Create new chunks
+	//Create new chunks (north => 0 | south => 1 | east => 2 | west => 3) 
+	//false => empty neighbor | true => neighbor exist
+	for (size_t i = 0; i < borderMapChunk.size(); i++)
+	{
+		if (borderMapChunk[i].north && borderMapChunk[i].south && borderMapChunk[i].east && borderMapChunk[i].west)
+		{
+			borderMapChunk.erase(borderMapChunk.begin() + i);
+			break;
+		}
+			
+		if (!borderMapChunk[i].north)
+		{
+			glm::vec3 northChunkPosition = borderMapChunk[i].cornerPosition;
+			northChunkPosition.z -= ChunkSize::DEPTH;
+			if (GetDistanceChunkPlayer(playerPosition, northChunkPosition) < renderDistance && std::find(chunksPositions.begin(), chunksPositions.end(), northChunkPosition) == chunksPositions.end())
+			{
+				bool neighbor[] = {false, true, false, false};
+				Chunk northChunk(northChunkPosition, _fastNoise, neighbor);
+
+				displayChunks.push_back(northChunk);
+				borderMapChunk.push_back(northChunk);
+				chunksPositions.push_back(northChunk.cornerPosition);
+				borderMapChunk[i].north = true;
+			}
+		}
+		
+		if (!borderMapChunk[i].south)
+		{
+			glm::vec3 southChunkPosition = borderMapChunk[i].cornerPosition;
+			southChunkPosition.z += ChunkSize::DEPTH;
+			if (GetDistanceChunkPlayer(playerPosition, southChunkPosition) < renderDistance && std::find(chunksPositions.begin(), chunksPositions.end(), southChunkPosition) == chunksPositions.end())
+			{
+				bool neighbor[] = { true, false, false, false };
+				Chunk southChunk(southChunkPosition, _fastNoise, neighbor);
+
+				displayChunks.push_back(southChunk);
+				borderMapChunk.push_back(southChunk);
+				chunksPositions.push_back(southChunk.cornerPosition);
+				borderMapChunk[i].south = true;
+			}
+		}
+
+		//REMOVE CHUNKS POISITION LIST WHEN USELESSS
+
+		
+		if (!borderMapChunk[i].east)
+		{
+			glm::vec3 eastChunkPosition = borderMapChunk[i].cornerPosition;
+			eastChunkPosition.x += ChunkSize::WIDTH;
+			if (GetDistanceChunkPlayer(playerPosition, eastChunkPosition) < renderDistance && std::find(chunksPositions.begin(), chunksPositions.end(), eastChunkPosition) == chunksPositions.end())
+			{
+				bool neighbor[] = { false, false, false, true };
+				Chunk eastChunk(eastChunkPosition, _fastNoise, neighbor);
+
+				displayChunks.push_back(eastChunk);
+				borderMapChunk.push_back(eastChunk);
+				chunksPositions.push_back(eastChunk.cornerPosition);
+				borderMapChunk[i].east = true;
+			}
+		}
+
+		if (!borderMapChunk[i].west)
+		{
+			glm::vec3 westChunkPosition = borderMapChunk[i].cornerPosition;
+			westChunkPosition.x -= ChunkSize::WIDTH;
+			if (GetDistanceChunkPlayer(playerPosition, westChunkPosition) < renderDistance && std::find(chunksPositions.begin(), chunksPositions.end(), westChunkPosition) == chunksPositions.end())
+			{
+				bool neighbor[] = { false, false, true, false };
+				Chunk westChunk(westChunkPosition, _fastNoise, neighbor);
+
+				displayChunks.push_back(westChunk);
+				borderMapChunk.push_back(westChunk);
+				chunksPositions.push_back(westChunk.cornerPosition);
+				borderMapChunk[i].west = true;
+			}
+		}			
+		
+	}
 }
 
 float World::GetDistanceChunkPlayer(glm::vec3 playerPosition, glm::vec3 chunkPosition)

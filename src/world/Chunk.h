@@ -1,6 +1,6 @@
 ///Author : kndysong@gmail.com
 ///Date : 31.05.2022
-///Summary : Contain 16x16x16 block's data
+///Summary : Contain blocks position and create terrain
 
 #include <iostream>
 #include <chrono>
@@ -14,9 +14,9 @@
 #pragma once
 namespace ChunkSize
 {
-	const unsigned int Width = 16;
-	const unsigned int Height = 255;
-	const unsigned int Depth = 16;
+	const unsigned int WIDTH = 16;
+	const unsigned int HEIGHT = 90;
+	const unsigned int DEPTH = 16;
 }
 
 class Chunk 
@@ -25,27 +25,26 @@ class Chunk
 private :
 	unsigned int _vao = 0;
 	unsigned int _vbo = 0;
-	
+	std::vector<float> _vertex;
+
+	void PrepareRender();
+
 public :
+	bool north;
+	bool south;
+	bool east;
+	bool west;
+
 	glm::vec3 cornerPosition;
 	glm::vec3 midPosition;
 	unsigned int verticesDraw;
-	std::vector<float> vertex;
 	std::vector<glm::vec3> blocks;
 
 	Chunk();
 
-	/// <summary>
-	/// Constructor
-	/// </summary>
-	/// <param name="position">Position fo the chunk</param>
-	Chunk(glm::vec3 position, FastNoiseLite* fastNoise);
+	Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor);
 
 	void AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender);
 
-	/// <summary>
-	/// Getter of vao for draw call
-	/// </summary>
-	/// <returns>Vao of the current chunk</returns>
 	unsigned int GetVao();
 };

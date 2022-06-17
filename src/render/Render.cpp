@@ -2,7 +2,7 @@
 
 Render::Render() 
 {
-
+	
 }
 
 Camera* Render::GetCamera() 
@@ -46,7 +46,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 {
 	_window = window;
 	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-	glViewport(0, 0, windowSize.x, windowSize.y);
+	glViewport(0, 0, (GLsizei)windowSize.x, (GLsizei)windowSize.y);
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
 	glClearColor(0.5254, 0.6901, 1, 1);
@@ -87,5 +87,6 @@ void Render::RenderFrame()
 	}
 	_gui->DisplayRenderData(_world.renderDistance);
 	_gui->ManageCamera(_camera);
+	_gui->DisplayWorldData(_world.displayChunks.size());
 	_gui->Render();
 }

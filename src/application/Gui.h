@@ -21,6 +21,7 @@ class Gui
 private :
 	std::string gpu;
 	std::string version;
+	std::string chunkRender;
 
 	Timer _timer;
 	std::string _framerate;
@@ -46,6 +47,8 @@ public :
 	void DisplayRenderData(float& renderDistance);
 
 	void ManageCamera(Camera* camera);
+
+	void DisplayWorldData(size_t nbChunkRendering);
 
 	/// <summary>
 	/// Render of gui window

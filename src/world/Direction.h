@@ -5,10 +5,8 @@
 #pragma once
 enum Direction
 {
-	front,
-	back,
-	right,
-	left,
-	top,
-	down
+	north = 0,
+	south = 1,
+	east  = 2,
+	west  = 3
 };
