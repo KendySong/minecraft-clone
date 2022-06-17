@@ -16,7 +16,7 @@ void Render::LoadShader()
 	_shader = new Shader("shaders/cube.vert", "shaders/cube.frag");
 	glUseProgram(_shader->GetProgram());
 
-	glm::vec3 lightPosition(160, 100, 160);
+	glm::vec3 lightPosition(0, 100, 0);
 	int lightPositionUniform = glGetUniformLocation(_shader->GetProgram(), "lightPosition");
 	glUniform3f(lightPositionUniform, lightPosition.x, lightPosition.y, lightPosition.z);
 }
@@ -61,7 +61,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	glUniformMatrix4fv(_camera->projectionLocation, 1, false, glm::value_ptr(_camera->projection));
 
 	_gui = new Gui(window);
-	_world.Load();	
+	_world.Load();
 }
 
 void Render::Update() 

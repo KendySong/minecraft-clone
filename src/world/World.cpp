@@ -2,7 +2,7 @@
 
 World::World() 
 {
-	renderDistance = 40;
+	renderDistance = 100;
 	srand(time(nullptr));
 	_fastNoise = new FastNoiseLite(rand());
 	_fastNoise->SetNoiseType(FastNoiseLite::NoiseType::NoiseType_OpenSimplex2S);
@@ -10,7 +10,7 @@ World::World()
 
 	_fastNoise->SetFractalLacunarity(2);
 	_fastNoise->SetFrequency(0.008);
-	_fastNoise->SetFractalOctaves(5);
+	_fastNoise->SetFractalOctaves(4);
 }
 
 void World::Load() 
@@ -49,7 +49,7 @@ void World::ManageChunk(const glm::vec3& playerPosition)
 			hiddenChunks.erase(hiddenChunks.begin() + i);
 		}
 	}
-
+	
 	//Create new chunks (north => 0 | south => 1 | east => 2 | west => 3) 
 	//false => empty neighbor | true => neighbor exist
 	for (size_t i = 0; i < borderMapChunk.size(); i++)
@@ -92,9 +92,6 @@ void World::ManageChunk(const glm::vec3& playerPosition)
 				borderMapChunk[i].south = true;
 			}
 		}
-
-		//REMOVE CHUNKS POISITION LIST WHEN USELESSS
-
 		
 		if (!borderMapChunk[i].east)
 		{

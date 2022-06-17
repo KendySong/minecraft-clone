@@ -15,7 +15,7 @@
 namespace ChunkSize
 {
 	const unsigned int WIDTH = 16;
-	const unsigned int HEIGHT = 90;
+	const unsigned int HEIGHT = 40;
 	const unsigned int DEPTH = 16;
 }
 
