@@ -116,7 +116,7 @@ void Chunk::PrepareRender()
 	glEnableVertexAttribArray(3);
 
 	verticesDraw = _vertex.size() / 3;
-	_vertex.clear();
+	//_vertex.clear();
 }
 
 void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender)

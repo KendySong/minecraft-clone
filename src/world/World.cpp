@@ -57,6 +57,7 @@ void World::ManageChunk(const glm::vec3& playerPosition)
 		if (borderMapChunk[i].north && borderMapChunk[i].south && borderMapChunk[i].east && borderMapChunk[i].west)
 		{
 			borderMapChunk.erase(borderMapChunk.begin() + i);
+			chunksPositions.erase(chunksPositions.begin() + i);
 			break;
 		}
 			
