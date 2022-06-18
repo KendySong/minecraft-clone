@@ -22,7 +22,7 @@ void World::Load()
 	chunksPositions.push_back(firstChunk.cornerPosition);
 }
 
-void World::ManageChunk(const glm::vec3& playerPosition)
+void World::ManageChunks(const glm::vec3& playerPosition)
 {
 	//Check too far chunks
 	nearestChunk = &displayChunks[0];
@@ -67,7 +67,7 @@ void World::ManageChunk(const glm::vec3& playerPosition)
 			northChunkPosition.z -= ChunkSize::DEPTH;
 			if (GetDistanceChunkPlayer(playerPosition, northChunkPosition) < renderDistance && std::find(chunksPositions.begin(), chunksPositions.end(), northChunkPosition) == chunksPositions.end())
 			{
-				bool neighbor[] = {false, true, false, false};
+				bool neighbor[] = { false, true, false, false };
 				Chunk northChunk(northChunkPosition, _fastNoise, neighbor);
 
 				displayChunks.push_back(northChunk);
@@ -123,8 +123,7 @@ void World::ManageChunk(const glm::vec3& playerPosition)
 				chunksPositions.push_back(westChunk.cornerPosition);
 				borderMapChunk[i].west = true;
 			}
-		}			
-		
+		}					
 	}
 }
 

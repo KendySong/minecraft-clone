@@ -39,8 +39,8 @@ void Render::LoadTextures(int shaderID)
 	sand.AssignSlot();
 	wood.AssignSlot();
 
-	int samplerLoc = glGetUniformLocation(shaderID, "sampler");
-	int texturesID[] = { 0, 1, 2, 3};
+	int samplerLoc = glGetUniformLocation(shaderID, "textureSampler");
+	int texturesID[4] = { 0, 1, 2, 3};
 	glUniform1iv(samplerLoc, 4, texturesID);
 }
 
@@ -74,7 +74,7 @@ void Render::Update()
 	_deltaTimeTimer.Restart();
 
 	//Manage world
-	_world.ManageChunk(_camera->position);
+	_world.ManageChunks(_camera->position);
 }
 
 void Render::RenderFrame()

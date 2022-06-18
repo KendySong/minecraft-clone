@@ -99,6 +99,9 @@
     <ClCompile Include="src\render\stb_image.cpp">
       <Filter>Fichiers sources\Render</Filter>
     </ClCompile>
+    <ClCompile Include="src\world\Tree.cpp">
+      <Filter>Fichiers sources\World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\render\Camera.h">
@@ -163,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="src\render\Texture.h">
       <Filter>Fichiers d%27en-tête\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\Tree.h">
+      <Filter>Fichiers d%27en-tête\World</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

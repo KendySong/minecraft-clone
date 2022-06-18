@@ -45,6 +45,14 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 		{
 			for (size_t y = 0; y < heightMap[x][z]; y++)
 			{
+				/*
+				Texture grass("textures/grass.png", 0);
+				Texture dirt ("textures/dirt.png",  1);
+				Texture sand ("textures/sand.png",  2);
+				Texture wood ("textures/wood.png",  3);
+
+				*/
+
 				float textureID = 1;
 				bool faceToRender[6];
 
@@ -53,7 +61,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 					textureID = 0;
 
 				if (y < 4)
-					textureID = 2;				
+					textureID = 2;					
 
 				//Check face to render
 				if (z == ChunkSize::DEPTH - 1)
@@ -92,6 +100,8 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 		}
 	}
 
+	
+	//Generate a tree
 	bool faceToRender[] = {true};
 	for (size_t i = 25; i < 30; i++)
 	{
@@ -124,7 +134,7 @@ void Chunk::PrepareRender()
 	glEnableVertexAttribArray(3);
 
 	verticesDraw = _vertex.size() / 3;
-	//_vertex.clear();
+	_vertex.clear();
 }
 
 void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender)

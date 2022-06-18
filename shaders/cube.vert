@@ -1,4 +1,4 @@
-#version 450
+#version 450 core
 layout (location = 0) in vec3 vertex;
 layout (location = 1) in vec2 texUV;
 layout (location = 2) in vec3 vecNormal;
@@ -9,6 +9,7 @@ uniform mat4 view;
 
 out vec2 v_texUV;
 out float v_texID;
+
 out vec3 v_normal;
 out vec3 v_fragPosition;
 

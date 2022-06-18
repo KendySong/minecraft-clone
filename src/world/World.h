@@ -40,7 +40,7 @@ public :
 	/// Check chunk to display, remove or add
 	/// </summary>
 	/// <param name="playerPosition">Manage chunk depending player position</param>
-	void ManageChunk(const glm::vec3& playerPosition);
+	void ManageChunks(const glm::vec3& playerPosition);
 
 	/// <summary>
 	/// Calculate the approximative distance between the player and the chunk

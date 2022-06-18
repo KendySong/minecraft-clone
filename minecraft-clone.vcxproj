@@ -162,6 +162,7 @@
     <ClCompile Include="src\render\Shader.cpp" />
     <ClCompile Include="src\world\World.cpp" />
     <ClCompile Include="src\render\Texture.cpp" />
+    <ClCompile Include="src\world\Tree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libraries\include\imgui\imconfig.h" />
@@ -185,6 +186,7 @@
     <ClInclude Include="src\render\Shader.h" />
     <ClInclude Include="src\world\World.h" />
     <ClInclude Include="src\render\Texture.h" />
+    <ClInclude Include="src\world\Tree.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\cube.frag" />
