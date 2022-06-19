@@ -50,7 +50,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 				Texture dirt ("textures/dirt.png",  1);
 				Texture sand ("textures/sand.png",  2);
 				Texture wood ("textures/wood.png",  3);
-
+				Texture leaf ("textures/wood.png",  4);
 				*/
 
 				float textureID = 1;
@@ -105,10 +105,9 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 	bool faceToRender[] = {true};
 	for (size_t i = 25; i < 30; i++)
 	{
-		AddNewBlock(_vertex, glm::vec3(midPosition.x, i, midPosition.z), 3, faceToRender);
+		AddNewBlock(_vertex, glm::vec3(midPosition.x, i, midPosition.z), 4, faceToRender);
 	}
 	
-
 	PrepareRender();
 }
 

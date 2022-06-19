@@ -32,16 +32,20 @@ void Render::LoadTextures(int shaderID)
 	Texture grass("textures/grass.png", 0);
 	Texture dirt ("textures/dirt.png",  1);
 	Texture sand ("textures/sand.png",  2);
+
 	Texture wood ("textures/wood.png",  3);
+	Texture leaf ("textures/leaf.png",  4);
 
 	grass.AssignSlot();
 	dirt.AssignSlot();
 	sand.AssignSlot();
+
 	wood.AssignSlot();
+	leaf.AssignSlot();
 
 	int samplerLoc = glGetUniformLocation(shaderID, "textureSampler");
-	int texturesID[4] = { 0, 1, 2, 3};
-	glUniform1iv(samplerLoc, 4, texturesID);
+	int texturesID[] = { 0, 1, 2, 3, 4};
+	glUniform1iv(samplerLoc, 5, texturesID);
 }
 
 void Render::Load(GLFWwindow* window, glm::vec2 windowSize) 
