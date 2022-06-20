@@ -12,7 +12,6 @@ out vec4 outputColor;
 
 void main()
 {
-    /*
     //Calculate light direction
     vec3 normalizeSurface = normalize(v_normal);
     vec3 lightDirection = normalize(lightPosition - v_fragPosition);
@@ -24,12 +23,4 @@ void main()
 
     //Set texture with ligth
     outputColor = vec4((lightColor + diffuse) * texture(textureSampler[int(v_texID)], v_texUV).xyz, 1);
-    */
-
-    vec3 faceColor = vec3(1, 1, 1);
-    if (v_normal.z >= 1)
-    {
-
-    }
-    outputColor = texture(textureSampler[int(v_texID)], v_texUV) * vec4(faceColor, 1);
 }

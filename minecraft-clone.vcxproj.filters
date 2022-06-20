@@ -105,6 +105,9 @@
     <ClCompile Include="src\world\Block.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\Random.cpp">
+      <Filter>Fichiers sources\Application</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\render\Camera.h">
@@ -176,7 +179,7 @@
     <ClInclude Include="src\world\Block.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="src\world\Random.h">
+    <ClInclude Include="src\application\Random.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

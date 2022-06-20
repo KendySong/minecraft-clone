@@ -13,8 +13,6 @@ class Tree
 {
 	//Attributes and properties
 private :
-	unsigned int _height;
-
 	std::vector<Block> treeStruct;
 
 public :

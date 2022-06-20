@@ -142,6 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\application\Random.cpp" />
     <ClCompile Include="src\world\Block.cpp" />
     <ClCompile Include="libraries\include\imgui\imgui.cpp" />
     <ClCompile Include="libraries\include\imgui\imgui_demo.cpp" />
@@ -175,6 +176,7 @@
     <ClInclude Include="libraries\include\imgui\imstb_rectpack.h" />
     <ClInclude Include="libraries\include\imgui\imstb_textedit.h" />
     <ClInclude Include="libraries\include\imgui\imstb_truetype.h" />
+    <ClInclude Include="src\application\Random.h" />
     <ClInclude Include="src\render\stb_image.h" />
     <ClInclude Include="src\world\Block.h" />
     <ClInclude Include="src\world\Direction.h" />
@@ -186,7 +188,6 @@
     <ClInclude Include="src\render\Render.h" />
     <ClInclude Include="src\application\Window.h" />
     <ClInclude Include="src\render\Shader.h" />
-    <ClInclude Include="src\world\Random.h" />
     <ClInclude Include="src\world\World.h" />
     <ClInclude Include="src\render\Texture.h" />
     <ClInclude Include="src\world\Tree.h" />

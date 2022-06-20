@@ -164,6 +164,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 		}
 	}
 
+
 	//Generate a tree
 	Tree tree(glm::vec3(midPosition.x, (int)GetHeight(midPosition.x, midPosition.z), midPosition.z));
 	std::vector<Block> treeBlock = tree.GetTreeStruct();
