@@ -61,7 +61,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 	LoadTextures(_shader->GetProgram());
 
 	//Instanciate camera
-	_camera = new Camera(window, windowSize.x, windowSize.y, 90, 0.1f, 1000.0f, 0.4f, 15.0f, glm::vec3(0, 0, 0));
+	_camera = new Camera(window, windowSize.x, windowSize.y, 90, 0.1f, 1000.0f, 0.4f, 15.0f, glm::vec3(0, 10, 0));
 	_camera->viewLocation = glGetUniformLocation(_shader->GetProgram(), "view");
 	_camera->projectionLocation = glGetUniformLocation(_shader->GetProgram(), "projection");
 	glUniformMatrix4fv(_camera->projectionLocation, 1, false, glm::value_ptr(_camera->projection));

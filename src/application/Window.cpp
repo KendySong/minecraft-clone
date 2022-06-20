@@ -14,7 +14,7 @@ Window::Window(unsigned int width, unsigned int height, const char* title)
 	glfwMakeContextCurrent(_window);
 }
 
-void Window::Run()
+int Window::Run()
 {
 	_render.Load(this->_window, glm::vec2(_width, _height));
 	while (!glfwWindowShouldClose(_window))
@@ -26,4 +26,9 @@ void Window::Run()
 		_render.RenderFrame();
 		glfwSwapBuffers(_window);
 	}
+
+	glfwDestroyWindow(_window);
+	ImGui::DestroyContext();
+
+	return 0;
 }

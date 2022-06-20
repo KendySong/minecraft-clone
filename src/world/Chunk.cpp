@@ -12,7 +12,7 @@ float Chunk::GetTextureHeight(bool upBlock, size_t height)
 		Texture dirt ("textures/dirt.png",  1);
 		Texture sand ("textures/sand.png",  2);
 		Texture wood ("textures/wood.png",  3);
-		Texture leaf ("textures/wood.png",  4);
+		Texture leaf ("textures/leaf.png",  4);
 	*/
 	
 	float texID = 1;
@@ -63,11 +63,11 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 
 	//Create chunk mesh
 	for (size_t x = 0; x < ChunkSize::WIDTH; x++)
-	{	
+	{
 		for (size_t z = 0; z < ChunkSize::DEPTH; z++)
 		{
 			for (size_t y = 0; y < heightMap[x][z]; y++)
-			{					
+			{		
 				bool faceToRender[6];
 
 				if (z == ChunkSize::DEPTH - 1)
@@ -84,7 +84,6 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 				else
 				{
 					faceToRender[0] = !chunkCoordinate[x][y][z + 1];	
-
 				}
 
 				if (z == 0)
@@ -101,7 +100,6 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 				else
 				{
 					faceToRender[1] = !chunkCoordinate[x][y][z - 1];
-
 				}
 				
 				if (x == ChunkSize::WIDTH - 1)
@@ -118,7 +116,6 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 				else 
 				{
 					faceToRender[2] = !chunkCoordinate[x + 1][y][z];
-
 				}
 
 				if (x == 0)
@@ -135,8 +132,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 				else
 				{
 					faceToRender[3] = !chunkCoordinate[x - 1][y][z];
-				}
-				
+				}		
 
 				if (y == heightMap[x][z] - 1)
 				{
@@ -169,12 +165,17 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 	}
 
 	//Generate a tree
-	bool faceToRender[] = { true };
-	for (size_t i = 25; i < 30; i++)
+	Tree tree(glm::vec3(midPosition.x, (int)GetHeight(midPosition.x, midPosition.z), midPosition.z));
+	std::vector<Block> treeBlock = tree.GetTreeStruct();
+	bool treeFace[] = { true };
+
+	for (size_t i = 0; i < treeBlock.size(); i++)
 	{
-		AddNewBlock(_vertex, glm::vec3(midPosition.x, i, midPosition.z), 4, faceToRender);
+		AddNewBlock(_vertex, treeBlock[i].GetPosition(), treeBlock[i].GetTextureID(), treeFace);
 	}
-	
+
+
+
 	PrepareRender();
 }
 

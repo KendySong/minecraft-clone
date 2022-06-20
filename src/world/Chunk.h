@@ -2,7 +2,6 @@
 ///Date : 31.05.2022
 ///Summary : Contain blocks position and create terrain
 
-#include <iostream>
 #include <chrono>
 #include <vector>
 
@@ -10,6 +9,8 @@
 #include <glm/glm.hpp>
 
 #include <FastNoiseLite/FastNoiseLite.h>
+
+#include "Tree.h"
 
 #pragma once
 namespace ChunkSize

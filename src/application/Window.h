@@ -32,5 +32,5 @@ public :
 	/// <summary>
 	/// Run the program
 	/// </summary>
-	void Run();
+	int Run();
 };
