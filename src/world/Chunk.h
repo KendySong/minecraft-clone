@@ -10,6 +10,7 @@
 
 #include <FastNoiseLite/FastNoiseLite.h>
 
+#include "../application/Random.h"
 #include "Tree.h"
 
 #pragma once
@@ -41,8 +42,6 @@ public :
 	glm::vec3 midPosition;
 	unsigned int verticesDraw;
 	std::vector<glm::vec3> blocks;
-
-	
 
 	Chunk();
 

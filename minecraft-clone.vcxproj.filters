@@ -180,7 +180,7 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="src\application\Random.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Application</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
