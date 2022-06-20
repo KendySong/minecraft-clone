@@ -26,6 +26,7 @@ private :
 	unsigned int _vao = 0;
 	unsigned int _vbo = 0;
 	std::vector<float> _vertex;
+	FastNoiseLite* _fastNoise;
 
 	void PrepareRender();
 
@@ -40,7 +41,13 @@ public :
 	unsigned int verticesDraw;
 	std::vector<glm::vec3> blocks;
 
+	
+
 	Chunk();
+
+	float GetTextureHeight(bool upBlock, size_t height);
+
+	float GetHeight(float x, float z);
 
 	Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor);
 

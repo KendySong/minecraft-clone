@@ -5,6 +5,34 @@ Chunk::Chunk()
 
 }
 
+float Chunk::GetTextureHeight(bool upBlock, size_t height)
+{
+	/*
+		Texture grass("textures/grass.png", 0);
+		Texture dirt ("textures/dirt.png",  1);
+		Texture sand ("textures/sand.png",  2);
+		Texture wood ("textures/wood.png",  3);
+		Texture leaf ("textures/wood.png",  4);
+	*/
+	
+	float texID = 1;
+	if (!upBlock)
+		texID = 0;
+
+	if (height < 4)
+		texID = 2;
+
+	return texID;	
+}
+
+float Chunk::GetHeight(float x, float z)
+{
+	float height = _fastNoise->GetNoise(x, z);
+	height = std::abs(height) * 40;
+	height++;
+	return height;
+}
+
 Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 {
 	north = neighbor[0];
@@ -13,6 +41,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 	west  = neighbor[3];
 
 	cornerPosition = position;
+	_fastNoise = fastNoise;
 
 	unsigned int chunkWidthMid = ChunkSize::WIDTH / 2;
 	unsigned int chunkDepthMid = ChunkSize::DEPTH / 2;
@@ -22,14 +51,8 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 	//Generate heightmap
 	float heightMap[ChunkSize::WIDTH][ChunkSize::DEPTH];
 	for (size_t x = 0; x < ChunkSize::WIDTH; x++)
-	{
 		for (size_t z = 0; z < ChunkSize::DEPTH; z++)
-		{
-			heightMap[x][z] = fastNoise->GetNoise((float)x + position.x, (float)z + position.z);
-			heightMap[x][z] = std::abs(heightMap[x][z]) * 40;
-			heightMap[x][z]++;
-		}
-	}
+			heightMap[x][z] = GetHeight(x + position.x, z + position.z);
 
 	//Create 3D array for face check
 	bool chunkCoordinate[ChunkSize::WIDTH][ChunkSize::HEIGHT][ChunkSize::DEPTH] = {false}; //False => Empty
@@ -44,65 +67,109 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 		for (size_t z = 0; z < ChunkSize::DEPTH; z++)
 		{
 			for (size_t y = 0; y < heightMap[x][z]; y++)
-			{
-				/*
-				Texture grass("textures/grass.png", 0);
-				Texture dirt ("textures/dirt.png",  1);
-				Texture sand ("textures/sand.png",  2);
-				Texture wood ("textures/wood.png",  3);
-				Texture leaf ("textures/wood.png",  4);
-				*/
-
-				float textureID = 1;
+			{					
 				bool faceToRender[6];
 
-				//Set block texture
-				if (!chunkCoordinate[x][y + 1][z])
-					textureID = 0;
-
-				if (y < 4)
-					textureID = 2;					
-
-				//Check face to render
 				if (z == ChunkSize::DEPTH - 1)
-					faceToRender[0] = true;
+				{
+					if (y > GetHeight(x + position.x, z + position.z + 1))
+					{
+						faceToRender[0] = true;
+					}
+					else 
+					{
+						faceToRender[0] = false;
+					}
+				}
 				else
+				{
 					faceToRender[0] = !chunkCoordinate[x][y][z + 1];	
 
+				}
+
 				if (z == 0)
-					faceToRender[1] = true;
+				{
+					if (y > GetHeight(x + position.x, z + position.z - 1))
+					{
+						faceToRender[1] = true;
+					}
+					else 
+					{
+						faceToRender[1] = false;
+					}
+				}
 				else
+				{
 					faceToRender[1] = !chunkCoordinate[x][y][z - 1];
-					
+
+				}
+				
 				if (x == ChunkSize::WIDTH - 1)
-					faceToRender[2] = true;
-				else
+				{
+					if (y > GetHeight(x + position.x + 1, z + position.z))
+					{
+						faceToRender[2] = true;
+					}
+					else 
+					{
+						faceToRender[2] = false;
+					}
+				}
+				else 
+				{
 					faceToRender[2] = !chunkCoordinate[x + 1][y][z];
 
+				}
+
 				if (x == 0)
-					faceToRender[3] = true;
+				{			
+					if (y > GetHeight(x + position.x - 1, z + position.z))
+					{
+						faceToRender[3] = true;
+					}
+					else 
+					{
+						faceToRender[3] = false;
+					}
+				}
 				else
+				{
 					faceToRender[3] = !chunkCoordinate[x - 1][y][z];
+				}
 				
+
 				if (y == heightMap[x][z] - 1)
+				{
 					faceToRender[4] = true;
+				}
 				else
+				{
 					faceToRender[4] = !chunkCoordinate[x][y + 1][z];
+				}
 
 				if (y == 0)
+				{
 					faceToRender[5] = true;
+				}
 				else
-					faceToRender[5] = !chunkCoordinate[x][y - 1][z];			
+				{
+					faceToRender[5] = !chunkCoordinate[x][y - 1][z];
+				}
 
 				//Set texture			
-				AddNewBlock(_vertex, glm::vec3(x + position.x, y, z + position.z), textureID, faceToRender);
+				AddNewBlock
+				(
+					_vertex, 
+					glm::vec3(x + position.x, y, z + position.z), 
+					GetTextureHeight(chunkCoordinate[x][y + 1][z], y),
+					faceToRender
+				);
 			}
 		}
 	}
 
-	
 	//Generate a tree
-	bool faceToRender[] = {true};
+	bool faceToRender[] = { true };
 	for (size_t i = 25; i < 30; i++)
 	{
 		AddNewBlock(_vertex, glm::vec3(midPosition.x, i, midPosition.z), 4, faceToRender);

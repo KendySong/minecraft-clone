@@ -16,6 +16,7 @@ World::World()
 void World::Load() 
 {	
 	bool firstChunkNeighbor[] = {false, false, false, false};
+
 	Chunk firstChunk(glm::vec3(0, 0, 0), _fastNoise, firstChunkNeighbor);
 	displayChunks.push_back(firstChunk);
 	borderMapChunk.push_back(firstChunk);
