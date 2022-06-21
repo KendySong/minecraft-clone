@@ -15,7 +15,6 @@ git clone https://github.com/KendySong/minecraft-clone.git
 cd minecraft-clone
 start minecraft-clone.sln
 ```
-Launch sln file
 
 ## Used libraries
 - GLFW
