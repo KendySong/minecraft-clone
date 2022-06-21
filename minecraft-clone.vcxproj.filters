@@ -176,11 +176,11 @@
     <ClInclude Include="src\world\Tree.h">
       <Filter>Fichiers d%27en-tête\World</Filter>
     </ClInclude>
-    <ClInclude Include="src\world\Block.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="src\application\Random.h">
       <Filter>Fichiers d%27en-tête\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\Block.h">
+      <Filter>Fichiers d%27en-tête\World</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
