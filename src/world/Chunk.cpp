@@ -13,13 +13,14 @@ float Chunk::GetTextureHeight(bool upBlock, size_t height)
 		Texture sand ("textures/sand.png",  2);
 		Texture wood ("textures/wood.png",  3);
 		Texture leaf ("textures/leaf.png",  4);
+		Texture water("textures/water.png", 5);
 	*/
 	
 	float texID = 1;
 	if (!upBlock)
 		texID = 0;
 
-	if (height < ChunkSize::SAND_HEIGHT)
+	if (height < ChunkGen::SAND_HEIGHT)
 		texID = 2;
 
 	return texID;	
@@ -43,34 +44,40 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 	cornerPosition = position;
 	_fastNoise = fastNoise;
 
-	unsigned int chunkWidthMid = ChunkSize::WIDTH / 2;
-	unsigned int chunkDepthMid = ChunkSize::DEPTH / 2;
+	unsigned int chunkWidthMid = ChunkGen::WIDTH / 2;
+	unsigned int chunkDepthMid = ChunkGen::DEPTH / 2;
 	midPosition.x = position.x + chunkWidthMid;
 	midPosition.z = position.z + chunkDepthMid;
 	
 	//Generate heightmap
-	float heightMap[ChunkSize::WIDTH][ChunkSize::DEPTH];
-	for (size_t x = 0; x < ChunkSize::WIDTH; x++)
-		for (size_t z = 0; z < ChunkSize::DEPTH; z++)
+	float heightMap[ChunkGen::WIDTH][ChunkGen::DEPTH];
+	for (size_t x = 0; x < ChunkGen::WIDTH; x++)
+		for (size_t z = 0; z < ChunkGen::DEPTH; z++)
 			heightMap[x][z] = GetHeight(x + position.x, z + position.z);
 
 	//Create 3D array for face check
-	bool chunkCoordinate[ChunkSize::WIDTH][ChunkSize::HEIGHT][ChunkSize::DEPTH] = {false}; //False => Empty
-	for (size_t x = 0; x < ChunkSize::WIDTH; x++)
-		for (size_t z = 0; z < ChunkSize::DEPTH; z++)
+	bool chunkCoordinate[ChunkGen::WIDTH][ChunkGen::HEIGHT][ChunkGen::DEPTH] = {false}; //False => Empty
+	for (size_t x = 0; x < ChunkGen::WIDTH; x++)
+	{
+		for (size_t z = 0; z < ChunkGen::DEPTH; z++)
+		{
 			for (size_t y = 0; y < heightMap[x][z]; y++)
+			{
 				chunkCoordinate[x][y][z] = true;
+			}
+		}
+	}
 
 	//Create chunk mesh
-	for (size_t x = 0; x < ChunkSize::WIDTH; x++)
+	for (size_t x = 0; x < ChunkGen::WIDTH; x++)
 	{
-		for (size_t z = 0; z < ChunkSize::DEPTH; z++)
+		for (size_t z = 0; z < ChunkGen::DEPTH; z++)
 		{
 			for (size_t y = 0; y < heightMap[x][z]; y++)
 			{		
 				bool faceToRender[6];
 
-				if (z == ChunkSize::DEPTH - 1)
+				if (z == ChunkGen::DEPTH - 1)
 				{
 					if (y > GetHeight(x + position.x, z + position.z + 1))
 					{
@@ -102,7 +109,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 					faceToRender[1] = !chunkCoordinate[x][y][z - 1];
 				}
 				
-				if (x == ChunkSize::WIDTH - 1)
+				if (x == ChunkGen::WIDTH - 1)
 				{
 					if (y > GetHeight(x + position.x + 1, z + position.z))
 					{
@@ -160,18 +167,46 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 					GetTextureHeight(chunkCoordinate[x][y + 1][z], y),
 					faceToRender
 				);
+				
+				//Add water
+				if (heightMap[x][z] < ChunkGen::WATER_HEIGHT)
+				{
+					faceToRender[5] = false;
+
+					for (size_t i = heightMap[x][z]; i < ChunkGen::WATER_HEIGHT; i++)
+					{
+						if (i == ChunkGen::WATER_HEIGHT - 1)
+							faceToRender[4] = true;
+						else
+							faceToRender[4] = false;
+
+						AddNewBlock
+						(
+							_vertex,
+							glm::vec3(x + position.x, i, z + position.z),
+							5,
+							faceToRender
+						);
+					}
+				}
 			}
 		}
 	}
 
+	GenerateTree();
+	PrepareRender();
+}
+
+void Chunk::GenerateTree() 
+{
 	//Tree position
-	int xPos = Random::Instance()->FastRand() % ChunkSize::WIDTH;
-	int zPos = Random::Instance()->FastRand() % ChunkSize::DEPTH;
+	int xPos = Random::Instance()->FastRand() % ChunkGen::WIDTH;
+	int zPos = Random::Instance()->FastRand() % ChunkGen::DEPTH;
 	xPos += cornerPosition.x;
 	zPos += cornerPosition.z;
 
 	int positionHeight = (int)GetHeight(xPos, zPos);
-	if (positionHeight > ChunkSize::SAND_HEIGHT)
+	if (positionHeight > ChunkGen::SAND_HEIGHT)
 	{
 		//Generate a tree
 		Tree tree(glm::vec3(xPos, (int)GetHeight(xPos, zPos), zPos));
@@ -183,8 +218,6 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 			AddNewBlock(_vertex, treeBlock[i].GetPosition(), treeBlock[i].GetTextureID(), treeFace);
 		}
 	}
-
-	PrepareRender();
 }
 
 void Chunk::PrepareRender() 

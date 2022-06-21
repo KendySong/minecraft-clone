@@ -14,13 +14,14 @@
 #include "Tree.h"
 
 #pragma once
-namespace ChunkSize
+namespace ChunkGen
 {
 	const unsigned int WIDTH = 16;
 	const unsigned int HEIGHT = 40;
 	const unsigned int DEPTH = 16;
 
-	const unsigned int SAND_HEIGHT = 4;
+	const unsigned int SAND_HEIGHT = 5;
+	const unsigned int WATER_HEIGHT = 4;
 }
 
 class Chunk 
@@ -52,6 +53,8 @@ public :
 	float GetHeight(float x, float z);
 
 	Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor);
+
+	void GenerateTree();
 
 	void AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender);
 

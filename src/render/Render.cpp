@@ -35,6 +35,7 @@ void Render::LoadTextures(int shaderID)
 
 	Texture wood ("textures/wood.png",  3);
 	Texture leaf ("textures/leaf.png",  4);
+	Texture water("textures/water.png", 5);
 
 	grass.AssignSlot();
 	dirt.AssignSlot();
@@ -42,10 +43,11 @@ void Render::LoadTextures(int shaderID)
 
 	wood.AssignSlot();
 	leaf.AssignSlot();
+	water.AssignSlot();
 
 	int samplerLoc = glGetUniformLocation(shaderID, "textureSampler");
-	int texturesID[] = { 0, 1, 2, 3, 4};
-	glUniform1iv(samplerLoc, 5, texturesID);
+	int texturesID[] = { 0, 1, 2, 3, 4, 5};
+	glUniform1iv(samplerLoc, 6, texturesID);
 }
 
 void Render::Load(GLFWwindow* window, glm::vec2 windowSize) 
@@ -91,7 +93,7 @@ void Render::RenderFrame()
 		glBindVertexArray(_world.displayChunks[i].GetVao());
 		glDrawArrays(GL_TRIANGLES, 0, _world.displayChunks[i].verticesDraw);
 	}
-	_gui->DisplayRenderData(_world.renderDistance);
+	_gui->DisplayRenderData(_world.renderDistance, _shader->GetProgram());
 	_gui->ManageCamera(_camera);
 	_gui->DisplayWorldData(_world.displayChunks.size());
 	_gui->Render();

@@ -11,6 +11,7 @@ Gui::Gui(GLFWwindow* window)
 	_wireframe = false;
 	_faceCulling = true;
 
+	//Opengl and Gpu data
 	const GLubyte* gpuName = glGetString(GL_RENDERER);
 	const GLubyte* versionName = glGetString(GL_VERSION);
 	for (size_t i = 0; i < 40; i++)
@@ -18,6 +19,8 @@ Gui::Gui(GLFWwindow* window)
 		gpu += gpuName[i];
 		version += versionName[i];
 	}
+
+	
 }
 
 void Gui::CreateFrame() 
@@ -27,7 +30,7 @@ void Gui::CreateFrame()
 	ImGui::NewFrame();
 }
 
-void Gui::DisplayRenderData(float& renderDistance)
+void Gui::DisplayRenderData(float& renderDistance, unsigned int shaderID)
 {
 	_fps++;
 	ImGui::Begin("Render");
@@ -47,6 +50,24 @@ void Gui::DisplayRenderData(float& renderDistance)
 	//Render distance
 	ImGui::SliderFloat("Render distance", &renderDistance, 10, 1000);
 
+	//Light
+	const char* lightTypes[] = { "Fake", "Diffuse" };
+	static const char* currentLight = lightTypes[0];
+
+	if (ImGui::BeginCombo("Light", currentLight))
+	{
+		for (int i = 0; i < std::size(lightTypes); i++)
+		{
+			bool isSelected = (currentLight == lightTypes[i]);
+			if (ImGui::Selectable(lightTypes[i], isSelected))
+				currentLight = lightTypes[i];
+		
+			if (isSelected)
+				ImGui::SetItemDefaultFocus();  		
+		}
+		ImGui::EndCombo();
+	}
+
 	//Render mode
 	ImGui::Checkbox("Wireframe Render", &_wireframe);
 	ImGui::Checkbox("Face culling", &_faceCulling);
@@ -62,6 +83,12 @@ void Gui::DisplayRenderData(float& renderDistance)
 			glEnable(GL_CULL_FACE);
 		else
 			glDisable(GL_CULL_FACE);
+
+		int lightModeLocation = glGetUniformLocation(shaderID, "diffuseLight");
+		if (currentLight == "Diffuse")		
+			glUniform1i(lightModeLocation, true);		
+		else
+			glUniform1i(lightModeLocation, false);
 	}
 
 	ImGui::End();

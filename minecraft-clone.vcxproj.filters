@@ -102,11 +102,11 @@
     <ClCompile Include="src\world\Tree.cpp">
       <Filter>Fichiers sources\World</Filter>
     </ClCompile>
-    <ClCompile Include="src\world\Block.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="src\application\Random.cpp">
       <Filter>Fichiers sources\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\Block.cpp">
+      <Filter>Fichiers sources\World</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

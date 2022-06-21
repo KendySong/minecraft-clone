@@ -65,7 +65,7 @@ void World::ManageChunks(const glm::vec3& playerPosition)
 		if (!borderMapChunk[i].north)
 		{
 			glm::vec3 northChunkPosition = borderMapChunk[i].cornerPosition;
-			northChunkPosition.z -= ChunkSize::DEPTH;
+			northChunkPosition.z -= ChunkGen::DEPTH;
 			if (GetDistanceChunkPlayer(playerPosition, northChunkPosition) < renderDistance && std::find(chunksPositions.begin(), chunksPositions.end(), northChunkPosition) == chunksPositions.end())
 			{
 				bool neighbor[] = { false, true, false, false };
@@ -81,7 +81,7 @@ void World::ManageChunks(const glm::vec3& playerPosition)
 		if (!borderMapChunk[i].south)
 		{
 			glm::vec3 southChunkPosition = borderMapChunk[i].cornerPosition;
-			southChunkPosition.z += ChunkSize::DEPTH;
+			southChunkPosition.z += ChunkGen::DEPTH;
 			if (GetDistanceChunkPlayer(playerPosition, southChunkPosition) < renderDistance && std::find(chunksPositions.begin(), chunksPositions.end(), southChunkPosition) == chunksPositions.end())
 			{
 				bool neighbor[] = { true, false, false, false };
@@ -97,7 +97,7 @@ void World::ManageChunks(const glm::vec3& playerPosition)
 		if (!borderMapChunk[i].east)
 		{
 			glm::vec3 eastChunkPosition = borderMapChunk[i].cornerPosition;
-			eastChunkPosition.x += ChunkSize::WIDTH;
+			eastChunkPosition.x += ChunkGen::WIDTH;
 			if (GetDistanceChunkPlayer(playerPosition, eastChunkPosition) < renderDistance && std::find(chunksPositions.begin(), chunksPositions.end(), eastChunkPosition) == chunksPositions.end())
 			{
 				bool neighbor[] = { false, false, false, true };
@@ -113,7 +113,7 @@ void World::ManageChunks(const glm::vec3& playerPosition)
 		if (!borderMapChunk[i].west)
 		{
 			glm::vec3 westChunkPosition = borderMapChunk[i].cornerPosition;
-			westChunkPosition.x -= ChunkSize::WIDTH;
+			westChunkPosition.x -= ChunkGen::WIDTH;
 			if (GetDistanceChunkPlayer(playerPosition, westChunkPosition) < renderDistance && std::find(chunksPositions.begin(), chunksPositions.end(), westChunkPosition) == chunksPositions.end())
 			{
 				bool neighbor[] = { false, false, true, false };

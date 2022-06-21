@@ -44,7 +44,7 @@ public :
 	/// <summary>
 	/// Manage and display program data
 	/// </summary>
-	void DisplayRenderData(float& renderDistance);
+	void DisplayRenderData(float& renderDistance, unsigned int shaderID);
 
 	void ManageCamera(Camera* camera);
 
