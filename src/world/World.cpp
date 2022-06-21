@@ -3,8 +3,8 @@
 World::World() 
 {
 	renderDistance = 100;
-	srand(time(nullptr));
-	_fastNoise = new FastNoiseLite(rand());
+	Random::Instance()->SetSeed(time(nullptr));
+	_fastNoise = new FastNoiseLite(Random::Instance()->FastRand());
 	_fastNoise->SetNoiseType(FastNoiseLite::NoiseType::NoiseType_OpenSimplex2S);
 	_fastNoise->SetFractalType(FastNoiseLite::FractalType::FractalType_FBm);
 

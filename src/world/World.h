@@ -9,6 +9,7 @@
 #include <FastNoiseLite/FastNoiseLite.h>
 
 #include "Chunk.h"
+#include "../application/Random.h"
 
 #pragma once
 class World

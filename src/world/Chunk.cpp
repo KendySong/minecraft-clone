@@ -19,7 +19,7 @@ float Chunk::GetTextureHeight(bool upBlock, size_t height)
 	if (!upBlock)
 		texID = 0;
 
-	if (height < 4)
+	if (height < ChunkSize::SAND_HEIGHT)
 		texID = 2;
 
 	return texID;	
@@ -164,19 +164,25 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 		}
 	}
 
+	//Tree position
+	int xPos = Random::Instance()->FastRand() % ChunkSize::WIDTH;
+	int zPos = Random::Instance()->FastRand() % ChunkSize::DEPTH;
+	xPos += cornerPosition.x;
+	zPos += cornerPosition.z;
 
-
-	//Generate a tree
-	Tree tree(glm::vec3(midPosition.x, (int)GetHeight(midPosition.x, midPosition.z), midPosition.z));
-	std::vector<Block> treeBlock = tree.GetTreeStruct();
-	bool treeFace[] = { true };
-
-	for (size_t i = 0; i < treeBlock.size(); i++)
+	int positionHeight = (int)GetHeight(xPos, zPos);
+	if (positionHeight > ChunkSize::SAND_HEIGHT)
 	{
-		AddNewBlock(_vertex, treeBlock[i].GetPosition(), treeBlock[i].GetTextureID(), treeFace);
+		//Generate a tree
+		Tree tree(glm::vec3(xPos, (int)GetHeight(xPos, zPos), zPos));
+		std::vector<Block> treeBlock = tree.GetTreeStruct();
+		bool treeFace[] = { true };
+
+		for (size_t i = 0; i < treeBlock.size(); i++)
+		{
+			AddNewBlock(_vertex, treeBlock[i].GetPosition(), treeBlock[i].GetTextureID(), treeFace);
+		}
 	}
-
-
 
 	PrepareRender();
 }

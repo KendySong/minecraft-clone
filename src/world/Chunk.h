@@ -19,6 +19,8 @@ namespace ChunkSize
 	const unsigned int WIDTH = 16;
 	const unsigned int HEIGHT = 40;
 	const unsigned int DEPTH = 16;
+
+	const unsigned int SAND_HEIGHT = 4;
 }
 
 class Chunk 
