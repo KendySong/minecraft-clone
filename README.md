@@ -6,6 +6,8 @@
 ## Description
 Clone of minecraft map with OpenGL 4.5 and C++ 14.
 
+<img src="https://github.com/KendySong/minecraft-clone/blob/main/screenshots/world-2.png"></img>
+
 ## How to take the project
 Install visual studio 2019 or 2022.
 ```git
@@ -17,7 +19,7 @@ Launch sln file
 
 ## Used libraries
 - GLFW
-- GLAD
+- Glad
 - FastNoiseLite
 - glm
 - ImGui
