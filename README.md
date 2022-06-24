@@ -13,7 +13,7 @@ cd minecraft-clone
 start minecraft-clone.sln
 ```
 
-#Keys binds
+## Keys binds
 - WASD        => Camera movement
 - Right click => Camera rotation
 
