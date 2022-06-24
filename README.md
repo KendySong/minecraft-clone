@@ -13,6 +13,10 @@ cd minecraft-clone
 start minecraft-clone.sln
 ```
 
+#Keys binds
+- WASD        => Camera movement
+- Right click => Camera rotation
+
 ## Used libraries
 - GLFW
 - Glad
