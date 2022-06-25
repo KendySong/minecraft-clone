@@ -20,7 +20,17 @@ private :
 
 public :	
 	unsigned int textureID;
+
+	/// <summary>
+	/// Constructor
+	/// </summary>
+	/// <param name="texturePath">Path of the texture file</param>
+	/// <param name="slot">Slot of the texture</param>
 	Texture(const char* texturePath, int slot);
+
+	/// <summary>
+	/// Assign the texture at the slot given in constructor
+	/// </summary>
 	void AssignSlot();
 };
 

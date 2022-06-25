@@ -46,17 +46,52 @@ public :
 	unsigned int verticesDraw;
 	std::vector<glm::vec3> blocks;
 
+	/// <summary>
+	/// Constructor
+	/// </summary>
 	Chunk();
 
+	/// <summary>
+	/// Return texture id depending the height of the block
+	/// </summary>
+	/// <param name="upBlock">If there is a block on the top</param>
+	/// <param name="height">Height of the current block</param>
+	/// <returns>Texture ID</returns>
 	float GetTextureHeight(bool upBlock, size_t height);
 
+	/// <summary>
+	/// Get the height of the map at the position
+	/// </summary>
+	/// <param name="x">Horizontal position</param>
+	/// <param name="z">Depth position</param>
+	/// <returns>Height</returns>
 	float GetHeight(float x, float z);
 
+	/// <summary>
+	/// Constructor
+	/// </summary>
+	/// <param name="position">Position of the chunk (block in the corner)</param>
+	/// <param name="fastNoise">Map generator</param>
+	/// <param name="neighbor">Array of bool that contain existance of neighbor</param>
 	Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor);
 
+	/// <summary>
+	/// Generate tree in the current chunk
+	/// </summary>
 	void GenerateTree();
 
+	/// <summary>
+	/// Add a block in the chunk mesh
+	/// </summary>
+	/// <param name="chunkMesh">Chunk vertices</param>
+	/// <param name="position">Posiion of block</param>
+	/// <param name="textureID">Texture of block for render</param>
+	/// <param name="faceToRender">Direction of faces to render</param>
 	void AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender);
 
+	/// <summary>
+	/// Getter of vao for bind and draw
+	/// </summary>
+	/// <returns>Vao of the chunk</returns>
 	unsigned int GetVao();
 };

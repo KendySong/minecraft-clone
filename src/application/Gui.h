@@ -46,8 +46,16 @@ public :
 	/// </summary>
 	void DisplayRenderData(float& renderDistance, unsigned int shaderID);
 
+	/// <summary>
+	/// Display camera position and speed
+	/// </summary>
+	/// <param name="camera">Camera to display data</param>
 	void ManageCamera(Camera* camera);
 
+	/// <summary>
+	/// Display number of chunks
+	/// </summary>
+	/// <param name="nbChunkRendering">Number of chunks to display</param>
 	void DisplayWorldData(size_t nbChunkRendering);
 
 	/// <summary>

@@ -137,9 +137,6 @@
     <ClInclude Include="src\application\Config.h">
       <Filter>Fichiers d%27en-tête\Application</Filter>
     </ClInclude>
-    <ClInclude Include="src\world\Direction.h">
-      <Filter>Fichiers d%27en-tête\World</Filter>
-    </ClInclude>
     <ClInclude Include="libraries\include\imgui\imconfig.h">
       <Filter>ImGui</Filter>
     </ClInclude>

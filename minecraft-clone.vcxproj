@@ -179,7 +179,6 @@
     <ClInclude Include="src\application\Random.h" />
     <ClInclude Include="src\render\stb_image.h" />
     <ClInclude Include="src\world\Block.h" />
-    <ClInclude Include="src\world\Direction.h" />
     <ClInclude Include="src\world\Chunk.h" />
     <ClInclude Include="src\application\Gui.h" />
     <ClInclude Include="src\application\Config.h" />

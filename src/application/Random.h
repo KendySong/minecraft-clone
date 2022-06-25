@@ -16,7 +16,22 @@ private :
 	Random();
 
 public :
+
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <returns></returns>
 	static Random* Instance();
+
+	/// <summary>
+	/// Generate random number
+	/// </summary>
+	/// <returns>Random number</returns>
 	int FastRand();
+
+	/// <summary>
+	/// Set seed
+	/// </summary>
+	/// <param name="seed">Seed to set</param>
 	void SetSeed(int seed);
 };
