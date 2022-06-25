@@ -1,0 +1,165 @@
+\hypertarget{class_camera}{}\section{Camera Class Reference}
+\label{class_camera}\index{Camera@{Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_camera_a1c40f8c6fe27e69dab22d7b6a6f18b25}{Camera}} (G\+L\+F\+Wwindow $\ast$window, float i\+Width, float i\+Height, float i\+Fov, float i\+Near, float i\+Far, float i\+Sensitivity, float i\+Speed, glm\+::vec3 i\+Position)
+\begin{DoxyCompactList}\small\item\em Constructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_a47c49a30f4859189b08fe7d21bdc2657}{Process\+Movement}} (G\+L\+F\+Wwindow $\ast$window, float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Manage keyboard input for movements \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_a160190b78a1b314c5646b3eb646a48f7}{Process\+Mouse\+Input}} (double x, double y)
+\begin{DoxyCompactList}\small\item\em Process the movements of the camera \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_camera_a04b5db2c530d8630660e8cfb93a4b3b5}{position}}
+\item 
+float \mbox{\hyperlink{class_camera_a5431c8caefafb42a667ca4c801bef07f}{sensitivity}}
+\item 
+float \mbox{\hyperlink{class_camera_a2960f533df18fe6d7d574c316c6d217a}{speed}}
+\item 
+float \mbox{\hyperlink{class_camera_aff7393c9cfbccd7e369091f00008da93}{fov}}
+\item 
+glm\+::mat4 \mbox{\hyperlink{class_camera_add93fedd6b9a6a6e2c784aeda624de83}{view}}
+\item 
+int \mbox{\hyperlink{class_camera_a0640e08466574276525f91826c0691c6}{view\+Location}}
+\item 
+glm\+::mat4 \mbox{\hyperlink{class_camera_a43555a0ae83f9ec696ee257e5fd48cf2}{projection}}
+\item 
+int \mbox{\hyperlink{class_camera_ac36bf5e482e8a82b118e0bcf8f617a5c}{projection\+Location}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Author \+: \href{mailto:kndysong@gmail.com}{\tt kndysong@gmail.\+com} Date \+: 30.\+05.\+2022 Summary \+: \mbox{\hyperlink{class_camera}{Camera}} matrix and manage camera input 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_camera_a1c40f8c6fe27e69dab22d7b6a6f18b25}\label{class_camera_a1c40f8c6fe27e69dab22d7b6a6f18b25}} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{float}]{i\+Width,  }\item[{float}]{i\+Height,  }\item[{float}]{i\+Fov,  }\item[{float}]{i\+Near,  }\item[{float}]{i\+Far,  }\item[{float}]{i\+Sensitivity,  }\item[{float}]{i\+Speed,  }\item[{glm\+::vec3}]{i\+Position }\end{DoxyParamCaption})}
+
+
+
+Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \mbox{\hyperlink{class_window}{Window}} to process the camera\\
+\hline
+{\em i\+Width} & Width of the window\\
+\hline
+{\em i\+Height} & Height of the window\\
+\hline
+{\em i\+Fov} & Fov of the cam\\
+\hline
+{\em i\+Near} & Min distance to render\\
+\hline
+{\em i\+Far} & Max distance to render\\
+\hline
+{\em i\+Sensitivity} & Sensitivity of the mouse for movements\\
+\hline
+{\em i\+Speed} & Speed of the camera\\
+\hline
+{\em i\+Position} & Start position of the camera\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_camera_a160190b78a1b314c5646b3eb646a48f7}\label{class_camera_a160190b78a1b314c5646b3eb646a48f7}} 
+\index{Camera@{Camera}!Process\+Mouse\+Input@{Process\+Mouse\+Input}}
+\index{Process\+Mouse\+Input@{Process\+Mouse\+Input}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{Process\+Mouse\+Input()}{ProcessMouseInput()}}
+{\footnotesize\ttfamily void Camera\+::\+Process\+Mouse\+Input (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
+
+
+
+Process the movements of the camera 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X position of the mouse\\
+\hline
+{\em y} & Y position of the mouse\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_camera_a47c49a30f4859189b08fe7d21bdc2657}\label{class_camera_a47c49a30f4859189b08fe7d21bdc2657}} 
+\index{Camera@{Camera}!Process\+Movement@{Process\+Movement}}
+\index{Process\+Movement@{Process\+Movement}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{Process\+Movement()}{ProcessMovement()}}
+{\footnotesize\ttfamily void Camera\+::\+Process\+Movement (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Manage keyboard input for movements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \mbox{\hyperlink{class_window}{Window}} to manage input\\
+\hline
+{\em delta\+Time} & Manage speed of the camera\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_camera_aff7393c9cfbccd7e369091f00008da93}\label{class_camera_aff7393c9cfbccd7e369091f00008da93}} 
+\index{Camera@{Camera}!fov@{fov}}
+\index{fov@{fov}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{fov}{fov}}
+{\footnotesize\ttfamily float Camera\+::fov}
+
+\mbox{\Hypertarget{class_camera_a04b5db2c530d8630660e8cfb93a4b3b5}\label{class_camera_a04b5db2c530d8630660e8cfb93a4b3b5}} 
+\index{Camera@{Camera}!position@{position}}
+\index{position@{position}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily glm\+::vec3 Camera\+::position}
+
+\mbox{\Hypertarget{class_camera_a43555a0ae83f9ec696ee257e5fd48cf2}\label{class_camera_a43555a0ae83f9ec696ee257e5fd48cf2}} 
+\index{Camera@{Camera}!projection@{projection}}
+\index{projection@{projection}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{projection}{projection}}
+{\footnotesize\ttfamily glm\+::mat4 Camera\+::projection}
+
+\mbox{\Hypertarget{class_camera_ac36bf5e482e8a82b118e0bcf8f617a5c}\label{class_camera_ac36bf5e482e8a82b118e0bcf8f617a5c}} 
+\index{Camera@{Camera}!projection\+Location@{projection\+Location}}
+\index{projection\+Location@{projection\+Location}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{projection\+Location}{projectionLocation}}
+{\footnotesize\ttfamily int Camera\+::projection\+Location}
+
+\mbox{\Hypertarget{class_camera_a5431c8caefafb42a667ca4c801bef07f}\label{class_camera_a5431c8caefafb42a667ca4c801bef07f}} 
+\index{Camera@{Camera}!sensitivity@{sensitivity}}
+\index{sensitivity@{sensitivity}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{sensitivity}{sensitivity}}
+{\footnotesize\ttfamily float Camera\+::sensitivity}
+
+\mbox{\Hypertarget{class_camera_a2960f533df18fe6d7d574c316c6d217a}\label{class_camera_a2960f533df18fe6d7d574c316c6d217a}} 
+\index{Camera@{Camera}!speed@{speed}}
+\index{speed@{speed}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily float Camera\+::speed}
+
+\mbox{\Hypertarget{class_camera_add93fedd6b9a6a6e2c784aeda624de83}\label{class_camera_add93fedd6b9a6a6e2c784aeda624de83}} 
+\index{Camera@{Camera}!view@{view}}
+\index{view@{view}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{view}{view}}
+{\footnotesize\ttfamily glm\+::mat4 Camera\+::view}
+
+\mbox{\Hypertarget{class_camera_a0640e08466574276525f91826c0691c6}\label{class_camera_a0640e08466574276525f91826c0691c6}} 
+\index{Camera@{Camera}!view\+Location@{view\+Location}}
+\index{view\+Location@{view\+Location}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{view\+Location}{viewLocation}}
+{\footnotesize\ttfamily int Camera\+::view\+Location}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kndys/\+Desktop/minecraft-\/clone/src/render/\mbox{\hyperlink{_camera_8h}{Camera.\+h}}\item 
+C\+:/\+Users/kndys/\+Desktop/minecraft-\/clone/src/render/\mbox{\hyperlink{_camera_8cpp}{Camera.\+cpp}}\end{DoxyCompactItemize}

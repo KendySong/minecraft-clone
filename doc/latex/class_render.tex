@@ -1,0 +1,110 @@
+\hypertarget{class_render}{}\section{Render Class Reference}
+\label{class_render}\index{Render@{Render}}
+
+
+{\ttfamily \#include $<$Render.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_render_a8610cc11739ef679b5935dd819021351}{Render}} ()
+\begin{DoxyCompactList}\small\item\em Constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_camera}{Camera}} $\ast$ \mbox{\hyperlink{class_render_a268e4233d982f174d821501251f2a1ca}{Get\+Camera}} ()
+\begin{DoxyCompactList}\small\item\em Getter of camera \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_a96d8044246a4536a9957cde6ffadb3c2}{Load\+Shader}} ()
+\item 
+void \mbox{\hyperlink{class_render_a7dc9ef9e079633a398019cfe85a57f5e}{Load\+Textures}} (int shader\+ID)
+\item 
+void \mbox{\hyperlink{class_render_a2752c2703565f6453865bda106aca415}{Load}} (G\+L\+F\+Wwindow $\ast$window, glm\+::vec2 window\+Size)
+\begin{DoxyCompactList}\small\item\em Load opengl for the current glfw window \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_ac89a109349d00f88fc3405c3ac82ee52}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Update for next frame \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_ad1297c066156b76188c2285b40fed537}{Render\+Frame}} ()
+\begin{DoxyCompactList}\small\item\em Make the render for the next frame \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Author \+: \href{mailto:kndysong@gmail.com}{\tt kndysong@gmail.\+com} Date \+: 30.\+05.\+2022 Summary \+: \mbox{\hyperlink{class_render}{Render}} the world and manage camera 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_render_a8610cc11739ef679b5935dd819021351}\label{class_render_a8610cc11739ef679b5935dd819021351}} 
+\index{Render@{Render}!Render@{Render}}
+\index{Render@{Render}!Render@{Render}}
+\subsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily Render\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_render_a268e4233d982f174d821501251f2a1ca}\label{class_render_a268e4233d982f174d821501251f2a1ca}} 
+\index{Render@{Render}!Get\+Camera@{Get\+Camera}}
+\index{Get\+Camera@{Get\+Camera}!Render@{Render}}
+\subsubsection{\texorpdfstring{Get\+Camera()}{GetCamera()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_camera}{Camera}} $\ast$ Render\+::\+Get\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter of camera 
+
+\begin{DoxyReturn}{Returns}
+Pointer to camera
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_render_a2752c2703565f6453865bda106aca415}\label{class_render_a2752c2703565f6453865bda106aca415}} 
+\index{Render@{Render}!Load@{Load}}
+\index{Load@{Load}!Render@{Render}}
+\subsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily void Render\+::\+Load (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{glm\+::vec2}]{window\+Size }\end{DoxyParamCaption})}
+
+
+
+Load opengl for the current glfw window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \mbox{\hyperlink{class_window}{Window}} to load opengl in\\
+\hline
+{\em window\+Size} & Size of the window\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_render_a96d8044246a4536a9957cde6ffadb3c2}\label{class_render_a96d8044246a4536a9957cde6ffadb3c2}} 
+\index{Render@{Render}!Load\+Shader@{Load\+Shader}}
+\index{Load\+Shader@{Load\+Shader}!Render@{Render}}
+\subsubsection{\texorpdfstring{Load\+Shader()}{LoadShader()}}
+{\footnotesize\ttfamily void Render\+::\+Load\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_render_a7dc9ef9e079633a398019cfe85a57f5e}\label{class_render_a7dc9ef9e079633a398019cfe85a57f5e}} 
+\index{Render@{Render}!Load\+Textures@{Load\+Textures}}
+\index{Load\+Textures@{Load\+Textures}!Render@{Render}}
+\subsubsection{\texorpdfstring{Load\+Textures()}{LoadTextures()}}
+{\footnotesize\ttfamily void Render\+::\+Load\+Textures (\begin{DoxyParamCaption}\item[{int}]{shader\+ID }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_render_ad1297c066156b76188c2285b40fed537}\label{class_render_ad1297c066156b76188c2285b40fed537}} 
+\index{Render@{Render}!Render\+Frame@{Render\+Frame}}
+\index{Render\+Frame@{Render\+Frame}!Render@{Render}}
+\subsubsection{\texorpdfstring{Render\+Frame()}{RenderFrame()}}
+{\footnotesize\ttfamily void Render\+::\+Render\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Make the render for the next frame 
+
+\mbox{\Hypertarget{class_render_ac89a109349d00f88fc3405c3ac82ee52}\label{class_render_ac89a109349d00f88fc3405c3ac82ee52}} 
+\index{Render@{Render}!Update@{Update}}
+\index{Update@{Update}!Render@{Render}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Render\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Update for next frame 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kndys/\+Desktop/minecraft-\/clone/src/render/\mbox{\hyperlink{_render_8h}{Render.\+h}}\item 
+C\+:/\+Users/kndys/\+Desktop/minecraft-\/clone/src/render/\mbox{\hyperlink{_render_8cpp}{Render.\+cpp}}\end{DoxyCompactItemize}

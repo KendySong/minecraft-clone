@@ -1,0 +1,111 @@
+\hypertarget{class_gui}{}\section{Gui Class Reference}
+\label{class_gui}\index{Gui@{Gui}}
+
+
+{\ttfamily \#include $<$Gui.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gui_abd0b1cbb88cee15fb7f1ef3ae5fd8fad}{Gui}} (G\+L\+F\+Wwindow $\ast$window)
+\begin{DoxyCompactList}\small\item\em Constructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_a4adb127cac9b23b712d30bed6e127421}{Create\+Frame}} ()
+\begin{DoxyCompactList}\small\item\em Create new frame for gui \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_ab8755893515e2f7354e88359a3ac90be}{Display\+Render\+Data}} (float \&render\+Distance, unsigned int shader\+ID)
+\begin{DoxyCompactList}\small\item\em Manage and display program data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_ac8c1da0d97fd585190830538a6ea432c}{Manage\+Camera}} (\mbox{\hyperlink{class_camera}{Camera}} $\ast$camera)
+\begin{DoxyCompactList}\small\item\em Display camera position and speed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_a31585d980883836e9139018d348508c7}{Display\+World\+Data}} (size\+\_\+t nb\+Chunk\+Rendering)
+\begin{DoxyCompactList}\small\item\em Display number of chunks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gui_ae0afe0b27557be9d9e747e7fa1b3cd86}{Render}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_render}{Render}} of gui window \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Author \+: \href{mailto:kndysong@gmail.com}{\tt kndysong@gmail.\+com} Date \+: 30.\+05.\+2022 Summary \+: Display gui 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gui_abd0b1cbb88cee15fb7f1ef3ae5fd8fad}\label{class_gui_abd0b1cbb88cee15fb7f1ef3ae5fd8fad}} 
+\index{Gui@{Gui}!Gui@{Gui}}
+\index{Gui@{Gui}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{Gui()}{Gui()}}
+{\footnotesize\ttfamily Gui\+::\+Gui (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window }\end{DoxyParamCaption})}
+
+
+
+Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \mbox{\hyperlink{class_window}{Window}} to display gui\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gui_a4adb127cac9b23b712d30bed6e127421}\label{class_gui_a4adb127cac9b23b712d30bed6e127421}} 
+\index{Gui@{Gui}!Create\+Frame@{Create\+Frame}}
+\index{Create\+Frame@{Create\+Frame}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{Create\+Frame()}{CreateFrame()}}
+{\footnotesize\ttfamily void Gui\+::\+Create\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create new frame for gui 
+
+\mbox{\Hypertarget{class_gui_ab8755893515e2f7354e88359a3ac90be}\label{class_gui_ab8755893515e2f7354e88359a3ac90be}} 
+\index{Gui@{Gui}!Display\+Render\+Data@{Display\+Render\+Data}}
+\index{Display\+Render\+Data@{Display\+Render\+Data}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{Display\+Render\+Data()}{DisplayRenderData()}}
+{\footnotesize\ttfamily void Gui\+::\+Display\+Render\+Data (\begin{DoxyParamCaption}\item[{float \&}]{render\+Distance,  }\item[{unsigned int}]{shader\+ID }\end{DoxyParamCaption})}
+
+
+
+Manage and display program data 
+
+\mbox{\Hypertarget{class_gui_a31585d980883836e9139018d348508c7}\label{class_gui_a31585d980883836e9139018d348508c7}} 
+\index{Gui@{Gui}!Display\+World\+Data@{Display\+World\+Data}}
+\index{Display\+World\+Data@{Display\+World\+Data}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{Display\+World\+Data()}{DisplayWorldData()}}
+{\footnotesize\ttfamily void Gui\+::\+Display\+World\+Data (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nb\+Chunk\+Rendering }\end{DoxyParamCaption})}
+
+
+
+Display number of chunks 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nb\+Chunk\+Rendering} & Number of chunks to display\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gui_ac8c1da0d97fd585190830538a6ea432c}\label{class_gui_ac8c1da0d97fd585190830538a6ea432c}} 
+\index{Gui@{Gui}!Manage\+Camera@{Manage\+Camera}}
+\index{Manage\+Camera@{Manage\+Camera}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{Manage\+Camera()}{ManageCamera()}}
+{\footnotesize\ttfamily void Gui\+::\+Manage\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_camera}{Camera}} $\ast$}]{camera }\end{DoxyParamCaption})}
+
+
+
+Display camera position and speed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & \mbox{\hyperlink{class_camera}{Camera}} to display data\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gui_ae0afe0b27557be9d9e747e7fa1b3cd86}\label{class_gui_ae0afe0b27557be9d9e747e7fa1b3cd86}} 
+\index{Gui@{Gui}!Render@{Render}}
+\index{Render@{Render}!Gui@{Gui}}
+\subsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Gui\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_render}{Render}} of gui window 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kndys/\+Desktop/minecraft-\/clone/src/application/\mbox{\hyperlink{_gui_8h}{Gui.\+h}}\item 
+C\+:/\+Users/kndys/\+Desktop/minecraft-\/clone/src/application/\mbox{\hyperlink{_gui_8cpp}{Gui.\+cpp}}\end{DoxyCompactItemize}
