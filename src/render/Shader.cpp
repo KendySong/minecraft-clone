@@ -71,7 +71,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 	glDeleteShader(_fragment);
 }
 
-unsigned int Shader::GetProgram() 
+unsigned int Shader::GetProgram() const noexcept
 {
 	return _program;
 }

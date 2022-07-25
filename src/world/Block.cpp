@@ -1,6 +1,6 @@
 #include "Block.h"
 
-Block::Block(glm::vec3 position, float textureID)
+Block::Block(const glm::vec3& position, float textureID)
 {
 	_position = position;
 	_textureID = textureID;

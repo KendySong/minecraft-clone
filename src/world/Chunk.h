@@ -73,7 +73,7 @@ public :
 	/// <param name="position">Position of the chunk (block in the corner)</param>
 	/// <param name="fastNoise">Map generator</param>
 	/// <param name="neighbor">Array of bool that contain existance of neighbor</param>
-	Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor);
+	Chunk(const glm::vec3& position, FastNoiseLite* fastNoise, bool* neighbor);
 
 	/// <summary>
 	/// Generate tree in the current chunk
@@ -87,7 +87,7 @@ public :
 	/// <param name="position">Posiion of block</param>
 	/// <param name="textureID">Texture of block for render</param>
 	/// <param name="faceToRender">Direction of faces to render</param>
-	void AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender);
+	void AddNewBlock(std::vector<float>& chunkMesh, const glm::vec3& position, float textureID, bool* faceToRender);
 
 	/// <summary>
 	/// Getter of vao for bind and draw

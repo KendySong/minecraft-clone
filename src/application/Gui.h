@@ -19,9 +19,9 @@ class Gui
 {
 	//Attributes and properties
 private :
-	std::string gpu;
-	std::string version;
-	std::string chunkRender;
+	std::string _gpuName;
+	std::string _versionName;
+	std::string _nbChunkRender;
 
 	Timer _timer;
 	std::string _framerate;
@@ -39,7 +39,7 @@ public :
 	/// <summary>
 	/// Create new frame for gui
 	/// </summary>
-	void CreateFrame();
+	void CreateFrame() const;
 
 	/// <summary>
 	/// Manage and display program data
@@ -50,7 +50,7 @@ public :
 	/// Display camera position and speed
 	/// </summary>
 	/// <param name="camera">Camera to display data</param>
-	void ManageCamera(Camera* camera);
+	void ManageCamera(Camera* camera) const;
 
 	/// <summary>
 	/// Display number of chunks
@@ -61,5 +61,5 @@ public :
 	/// <summary>
 	/// Render of gui window
 	/// </summary>
-	void Render();	
+	void Render() const;	
 };

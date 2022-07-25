@@ -8,30 +8,33 @@
 class Random
 {
 private :
-	
+	static Random* _random;
+
 	int _seed;
 	bool _isSeedSet;
 
-	static Random* _random;
+	/// <summary>
+	/// Constructor
+	/// </summary>
 	Random();
 
 public :
 
 	/// <summary>
-	/// 
+	/// Getter of instance of the class
 	/// </summary>
-	/// <returns></returns>
-	static Random* Instance();
+	/// <returns>Pointer to the instance</returns>
+	static Random* GetInstance();
 
 	/// <summary>
 	/// Generate random number
 	/// </summary>
 	/// <returns>Random number</returns>
-	int FastRand();
+	int FastRand() noexcept;
 
 	/// <summary>
 	/// Set seed
 	/// </summary>
 	/// <param name="seed">Seed to set</param>
-	void SetSeed(int seed);
+	void SetSeed(int seed) noexcept;
 };

@@ -18,26 +18,26 @@ public:
 	/// <summary>
 	/// Constructor
 	/// </summary>
-	Timer();
+	Timer() noexcept;
 
 	/// <summary>
 	/// Start the timer
 	/// </summary>
-	void Start();
+	void Start() noexcept;
 
 	/// <summary>
 	/// Restart the timer
 	/// </summary>
-	void Restart();
+	void Restart() noexcept;
 
 	/// <summary>
 	/// Stop the timer
 	/// </summary>
-	void Stop();
+	void Stop() noexcept;
 
 	/// <summary>
 	/// Give elapsed time between start and stop
 	/// </summary>
 	/// <returns>Elapsed time</returns>
-	double GetElapsedTime();
+	double GetElapsedTime() noexcept;
 };

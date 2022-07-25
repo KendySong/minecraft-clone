@@ -26,7 +26,7 @@ Texture::Texture(const char* texturePath, int slot)
 	stbi_image_free(pixels);
 }
 
-void Texture::AssignSlot() 
+void Texture::AssignSlot() const noexcept
 {	
 	glActiveTexture(GL_TEXTURE0 + _slot);
 	glBindTexture(GL_TEXTURE_2D, textureID);

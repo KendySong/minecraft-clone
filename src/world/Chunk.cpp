@@ -34,7 +34,7 @@ float Chunk::GetHeight(float x, float z)
 	return height;
 }
 
-Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
+Chunk::Chunk(const glm::vec3& position, FastNoiseLite* fastNoise, bool* neighbor)
 {
 	north = neighbor[0];
 	south = neighbor[1];
@@ -200,8 +200,8 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 void Chunk::GenerateTree() 
 {
 	//Tree position
-	int xPos = Random::Instance()->FastRand() % ChunkGen::WIDTH;
-	int zPos = Random::Instance()->FastRand() % ChunkGen::DEPTH;
+	int xPos = Random::GetInstance()->FastRand() % ChunkGen::WIDTH;
+	int zPos = Random::GetInstance()->FastRand() % ChunkGen::DEPTH;
 	xPos += cornerPosition.x;
 	zPos += cornerPosition.z;
 
@@ -245,7 +245,7 @@ void Chunk::PrepareRender()
 	_vertex.clear();
 }
 
-void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender)
+void Chunk::AddNewBlock(std::vector<float>& chunkMesh, const glm::vec3& position, float textureID, bool* faceToRender)
 {
 	//Front
 	if (faceToRender[0])

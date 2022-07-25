@@ -1,10 +1,5 @@
 #include "Render.h"
 
-Render::Render() 
-{
-	
-}
-
 Camera* Render::GetCamera() 
 {
 	return _camera;
@@ -52,7 +47,7 @@ void Render::LoadTextures(int shaderID)
 
 void Render::Load(GLFWwindow* window, glm::vec2 windowSize) 
 {
-	_window = window;
+	_glfwWindow = window;
 	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 	glViewport(0, 0, (GLsizei)windowSize.x, (GLsizei)windowSize.y);
 	glEnable(GL_DEPTH_TEST);
@@ -75,7 +70,7 @@ void Render::Load(GLFWwindow* window, glm::vec2 windowSize)
 void Render::Update() 
 {
 	//Manage camera
-	_camera->ProcessMovement(_window, _deltaTimeTimer.GetElapsedTime());
+	_camera->ProcessMovement(_glfwWindow, _deltaTimeTimer.GetElapsedTime());
 	glUniformMatrix4fv(_camera->viewLocation, 1, false, glm::value_ptr(_camera->view));
 	_deltaTimeTimer.Restart();
 

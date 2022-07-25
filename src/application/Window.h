@@ -16,11 +16,10 @@ private :
 	unsigned int _height;
 
 	Gui* _gui;
-	GLFWwindow* _window;
+	GLFWwindow* _glfwWindow;
 	Render _render;
 	
 public :
-
 	/// <summary>
 	/// Constructor
 	/// </summary>

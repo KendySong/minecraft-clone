@@ -19,9 +19,6 @@
     <Filter Include="Fichiers sources\Render">
       <UniqueIdentifier>{106ea4b3-d876-4297-be77-390c6e5b3fac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\World">
-      <UniqueIdentifier>{08c84790-0bbd-46e2-adba-972bdf9265b7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers sources\Application">
       <UniqueIdentifier>{45216313-8b1e-423e-a67f-73360a124b30}</UniqueIdentifier>
     </Filter>
@@ -36,6 +33,9 @@
     </Filter>
     <Filter Include="ImGui">
       <UniqueIdentifier>{762eaedb-3ee3-488b-8190-5f592360af91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\World">
+      <UniqueIdentifier>{08c84790-0bbd-46e2-adba-972bdf9265b7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -53,9 +53,6 @@
     </ClCompile>
     <ClCompile Include="src\render\Shader.cpp">
       <Filter>Fichiers sources\Render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\world\World.cpp">
-      <Filter>Fichiers sources\World</Filter>
     </ClCompile>
     <ClCompile Include="src\application\Timer.cpp">
       <Filter>Fichiers sources\Application</Filter>
@@ -106,6 +103,9 @@
       <Filter>Fichiers sources\Application</Filter>
     </ClCompile>
     <ClCompile Include="src\world\Block.cpp">
+      <Filter>Fichiers sources\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\World.cpp">
       <Filter>Fichiers sources\World</Filter>
     </ClCompile>
   </ItemGroup>

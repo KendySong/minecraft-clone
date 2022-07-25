@@ -16,14 +16,14 @@ Gui::Gui(GLFWwindow* window)
 	const GLubyte* versionName = glGetString(GL_VERSION);
 	for (size_t i = 0; i < 40; i++)
 	{
-		gpu += gpuName[i];
-		version += versionName[i];
+		_gpuName += gpuName[i];
+		_versionName += versionName[i];
 	}
 
 	
 }
 
-void Gui::CreateFrame() 
+void Gui::CreateFrame() const
 {
 	ImGui_ImplOpenGL3_NewFrame();
 	ImGui_ImplGlfw_NewFrame();
@@ -35,8 +35,8 @@ void Gui::DisplayRenderData(float& renderDistance, unsigned int shaderID)
 	_fps++;
 	ImGui::Begin("Render");
 
-	ImGui::Text(gpu.c_str());
-	ImGui::Text(version.c_str());
+	ImGui::Text(_gpuName.c_str());
+	ImGui::Text(_versionName.c_str());
 
 	//FPS
 	if (_timer.GetElapsedTime() > 1)
@@ -94,7 +94,7 @@ void Gui::DisplayRenderData(float& renderDistance, unsigned int shaderID)
 	ImGui::End();
 }
 
-void Gui::ManageCamera(Camera* camera) 
+void Gui::ManageCamera(Camera* camera) const
 {
 	ImGui::Begin("Camera");
 	float cameraPos[]{ camera->position.x, camera->position.y ,camera->position.z };
@@ -106,12 +106,12 @@ void Gui::ManageCamera(Camera* camera)
 void Gui::DisplayWorldData(size_t nbChunkRendering)
 {
 	ImGui::Begin("World");
-	chunkRender = "Number of chunks in render " + std::to_string(nbChunkRendering);
-	ImGui::Text(chunkRender.c_str());
+	_nbChunkRender = "Number of chunks in render " + std::to_string(nbChunkRendering);
+	ImGui::Text(_nbChunkRender.c_str());
 	ImGui::End();
 }
 
-void Gui::Render() 
+void Gui::Render() const
 {
 	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

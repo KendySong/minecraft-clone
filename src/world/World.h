@@ -48,5 +48,5 @@ public :
 	/// <param name="playerPosition">Position of the player</param>
 	/// <param name="chunkPosition">Position of the chunk</param>
 	/// <returns>Approximative distance</returns>
-	float GetDistanceChunkPlayer(glm::vec3 playerPosition, glm::vec3 chunkPosition);
+	float GetDistanceChunkPlayer(const glm::vec3& playerPosition, const glm::vec3& chunkPosition);
 };

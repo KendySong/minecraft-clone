@@ -31,6 +31,6 @@ public :
 	/// <summary>
 	/// Assign the texture at the slot given in constructor
 	/// </summary>
-	void AssignSlot();
+	void AssignSlot() const noexcept;
 };
 

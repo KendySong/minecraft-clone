@@ -14,7 +14,7 @@ class Render
 {
 private :
 	Timer _deltaTimeTimer;
-	GLFWwindow* _window;
+	GLFWwindow* _glfwWindow;
 
 	Gui* _gui;
 
@@ -26,7 +26,7 @@ public:
 	/// <summary>
 	/// Constructor
 	/// </summary>
-	Render();
+	Render() = default;
 
 	/// <summary>
 	/// Getter of camera
@@ -43,7 +43,7 @@ public:
 	/// </summary>
 	/// <param name="window">Window to load opengl in</param>
 	/// <param name="windowSize">Size of the window</param>
-	void Load(GLFWwindow* window, glm::vec2 windowSize);
+	void Load(GLFWwindow* glfwWindow, glm::vec2 windowSize);
 
 	/// <summary>
 	/// Update for next frame

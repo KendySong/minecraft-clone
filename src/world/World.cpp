@@ -3,8 +3,8 @@
 World::World() 
 {
 	renderDistance = 100;
-	Random::Instance()->SetSeed(time(nullptr));
-	_fastNoise = new FastNoiseLite(Random::Instance()->FastRand());
+	Random::GetInstance()->SetSeed(time(nullptr));
+	_fastNoise = new FastNoiseLite(Random::GetInstance()->FastRand());
 	_fastNoise->SetNoiseType(FastNoiseLite::NoiseType::NoiseType_OpenSimplex2S);
 	_fastNoise->SetFractalType(FastNoiseLite::FractalType::FractalType_FBm);
 
@@ -128,7 +128,7 @@ void World::ManageChunks(const glm::vec3& playerPosition)
 	}
 }
 
-float World::GetDistanceChunkPlayer(glm::vec3 playerPosition, glm::vec3 chunkPosition)
+float World::GetDistanceChunkPlayer(const glm::vec3& playerPosition, const glm::vec3& chunkPosition)
 {
 	//Approximated distance for heigher performance
 	return std::abs(playerPosition.x - chunkPosition.x) + std::abs(playerPosition.z - chunkPosition.z);

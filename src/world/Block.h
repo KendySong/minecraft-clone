@@ -18,7 +18,7 @@ public :
 	/// </summary>
 	/// <param name="position">Position of the tree block</param>
 	/// <param name="textureID">Texture of the block</param>
-	Block(glm::vec3 position, float textureID);
+	Block(const glm::vec3& position, float textureID);
 
 	/// <summary>
 	/// Getter of the block position

@@ -8,14 +8,14 @@ Random::Random()
 	_isSeedSet = false;
 }
 
-Random* Random::Instance() 
+Random* Random::GetInstance() 
 {
 	if (_random == nullptr)
 		_random = new Random();
 	return _random;
 }
 
-int Random::FastRand() 
+int Random::FastRand() noexcept
 {
 	if (_seed == -1 || !_isSeedSet)
 	{
@@ -27,7 +27,7 @@ int Random::FastRand()
 	return (_seed >> 16) & 0x7FFF;
 }
 
-void Random::SetSeed(int seed) 
+void Random::SetSeed(int seed) noexcept
 {
 	_seed = seed;
 	_isSeedSet = true;
