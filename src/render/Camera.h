@@ -60,7 +60,7 @@ public:
 	/// <param name="iSensitivity">Sensitivity of the mouse for movements</param>
 	/// <param name="iSpeed">Speed of the camera</param>
 	/// <param name="iPosition">Start position of the camera</param>
-	Camera(GLFWwindow* window, float iWidth, float iHeight, float iFov, float iNear, float iFar, float iSensitivity, float iSpeed, glm::vec3 iPosition);
+	Camera(GLFWwindow* window, float iWidth, float iHeight, float iFov, float iNear, float iFar, float iSensitivity, float iSpeed, const glm::vec3& iPosition);
 
 	/// <summary>
 	/// Manage keyboard input for movements

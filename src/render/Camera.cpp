@@ -3,7 +3,7 @@
 Camera* sub_camera;
 void mouse_callback(GLFWwindow* window, double x, double y);
 
-Camera::Camera(GLFWwindow* window, float iWidth, float iHeight, float iFov, float iNear, float iFar, float iSensitivity, float iSpeed, glm::vec3 iPosition)
+Camera::Camera(GLFWwindow* window, float iWidth, float iHeight, float iFov, float iNear, float iFar, float iSensitivity, float iSpeed, const glm::vec3& iPosition)
 {	
 	_width = iWidth;
 	_height = iHeight;
