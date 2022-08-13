@@ -8,7 +8,9 @@ Texture::Texture(const char* texturePath, int slot)
 	uint8_t* pixels = stbi_load(texturePath, &_width, &_height, &_channel, 0);
 
 	if (pixels == NULL)
+	{
 		std::cout << "[ERROR] " << texturePath << " not found\n";
+	}
 
 	glGenTextures(1, &textureID);
 	glBindTexture(GL_TEXTURE_2D, textureID);
@@ -26,7 +28,7 @@ Texture::Texture(const char* texturePath, int slot)
 	stbi_image_free(pixels);
 }
 
-void Texture::AssignSlot() 
+void Texture::AssignSlot() const
 {	
 	glActiveTexture(GL_TEXTURE0 + _slot);
 	glBindTexture(GL_TEXTURE_2D, textureID);
