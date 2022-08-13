@@ -18,9 +18,9 @@ void World::Load()
 	bool firstChunkNeighbor[] = {false, false, false, false};
 
 	Chunk firstChunk(glm::vec3(0, 0, 0), _fastNoise, firstChunkNeighbor);
-	displayChunks.push_back(firstChunk);
-	borderMapChunk.push_back(firstChunk);
-	chunksPositions.push_back(firstChunk.cornerPosition);
+	displayChunks.emplace_back(firstChunk);
+	borderMapChunk.emplace_back(firstChunk);
+	chunksPositions.emplace_back(firstChunk.cornerPosition);
 }
 
 void World::ManageChunks(const glm::vec3& playerPosition)
@@ -36,7 +36,7 @@ void World::ManageChunks(const glm::vec3& playerPosition)
 
 		if (distance > renderDistance)
 		{
-			hiddenChunks.push_back(displayChunks[i]);
+			hiddenChunks.emplace_back(displayChunks[i]);
 			displayChunks.erase(displayChunks.begin() + i);
 		}
 	}
@@ -46,7 +46,7 @@ void World::ManageChunks(const glm::vec3& playerPosition)
 	{
 		if (GetDistanceChunkPlayer(playerPosition, hiddenChunks[i].midPosition) < renderDistance)
 		{
-			displayChunks.push_back(hiddenChunks[i]);
+			displayChunks.emplace_back(hiddenChunks[i]);
 			hiddenChunks.erase(hiddenChunks.begin() + i);
 		}
 	}
@@ -71,9 +71,9 @@ void World::ManageChunks(const glm::vec3& playerPosition)
 				bool neighbor[] = { false, true, false, false };
 				Chunk northChunk(northChunkPosition, _fastNoise, neighbor);
 
-				displayChunks.push_back(northChunk);
-				borderMapChunk.push_back(northChunk);
-				chunksPositions.push_back(northChunk.cornerPosition);
+				displayChunks.emplace_back(northChunk);
+				borderMapChunk.emplace_back(northChunk);
+				chunksPositions.emplace_back(northChunk.cornerPosition);
 				borderMapChunk[i].north = true;
 			}
 		}
@@ -87,9 +87,9 @@ void World::ManageChunks(const glm::vec3& playerPosition)
 				bool neighbor[] = { true, false, false, false };
 				Chunk southChunk(southChunkPosition, _fastNoise, neighbor);
 
-				displayChunks.push_back(southChunk);
-				borderMapChunk.push_back(southChunk);
-				chunksPositions.push_back(southChunk.cornerPosition);
+				displayChunks.emplace_back(southChunk);
+				borderMapChunk.emplace_back(southChunk);
+				chunksPositions.emplace_back(southChunk.cornerPosition);
 				borderMapChunk[i].south = true;
 			}
 		}
@@ -103,9 +103,9 @@ void World::ManageChunks(const glm::vec3& playerPosition)
 				bool neighbor[] = { false, false, false, true };
 				Chunk eastChunk(eastChunkPosition, _fastNoise, neighbor);
 
-				displayChunks.push_back(eastChunk);
-				borderMapChunk.push_back(eastChunk);
-				chunksPositions.push_back(eastChunk.cornerPosition);
+				displayChunks.emplace_back(eastChunk);
+				borderMapChunk.emplace_back(eastChunk);
+				chunksPositions.emplace_back(eastChunk.cornerPosition);
 				borderMapChunk[i].east = true;
 			}
 		}
@@ -119,9 +119,9 @@ void World::ManageChunks(const glm::vec3& playerPosition)
 				bool neighbor[] = { false, false, true, false };
 				Chunk westChunk(westChunkPosition, _fastNoise, neighbor);
 
-				displayChunks.push_back(westChunk);
-				borderMapChunk.push_back(westChunk);
-				chunksPositions.push_back(westChunk.cornerPosition);
+				displayChunks.emplace_back(westChunk);
+				borderMapChunk.emplace_back(westChunk);
+				chunksPositions.emplace_back(westChunk.cornerPosition);
 				borderMapChunk[i].west = true;
 			}
 		}					

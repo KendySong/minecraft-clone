@@ -197,7 +197,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 	PrepareRender();
 }
 
-void Chunk::GenerateTree() 
+void Chunk::GenerateTree()
 {
 	//Tree position
 	int xPos = Random::Instance()->FastRand() % ChunkGen::WIDTH;
