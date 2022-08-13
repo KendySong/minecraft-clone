@@ -66,9 +66,6 @@
     <ClCompile Include="src\world\Chunk.cpp">
       <Filter>Fichiers sources\World</Filter>
     </ClCompile>
-    <ClCompile Include="src\application\Config.cpp">
-      <Filter>Fichiers sources\Application</Filter>
-    </ClCompile>
     <ClCompile Include="src\application\Gui.cpp">
       <Filter>Fichiers sources\Application</Filter>
     </ClCompile>
@@ -134,9 +131,6 @@
     <ClInclude Include="src\application\Gui.h">
       <Filter>Fichiers d%27en-tête\Application</Filter>
     </ClInclude>
-    <ClInclude Include="src\application\Config.h">
-      <Filter>Fichiers d%27en-tête\Application</Filter>
-    </ClInclude>
     <ClInclude Include="libraries\include\imgui\imconfig.h">
       <Filter>ImGui</Filter>
     </ClInclude>
@@ -178,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="src\world\Block.h">
       <Filter>Fichiers d%27en-tête\World</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\Settings.h">
+      <Filter>Fichiers d%27en-tête\Application</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

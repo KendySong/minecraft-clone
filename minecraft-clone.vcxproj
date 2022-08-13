@@ -154,7 +154,6 @@
     <ClCompile Include="src\render\stb_image.cpp" />
     <ClCompile Include="src\world\Chunk.cpp" />
     <ClCompile Include="src\application\Gui.cpp" />
-    <ClCompile Include="src\application\Config.cpp" />
     <ClCompile Include="src\application\Timer.cpp" />
     <ClCompile Include="src\render\Camera.cpp" />
     <ClCompile Include="src\render\Render.cpp" />
@@ -176,12 +175,12 @@
     <ClInclude Include="libraries\include\imgui\imstb_rectpack.h" />
     <ClInclude Include="libraries\include\imgui\imstb_textedit.h" />
     <ClInclude Include="libraries\include\imgui\imstb_truetype.h" />
+    <ClInclude Include="src\application\Settings.h" />
     <ClInclude Include="src\application\Random.h" />
     <ClInclude Include="src\render\stb_image.h" />
     <ClInclude Include="src\world\Block.h" />
     <ClInclude Include="src\world\Chunk.h" />
     <ClInclude Include="src\application\Gui.h" />
-    <ClInclude Include="src\application\Config.h" />
     <ClInclude Include="src\application\Timer.h" />
     <ClInclude Include="src\render\Camera.h" />
     <ClInclude Include="src\render\Render.h" />
