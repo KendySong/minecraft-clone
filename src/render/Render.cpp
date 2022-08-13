@@ -1,11 +1,6 @@
 #include "Render.h"
 
-Render::Render() 
-{
-	
-}
-
-Camera* Render::GetCamera() 
+Camera* Render::GetCamera() const noexcept
 {
 	return _camera;
 }
@@ -16,12 +11,11 @@ void Render::LoadShader()
 	_shader = new Shader("shaders/cube.vert", "shaders/cube.frag");
 	glUseProgram(_shader->GetProgram());
 
-	glm::vec3 lightPosition(0, 100, 0);
 	int lightPositionUniform = glGetUniformLocation(_shader->GetProgram(), "lightPosition");
-	glUniform3f(lightPositionUniform, lightPosition.x, lightPosition.y, lightPosition.z);
+	glUniform3f(lightPositionUniform, 0, 100, 0);
 }
 
-void Render::LoadTextures(int shaderID)
+void Render::LoadTextures(int shaderID) const
 {
 	/*
 		1) Instanciate textures with path and slot number

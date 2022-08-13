@@ -26,17 +26,24 @@ public:
 	/// <summary>
 	/// Constructor
 	/// </summary>
-	Render();
+	Render() = default;
 
 	/// <summary>
 	/// Getter of camera
 	/// </summary>
 	/// <returns>Pointer to camera</returns>
-	Camera* GetCamera();
+	Camera* GetCamera() const noexcept;
 
+	/// <summary>
+	/// Load shaders into the program
+	/// </summary>
 	void LoadShader();
 
-	void LoadTextures(int shaderID);	
+	/// <summary>
+	/// Load texture for apply to voxels
+	/// </summary>
+	/// <param name="shaderID"></param>
+	void LoadTextures(int shaderID) const;	
 
 	/// <summary>
 	/// Load opengl for the current glfw window
