@@ -18,17 +18,17 @@ public :
 	/// </summary>
 	/// <param name="position">Position of the tree block</param>
 	/// <param name="textureID">Texture of the block</param>
-	Block(glm::vec3 position, float textureID);
+	Block(const glm::vec3& position, float textureID);
 
 	/// <summary>
 	/// Getter of the block position
 	/// </summary>
 	/// <returns>Block position</returns>
-	glm::vec3 GetPosition();
+	glm::vec3 GetPosition() const noexcept;
 
 	/// <summary>
 	/// Getter of textureID
 	/// </summary>
 	/// <returns>ID of the texture</returns>
-	float GetTextureID();
+	float GetTextureID() const noexcept;
 };

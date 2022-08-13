@@ -1,6 +1,6 @@
 #include "Tree.h"
 
-Tree::Tree(glm::vec3 position)
+Tree::Tree(const glm::vec3& position)
 {
 	/*
 		Texture grass("textures/grass.png", 0);
@@ -16,7 +16,7 @@ Tree::Tree(glm::vec3 position)
 
 	//Wood	
 	for (size_t i = 1; i < woodHeight; i++)	
-		treeStruct.push_back(Block(glm::vec3(position.x, position.y + i, position.z), 3));
+		_treeStruct.push_back(Block(glm::vec3(position.x, position.y + i, position.z), 3));
 	
 	for (size_t x = 0; x < leafSize; x++)
 	{
@@ -26,7 +26,7 @@ Tree::Tree(glm::vec3 position)
 			{
 				if (!(y == leafHeight - 1 && (x == 0 || x == leafSize - 1 || z == 0 || z == leafSize - 1)))
 				{
-					treeStruct.push_back(Block(glm::vec3(position.x + x - leafSize / 2, position.y + woodHeight + y, position.z + z - leafSize / 2), 4));
+					_treeStruct.push_back(Block(glm::vec3(position.x + x - leafSize / 2, position.y + woodHeight + y, position.z + z - leafSize / 2), 4));
 				}		
 			}
 			
@@ -36,5 +36,5 @@ Tree::Tree(glm::vec3 position)
 
 std::vector<Block>& Tree::GetTreeStruct()
 {
-	return treeStruct;
+	return _treeStruct;
 }

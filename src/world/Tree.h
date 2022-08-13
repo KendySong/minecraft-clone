@@ -13,14 +13,14 @@ class Tree
 {
 	//Attributes and properties
 private :
-	std::vector<Block> treeStruct;
+	std::vector<Block> _treeStruct;
 
 public :
 	/// <summary>
 	/// Constructor
 	/// </summary>
 	/// <param name="position">Position of tree (wood block at the bottom)</param>
-	Tree(glm::vec3 position);
+	Tree(const glm::vec3& position);
 
 	/// <summary>
 	/// Allow chunk mesh add the block structure of the tree

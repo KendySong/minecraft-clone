@@ -1,17 +1,17 @@
 #include "Block.h"
 
-Block::Block(glm::vec3 position, float textureID)
+Block::Block(const glm::vec3& position, float textureID)
 {
 	_position = position;
 	_textureID = textureID;
 }
 
-glm::vec3 Block::GetPosition() 
+glm::vec3 Block::GetPosition() const noexcept
 {
 	return _position;
 }
 
-float Block::GetTextureID() 
+float Block::GetTextureID() const noexcept
 {
 	return _textureID;
 }
