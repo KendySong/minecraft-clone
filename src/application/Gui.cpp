@@ -14,16 +14,19 @@ Gui::Gui(GLFWwindow* window)
 	//Opengl and Gpu data
 	const GLubyte* gpuName = glGetString(GL_RENDERER);
 	const GLubyte* versionName = glGetString(GL_VERSION);
-	for (size_t i = 0; i < 40; i++)
+
+	for (size_t i = 0; i < strlen((char*)gpuName); i++)
 	{
-		gpu += gpuName[i];
+		gpu += gpuName[i];	
+	}	
+
+	for (size_t i = 0; i < strlen((char*)versionName); i++)
+	{
 		version += versionName[i];
 	}
-
-	
 }
 
-void Gui::CreateFrame() 
+void Gui::CreateFrame() const
 {
 	ImGui_ImplOpenGL3_NewFrame();
 	ImGui_ImplGlfw_NewFrame();
@@ -94,7 +97,7 @@ void Gui::DisplayRenderData(float& renderDistance, unsigned int shaderID)
 	ImGui::End();
 }
 
-void Gui::ManageCamera(Camera* camera) 
+void Gui::ManageCamera(Camera* camera) const
 {
 	ImGui::Begin("Camera");
 	float cameraPos[]{ camera->position.x, camera->position.y ,camera->position.z };
