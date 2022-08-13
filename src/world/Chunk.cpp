@@ -245,7 +245,7 @@ void Chunk::PrepareRender()
 	_vertex.clear();
 }
 
-void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender)
+void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender) 
 {
 	//Front
 	if (faceToRender[0])
@@ -344,7 +344,7 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float
 	}
 }
 
-unsigned int Chunk::GetVao()
+unsigned int Chunk::GetVao() const noexcept
 {
 	return _vao;
 }

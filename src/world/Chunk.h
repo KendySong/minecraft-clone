@@ -93,5 +93,5 @@ public :
 	/// Getter of vao for bind and draw
 	/// </summary>
 	/// <returns>Vao of the chunk</returns>
-	unsigned int GetVao();
+	unsigned int GetVao() const noexcept;
 };

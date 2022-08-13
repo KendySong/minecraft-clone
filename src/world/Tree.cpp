@@ -14,10 +14,12 @@ Tree::Tree(const glm::vec3& position)
 	unsigned int leafHeight = 4;
 	unsigned int leafSize = 5;
 
-	//Wood	
+	//Wood
+	_treeStruct.reserve(woodHeight + (leafSize * leafSize * leafHeight) - 16);
 	for (size_t i = 1; i < woodHeight; i++)	
-		_treeStruct.push_back(Block(glm::vec3(position.x, position.y + i, position.z), 3));
+		_treeStruct.emplace_back(Block(glm::vec3(position.x, position.y + i, position.z), 3));
 	
+
 	for (size_t x = 0; x < leafSize; x++)
 	{
 		for (size_t z = 0; z < leafSize; z++)
@@ -26,10 +28,9 @@ Tree::Tree(const glm::vec3& position)
 			{
 				if (!(y == leafHeight - 1 && (x == 0 || x == leafSize - 1 || z == 0 || z == leafSize - 1)))
 				{
-					_treeStruct.push_back(Block(glm::vec3(position.x + x - leafSize / 2, position.y + woodHeight + y, position.z + z - leafSize / 2), 4));
-				}		
-			}
-			
+					_treeStruct.emplace_back(Block(glm::vec3(position.x + x - leafSize / 2, position.y + woodHeight + y, position.z + z - leafSize / 2), 4));
+				}
+			}	
 		}
 	}
 }
