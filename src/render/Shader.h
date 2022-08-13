@@ -26,8 +26,6 @@ private :
 	const char* _vertexSource = "";
 	const char* _fragmentSource = "";
 
-
-
 public : 
 	/// <summary>
 	/// Constructor
@@ -39,5 +37,5 @@ public :
 	/// <summary>
 	/// Getter of the shader program ID
 	/// </summary>
-	unsigned int GetProgram();
+	unsigned int GetProgram() const noexcept;
 };
