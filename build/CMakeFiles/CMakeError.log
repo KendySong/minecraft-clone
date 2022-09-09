@@ -1,0 +1,51 @@
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: C:/Users/kndys/Desktop/minecraft-clone/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_e2084/fast && C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_e2084.dir\build.make CMakeFiles/cmTC_e2084.dir/build
+mingw32-make[1]: Entering directory 'C:/Users/kndys/Desktop/minecraft-clone/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e2084.dir/CheckIncludeFile.c.obj
+C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_e2084.dir\CheckIncludeFile.c.obj -c C:\Users\kndys\Desktop\minecraft-clone\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+C:\Users\kndys\Desktop\minecraft-clone\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c:1:21: fatal error: pthread.h: No such file or directory
+ #include <pthread.h>
+                     ^
+compilation terminated.
+mingw32-make[1]: *** [CMakeFiles\cmTC_e2084.dir\build.make:77: CMakeFiles/cmTC_e2084.dir/CheckIncludeFile.c.obj] Error 1
+mingw32-make[1]: Leaving directory 'C:/Users/kndys/Desktop/minecraft-clone/build/CMakeFiles/CMakeTmp'
+mingw32-make: *** [Makefile:126: cmTC_e2084/fast] Error 2
+
+
+
+Determining if the include file dinput.h exists failed with the following output:
+Change Dir: C:/Users/kndys/Desktop/minecraft-clone/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_566d5/fast && C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_566d5.dir\build.make CMakeFiles/cmTC_566d5.dir/build
+mingw32-make[1]: Entering directory 'C:/Users/kndys/Desktop/minecraft-clone/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_566d5.dir/CheckIncludeFile.c.obj
+C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_566d5.dir\CheckIncludeFile.c.obj -c C:\Users\kndys\Desktop\minecraft-clone\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+C:\Users\kndys\Desktop\minecraft-clone\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c:1:20: fatal error: dinput.h: No such file or directory
+ #include <dinput.h>
+                    ^
+compilation terminated.
+mingw32-make[1]: *** [CMakeFiles\cmTC_566d5.dir\build.make:77: CMakeFiles/cmTC_566d5.dir/CheckIncludeFile.c.obj] Error 1
+mingw32-make[1]: Leaving directory 'C:/Users/kndys/Desktop/minecraft-clone/build/CMakeFiles/CMakeTmp'
+mingw32-make: *** [Makefile:126: cmTC_566d5/fast] Error 2
+
+
+
+Determining if the include file xinput.h exists failed with the following output:
+Change Dir: C:/Users/kndys/Desktop/minecraft-clone/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_23e2c/fast && C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_23e2c.dir\build.make CMakeFiles/cmTC_23e2c.dir/build
+mingw32-make[1]: Entering directory 'C:/Users/kndys/Desktop/minecraft-clone/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_23e2c.dir/CheckIncludeFile.c.obj
+C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_23e2c.dir\CheckIncludeFile.c.obj -c C:\Users\kndys\Desktop\minecraft-clone\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+C:\Users\kndys\Desktop\minecraft-clone\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c:1:20: fatal error: xinput.h: No such file or directory
+ #include <xinput.h>
+                    ^
+compilation terminated.
+mingw32-make[1]: *** [CMakeFiles\cmTC_23e2c.dir\build.make:77: CMakeFiles/cmTC_23e2c.dir/CheckIncludeFile.c.obj] Error 1
+mingw32-make[1]: Leaving directory 'C:/Users/kndys/Desktop/minecraft-clone/build/CMakeFiles/CMakeTmp'
+mingw32-make: *** [Makefile:126: cmTC_23e2c/fast] Error 2
+
+
+
