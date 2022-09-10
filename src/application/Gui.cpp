@@ -54,12 +54,12 @@ void Gui::DisplayRenderData(float& renderDistance, unsigned int shaderID)
 	ImGui::SliderFloat("Render distance", &renderDistance, 10, 1000);
 
 	//Light
-	const char* lightTypes[] = { "Fake", "Diffuse" };
+	std::array<const char*, 2> lightTypes{ "Fake", "Diffuse" };
 	static const char* currentLight = lightTypes[0];
 
 	if (ImGui::BeginCombo("Light", currentLight))
 	{
-		for (int i = 0; i < std::size(lightTypes); i++)
+		for (int i = 0; i < lightTypes.size(); i++)
 		{
 			bool isSelected = (currentLight == lightTypes[i]);
 			if (ImGui::Selectable(lightTypes[i], isSelected))

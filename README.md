@@ -6,6 +6,8 @@ Assure that your gpu support OpenGL 4.5 before launch the program.
 
 <img src="https://github.com/KendySong/minecraft-clone/blob/main/screenshots/world-2.png"></img>
 
+<img src="https://github.com/KendySong/minecraft-clone/blob/main/screenshots/water-2.png"></img>
+
 ## How to take the project
 Install visual studio 2019 or 2022.
 ```git
