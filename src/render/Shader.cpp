@@ -15,6 +15,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 	else
 	{
 		std::cout << "[ERROR] Vertex shader is not found\n";
+		return;
 	}
 
 	_shaderReader.open(fragmentPath);
@@ -29,6 +30,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 	else
 	{
 		std::cout << "[ERROR] Fragment shader is not found\n";
+		return;
 	}
 
 	_vertex = glCreateShader(GL_VERTEX_SHADER);
