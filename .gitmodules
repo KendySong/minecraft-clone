@@ -4,6 +4,3 @@
 [submodule "libraries/glfw"]
 	path = libraries/glfw
 	url = https://github.com/glfw/glfw.git
-[submodule "libraries/ImGui"]
-	path = libraries/ImGui
-	url = https://github.com/ocornut/imgui.git
