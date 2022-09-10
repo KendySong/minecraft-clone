@@ -9,11 +9,10 @@ Assure that your gpu support OpenGL 4.5 before launch the program.
 <img src="https://github.com/KendySong/minecraft-clone/blob/main/screenshots/water-2.png"></img>
 
 ## How to take the project
-Install visual studio 2019 or 2022.
 ```git
-git clone https://github.com/KendySong/minecraft-clone.git
+git clone --recursive https://github.com/KendySong/minecraft-clone.git
 cd minecraft-clone
-start minecraft-clone.sln
+start build.bat
 ```
 
 ## Keys binds
