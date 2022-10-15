@@ -12,7 +12,7 @@ Assure that your gpu support OpenGL 4.5 before launch the program.
 ```git
 git clone --recursive https://github.com/KendySong/minecraft-clone.git
 cd minecraft-clone
-start build.bat
+start build.bat || cmake -Bbuild
 ```
 
 ## Keys binds
