@@ -1,4 +1,4 @@
-#include "Block.h"
+#include "Block.hpp"
 
 Block::Block(const glm::vec3& position, float textureID)
 {

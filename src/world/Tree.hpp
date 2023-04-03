@@ -6,7 +6,7 @@
 
 #include <glm/glm.hpp>
 
-#include "Block.h"
+#include "Block.hpp"
 
 #pragma once
 class Tree

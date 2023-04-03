@@ -2,12 +2,12 @@
 ///Date : 30.05.2022
 ///Summary : Render the world and manage camera
 
-#include "Shader.h"
-#include "Camera.h"
-#include "Texture.h"
-#include "../world/World.h"
-#include "../application/Gui.h"
-#include "../application/Timer.h"
+#include "Shader.hpp"
+#include "Camera.hpp"
+#include "Texture.hpp"
+#include "../world/World.hpp"
+#include "../application/Gui.hpp"
+#include "../application/Timer.hpp"
 
 #pragma once
 class Render

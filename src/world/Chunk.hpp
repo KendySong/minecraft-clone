@@ -10,8 +10,8 @@
 
 #include <FastNoiseLite/FastNoiseLite.h>
 
-#include "../application/Random.h"
-#include "Tree.h"
+#include "../application/Random.hpp"
+#include "Tree.hpp"
 
 #pragma once
 namespace ChunkGen

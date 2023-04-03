@@ -2,10 +2,10 @@
 ///Date : 15.04.2022
 ///Summary : Manage window
 
-#include "Settings.h"
-#include "../render/Render.h"
-#include "Timer.h"
-#include "Gui.h"
+#include "Settings.hpp"
+#include "../render/Render.hpp"
+#include "Timer.hpp"
+#include "Gui.hpp"
 
 #pragma once
 class Window

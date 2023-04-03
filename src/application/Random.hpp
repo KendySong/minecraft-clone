@@ -1,7 +1,3 @@
-///Author : Kendy Song
-///Date : 20.06.2022
-///Summary : Generate random number
-
 #include <chrono>
 
 #pragma once

@@ -1,4 +1,4 @@
-#include "Camera.h"
+#include "Camera.hpp"
 
 Camera* sub_camera;
 void mouse_callback(GLFWwindow* window, double x, double y);
@@ -101,6 +101,13 @@ void Camera::ProcessMouseInput(double x, double y)
 		_front.z = sin(glm::radians(_yaw)) * cos(glm::radians(_pitch));
 		_front = glm::normalize(_front);
 	}
+}
+
+void Camera::Reconstruct(std::uint32_t shaderID)
+{
+	projection = glm::perspective(glm::radians(fov), _width / _height, _near, _far);
+	this->projectionLocation = glGetUniformLocation(shaderID, "projection");
+	glUniformMatrix4fv(this->projectionLocation, 1, false, glm::value_ptr(this->projection));
 }
 
 void mouse_callback(GLFWwindow* window, double x, double y)

@@ -1,4 +1,4 @@
-#include "Gui.h"
+#include "Gui.hpp"
 
 Gui::Gui(GLFWwindow* window)
 {
@@ -97,12 +97,17 @@ void Gui::DisplayRenderData(float& renderDistance, unsigned int shaderID)
 	ImGui::End();
 }
 
-void Gui::ManageCamera(Camera* camera) const
+void Gui::ManageCamera(Camera* camera, std::uint32_t shaderID) const
 {
 	ImGui::Begin("Camera");
-	float cameraPos[]{ camera->position.x, camera->position.y ,camera->position.z };
-	ImGui::InputFloat3("Camera position", cameraPos);
+	
+	ImGui::InputFloat3("Position", &camera->position.x);
 	ImGui::SliderFloat("Speed", &camera->speed, 1, 100);
+	ImGui::DragFloat("FOV", &camera->fov, 0.1f, 0, 180);
+	if (ImGui::Button("Apply"))
+	{
+		camera->Reconstruct(shaderID);
+	}
 	ImGui::End();
 }
 

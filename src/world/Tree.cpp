@@ -1,4 +1,4 @@
-#include "Tree.h"
+#include "Tree.hpp"
 
 Tree::Tree(const glm::vec3& position)
 {

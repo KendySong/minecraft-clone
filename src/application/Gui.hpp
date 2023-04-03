@@ -1,7 +1,3 @@
-///Author : kndysong@gmail.com
-///Date : 30.05.2022
-///Summary : Display gui
-
 #include <string>
 #include <array>
 
@@ -12,8 +8,8 @@
 #include <ImGui/imgui_impl_glfw.h>
 #include <ImGui/imgui_impl_opengl3.h>
 
-#include "Timer.h"
-#include "../render/Camera.h"
+#include "Timer.hpp"
+#include "../render/Camera.hpp"
 
 #pragma once
 class Gui 
@@ -51,7 +47,7 @@ public :
 	/// Display camera position and speed
 	/// </summary>
 	/// <param name="camera">Camera to display data</param>
-	void ManageCamera(Camera* camera) const;
+	void ManageCamera(Camera* camera, std::uint32_t shaderID) const;
 
 	/// <summary>
 	/// Display number of chunks

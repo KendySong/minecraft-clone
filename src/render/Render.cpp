@@ -1,4 +1,4 @@
-#include "Render.h"
+#include "Render.hpp"
 
 Camera* Render::GetCamera() const noexcept
 {
@@ -8,7 +8,7 @@ Camera* Render::GetCamera() const noexcept
 void Render::LoadShader() 
 {
 	//Load shader
-	_shader = new Shader("shaders/cube.vert", "shaders/cube.frag");
+	_shader = new Shader("../shaders/cube.vert", "../shaders/cube.frag");
 	glUseProgram(_shader->GetProgram());
 
 	int lightPositionUniform = glGetUniformLocation(_shader->GetProgram(), "lightPosition");
@@ -23,13 +23,13 @@ void Render::LoadTextures(int shaderID) const
 		3) Add texture slots into uniform sampler
 		4) Change sampler array size
 	*/
-	Texture grass("textures/grass.png", 0);
-	Texture dirt ("textures/dirt.png",  1);
-	Texture sand ("textures/sand.png",  2);
+	Texture grass("../textures/grass.png", 0);
+	Texture dirt ("../textures/dirt.png",  1);
+	Texture sand ("../textures/sand.png",  2);
 
-	Texture wood ("textures/wood.png",  3);
-	Texture leaf ("textures/leaf.png",  4);
-	Texture water("textures/water.png", 5);
+	Texture wood ("../textures/wood.png",  3);
+	Texture leaf ("../textures/leaf.png",  4);
+	Texture water("../textures/water.png", 5);
 
 	grass.AssignSlot();
 	dirt.AssignSlot();
@@ -87,8 +87,9 @@ void Render::RenderFrame()
 		glBindVertexArray(_world.displayChunks[i].GetVao());
 		glDrawArrays(GL_TRIANGLES, 0, _world.displayChunks[i].verticesDraw);
 	}
+
 	_gui->DisplayRenderData(_world.renderDistance, _shader->GetProgram());
-	_gui->ManageCamera(_camera);
+	_gui->ManageCamera(_camera, _shader->GetProgram());
 	_gui->DisplayWorldData(_world.displayChunks.size());
 	_gui->Render();
 }

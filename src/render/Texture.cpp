@@ -1,4 +1,4 @@
-#include "Texture.h"
+#include "Texture.hpp"
 
 Texture::Texture(const char* texturePath, int slot)
 {

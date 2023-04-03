@@ -8,8 +8,8 @@
 #include <glm/glm.hpp>
 #include <FastNoiseLite/FastNoiseLite.h>
 
-#include "Chunk.h"
-#include "../application/Random.h"
+#include "Chunk.hpp"
+#include "../application/Random.hpp"
 
 #pragma once
 class World

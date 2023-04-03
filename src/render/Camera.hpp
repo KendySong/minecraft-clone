@@ -1,7 +1,3 @@
-///Author : kndysong@gmail.com
-///Date : 30.05.2022
-///Summary : Camera matrix and manage camera input
-
 #include <glad/glad.h>
 #include <glfw/glfw3.h>
 #include <glm/glm.hpp>
@@ -75,4 +71,10 @@ public:
 	/// <param name="x">X position of the mouse</param>
 	/// <param name="y">Y position of the mouse</param>
 	void ProcessMouseInput(double x, double y);
+
+	/// <summary>
+	/// Reconstruct the camera matrix with new settings
+	/// </summary>
+	/// <param name="shaderID">ID of the shader to set projection matrix</param>
+	void Reconstruct(std::uint32_t shaderID);
 };
