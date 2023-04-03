@@ -10,19 +10,18 @@ Assure that your gpu support OpenGL 4.5 before launch the program.
 
 ## How to take the project
 ```git
-git clone --recursive https://github.com/KendySong/minecraft-clone.git
+git clone https://github.com/KendySong/minecraft-clone.git
 cd minecraft-clone
-start build.bat || cmake -Bbuild
+premake5 vs2022
 ```
 
 ## Keys binds
-- WASD        => Camera movement
-- Right click => Camera rotation
+- wasd        => Camera movement
+- right click => Camera rotation
 
 ## Used libraries
-- GLFW
-- Glad
-- FastNoiseLite
+- glfw
+- glad
+- fastNoiseLite
 - glm
-- ImGui
-- Nlohmann
+- imgui
