@@ -14,9 +14,9 @@ project "minecraft-clone"
         "src/**.h", 
         "shaders/**",
         
-        "libraries/ImGui/**.cpp", 
-        "libraries/stb/**.cpp", 
-        "libraries/glad/src/glad.c"
+        "libraries/include/ImGui/**.cpp", 
+        "libraries/include/stb/**.cpp", 
+        "libraries/include/glad/src/glad.c"
     }
 
     includedirs { "libraries/*" }

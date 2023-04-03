@@ -10,9 +10,9 @@ Tree::Tree(const glm::vec3& position)
 		Texture leaf ("textures/leaf.png",  4);
 	*/
 
-	unsigned int woodHeight = 5 + 1;
-	unsigned int leafHeight = 4;
-	unsigned int leafSize = 5;
+	std::uint32_t woodHeight = 5 + 1;
+	std::uint32_t leafHeight = 4;
+	std::uint32_t leafSize = 5;
 
 	//Wood
 	_treeStruct.reserve(woodHeight + (leafSize * leafSize * leafHeight) - 16);
@@ -35,7 +35,7 @@ Tree::Tree(const glm::vec3& position)
 	}
 }
 
-std::vector<Block>& Tree::GetTreeStruct()
+std::vector<Block>& Tree::getTreeStruct()
 {
 	return _treeStruct;
 }

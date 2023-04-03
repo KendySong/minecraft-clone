@@ -8,47 +8,46 @@ Gui::Gui(GLFWwindow* window)
 	ImGui::StyleColorsClassic();
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 450");
-	_wireframe = false;
-	_faceCulling = true;
 
-	//Opengl and Gpu data
+	m_wireframe = false;
+	m_faceCulling = true;
 	const GLubyte* gpuName = glGetString(GL_RENDERER);
 	const GLubyte* versionName = glGetString(GL_VERSION);
 
 	for (size_t i = 0; i < strlen((char*)gpuName); i++)
 	{
-		gpu += gpuName[i];	
+		m_gpu += gpuName[i];	
 	}	
 
 	for (size_t i = 0; i < strlen((char*)versionName); i++)
 	{
-		version += versionName[i];
+		m_version += versionName[i];
 	}
 }
 
-void Gui::CreateFrame() const
+void Gui::createFrame() const
 {
 	ImGui_ImplOpenGL3_NewFrame();
 	ImGui_ImplGlfw_NewFrame();
 	ImGui::NewFrame();
 }
 
-void Gui::DisplayRenderData(float& renderDistance, unsigned int shaderID)
+void Gui::displayRenderData(float& renderDistance, std::uint32_t shaderID)
 {
-	_fps++;
+	m_fps++;
 	ImGui::Begin("Render");
 
-	ImGui::Text(gpu.c_str());
-	ImGui::Text(version.c_str());
+	ImGui::Text(m_gpu.c_str());
+	ImGui::Text(m_version.c_str());
 
 	//FPS
-	if (_timer.GetElapsedTime() > 1)
+	if (m_timer.getElapsedTime() > 1)
 	{
-		_framerate = std::to_string(_fps) + " fps";
-		_fps = 0;
-		_timer.Restart();
+		m_framerate = std::to_string(m_fps) + " fps";
+		m_fps = 0;
+		m_timer.restart();
 	}
-	ImGui::Text(_framerate.c_str());	
+	ImGui::Text(m_framerate.c_str());	
 
 	//Render distance
 	ImGui::SliderFloat("Render distance", &renderDistance, 10, 1000);
@@ -72,17 +71,17 @@ void Gui::DisplayRenderData(float& renderDistance, unsigned int shaderID)
 	}
 
 	//Render mode
-	ImGui::Checkbox("Wireframe Render", &_wireframe);
-	ImGui::Checkbox("Face culling", &_faceCulling);
+	ImGui::Checkbox("Wireframe Render", &m_wireframe);
+	ImGui::Checkbox("Face culling", &m_faceCulling);
 
 	if (ImGui::Button("Apply"))
 	{
-		if (_wireframe)
+		if (m_wireframe)
 			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		else 
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
-		if (_faceCulling)
+		if (m_faceCulling)
 			glEnable(GL_CULL_FACE);
 		else
 			glDisable(GL_CULL_FACE);
@@ -97,29 +96,28 @@ void Gui::DisplayRenderData(float& renderDistance, unsigned int shaderID)
 	ImGui::End();
 }
 
-void Gui::ManageCamera(Camera* camera, std::uint32_t shaderID) const
+void Gui::manageWorldCamera(Camera* camera, std::uint32_t shaderID) const
 {
 	ImGui::Begin("Camera");
-	
 	ImGui::InputFloat3("Position", &camera->position.x);
 	ImGui::SliderFloat("Speed", &camera->speed, 1, 100);
 	ImGui::DragFloat("FOV", &camera->fov, 0.1f, 0, 180);
 	if (ImGui::Button("Apply"))
 	{
-		camera->Reconstruct(shaderID);
+		camera->reconstruct(shaderID);
 	}
 	ImGui::End();
 }
 
-void Gui::DisplayWorldData(size_t nbChunkRendering)
+void Gui::displayWorldData(size_t nbChunkRendering)
 {
 	ImGui::Begin("World");
-	chunkRender = "Number of chunks in render " + std::to_string(nbChunkRendering);
-	ImGui::Text(chunkRender.c_str());
+	m_chunkRender = "Number of chunks in render " + std::to_string(nbChunkRendering);
+	ImGui::Text(m_chunkRender.c_str());
 	ImGui::End();
 }
 
-void Gui::Render() 
+void Gui::render() 
 {
 	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

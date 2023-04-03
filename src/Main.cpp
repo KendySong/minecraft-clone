@@ -1,6 +1,6 @@
-#include "application/Window.hpp"
+#include "Application/Window.hpp"
 
 int main() 
 {	
-	return Window::GetInstance()->Run();
+	return Window::instance()->run();
 }

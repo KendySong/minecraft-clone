@@ -1,11 +1,6 @@
 #include "Chunk.hpp"
 
-Chunk::Chunk() 
-{
-
-}
-
-float Chunk::GetTextureHeight(bool upBlock, size_t height)
+float Chunk::getTextureHeight(bool upBlock, size_t height)
 {
 	/*
 		Texture grass("textures/grass.png", 0);
@@ -26,7 +21,7 @@ float Chunk::GetTextureHeight(bool upBlock, size_t height)
 	return texID;	
 }
 
-float Chunk::GetHeight(float x, float z)
+float Chunk::getHeight(float x, float z)
 {
 	float height = _fastNoise->GetNoise(x, z);
 	height = std::abs(height) * 40;
@@ -44,8 +39,8 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 	cornerPosition = position;
 	_fastNoise = fastNoise;
 
-	unsigned int chunkWidthMid = ChunkGen::WIDTH / 2;
-	unsigned int chunkDepthMid = ChunkGen::DEPTH / 2;
+	std::uint32_t chunkWidthMid = ChunkGen::WIDTH / 2;
+	std::uint32_t chunkDepthMid = ChunkGen::DEPTH / 2;
 	midPosition.x = position.x + chunkWidthMid;
 	midPosition.z = position.z + chunkDepthMid;
 	
@@ -53,7 +48,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 	float heightMap[ChunkGen::WIDTH][ChunkGen::DEPTH];
 	for (size_t x = 0; x < ChunkGen::WIDTH; x++)
 		for (size_t z = 0; z < ChunkGen::DEPTH; z++)
-			heightMap[x][z] = GetHeight(x + position.x, z + position.z);
+			heightMap[x][z] = getHeight(x + position.x, z + position.z);
 
 	//Create 3D array for face check
 	bool chunkCoordinate[ChunkGen::WIDTH][ChunkGen::HEIGHT][ChunkGen::DEPTH] = {false}; //False => Empty
@@ -79,7 +74,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 
 				if (z == ChunkGen::DEPTH - 1)
 				{
-					if (y > GetHeight(x + position.x, z + position.z + 1))
+					if (y > getHeight(x + position.x, z + position.z + 1))
 					{
 						faceToRender[0] = true;
 					}
@@ -95,7 +90,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 
 				if (z == 0)
 				{
-					if (y > GetHeight(x + position.x, z + position.z - 1))
+					if (y > getHeight(x + position.x, z + position.z - 1))
 					{
 						faceToRender[1] = true;
 					}
@@ -111,7 +106,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 				
 				if (x == ChunkGen::WIDTH - 1)
 				{
-					if (y > GetHeight(x + position.x + 1, z + position.z))
+					if (y > getHeight(x + position.x + 1, z + position.z))
 					{
 						faceToRender[2] = true;
 					}
@@ -127,7 +122,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 
 				if (x == 0)
 				{			
-					if (y > GetHeight(x + position.x - 1, z + position.z))
+					if (y > getHeight(x + position.x - 1, z + position.z))
 					{
 						faceToRender[3] = true;
 					}
@@ -160,11 +155,11 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 				}
 
 				//Set texture			
-				AddNewBlock
+				addNewBlock
 				(
 					_vertex, 
 					glm::vec3(x + position.x, y, z + position.z), 
-					GetTextureHeight(chunkCoordinate[x][y + 1][z], y),
+					getTextureHeight(chunkCoordinate[x][y + 1][z], y),
 					faceToRender
 				);
 				
@@ -180,7 +175,7 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 						else
 							faceToRender[4] = false;
 
-						AddNewBlock
+						addNewBlock
 						(
 							_vertex,
 							glm::vec3(x + position.x, i, z + position.z),
@@ -193,29 +188,29 @@ Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
 		}
 	}
 
-	GenerateTree();
+	generateTree();
 	PrepareRender();
 }
 
-void Chunk::GenerateTree()
+void Chunk::generateTree()
 {
 	//Tree position
-	int xPos = Random::Instance()->FastRand() % ChunkGen::WIDTH;
-	int zPos = Random::Instance()->FastRand() % ChunkGen::DEPTH;
+	int xPos = Random::instance()->fastRand() % ChunkGen::WIDTH;
+	int zPos = Random::instance()->fastRand() % ChunkGen::DEPTH;
 	xPos += cornerPosition.x;
 	zPos += cornerPosition.z;
 
-	int positionHeight = (int)GetHeight(xPos, zPos);
+	int positionHeight = (int)getHeight(xPos, zPos);
 	if (positionHeight > ChunkGen::SAND_HEIGHT)
 	{
 		//Generate a tree
-		Tree tree(glm::vec3(xPos, (int)GetHeight(xPos, zPos), zPos));
-		std::vector<Block> treeBlock = tree.GetTreeStruct();
+		Tree tree(glm::vec3(xPos, (int)getHeight(xPos, zPos), zPos));
+		std::vector<Block> treeBlock = tree.getTreeStruct();
 		bool treeFace[] = { true };
 
 		for (size_t i = 0; i < treeBlock.size(); i++)
 		{
-			AddNewBlock(_vertex, treeBlock[i].GetPosition(), treeBlock[i].GetTextureID(), treeFace);
+			addNewBlock(_vertex, treeBlock[i].getPosition(), treeBlock[i].getTextureID(), treeFace);
 		}
 	}
 }
@@ -245,7 +240,7 @@ void Chunk::PrepareRender()
 	_vertex.clear();
 }
 
-void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender) 
+void Chunk::addNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender) 
 {
 	//Front
 	if (faceToRender[0])
@@ -344,7 +339,7 @@ void Chunk::AddNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float
 	}
 }
 
-unsigned int Chunk::GetVao() const noexcept
+std::uint32_t Chunk::getVao() const noexcept
 {
 	return _vao;
 }

@@ -2,32 +2,32 @@
 
 Timer::Timer()
 {
-	Start();
+	start();
 }
 
-void Timer::Start() noexcept
+void Timer::start() noexcept
 {
-	_start = std::chrono::system_clock::now();
+	m_start = std::chrono::system_clock::now();
 	_isRunning = true;
 }
 
-void Timer::Restart() noexcept
+void Timer::restart() noexcept
 {
-	Start();
+	start();
 }
 
-void Timer::Stop() noexcept
+void Timer::stop() noexcept
 {
-	_stop = std::chrono::system_clock::now();
+	m_stop = std::chrono::system_clock::now();
 	_isRunning = false;
 }
 
-double Timer::GetElapsedTime() noexcept
+double Timer::getElapsedTime() noexcept
 {
 	if (_isRunning)
-		_elapsed = std::chrono::system_clock::now();
+		m_elapsed = std::chrono::system_clock::now();
 	else
-		_elapsed = _stop;
+		m_elapsed = m_stop;
 
-	return std::chrono::duration_cast<std::chrono::microseconds>(_elapsed - _start).count() * 0.000001;
+	return std::chrono::duration_cast<std::chrono::microseconds>(m_elapsed - m_start).count() * 0.000001;
 }

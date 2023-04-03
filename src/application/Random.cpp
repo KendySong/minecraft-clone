@@ -1,34 +1,34 @@
 #include "Random.hpp"
 
-Random* Random::_random = nullptr;
+Random* Random::p_random = nullptr;
 
 Random::Random() 
 {
-	_seed = -1;
-	_isSeedSet = false;
+	m_seed = -1;
+	m_isSeedSet = false;
 }
 
-Random* Random::Instance() 
+Random* Random::instance() 
 {
-	if (_random == nullptr)
-		_random = new Random();
-	return _random;
+	if (p_random == nullptr)
+		p_random = new Random();
+	return p_random;
 }
 
-int Random::FastRand() 
+int Random::fastRand() 
 {
-	if (_seed == -1 || !_isSeedSet)
+	if (m_seed == -1 || !m_isSeedSet)
 	{
-		_seed = time(nullptr);
-		_isSeedSet = true;
+		m_seed = time(nullptr);
+		m_isSeedSet = true;
 	}
 
-	_seed = (214013 * _seed + 2531011);
-	return (_seed >> 16) & 0x7FFF;
+	m_seed = (214013 * m_seed + 2531011);
+	return (m_seed >> 16) & 0x7FFF;
 }
 
-void Random::SetSeed(int seed) 
+void Random::setSeed(int seed) 
 {
-	_seed = seed;
-	_isSeedSet = true;
+	m_seed = seed;
+	m_isSeedSet = true;
 }

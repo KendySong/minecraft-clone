@@ -4,30 +4,15 @@
 class Random
 {
 private :
-	
-	int _seed;
-	bool _isSeedSet;
-
-	static Random* _random;
 	Random();
 
-public :
+public:
+	static Random* instance();
+	int fastRand();
+	void setSeed(int seed);
 
-	/// <summary>
-	/// 
-	/// </summary>
-	/// <returns></returns>
-	static Random* Instance();
-
-	/// <summary>
-	/// Generate random number
-	/// </summary>
-	/// <returns>Random number</returns>
-	int FastRand();
-
-	/// <summary>
-	/// Set seed
-	/// </summary>
-	/// <param name="seed">Seed to set</param>
-	void SetSeed(int seed);
+private :
+	int m_seed;
+	bool m_isSeedSet;
+	static Random* p_random;
 };

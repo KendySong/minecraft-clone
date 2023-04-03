@@ -1,45 +1,44 @@
 #include "Window.hpp"
 
-Window* Window::_window = nullptr;
+Window* Window::p_window = nullptr;
 
-Window* Window::GetInstance()
+Window* Window::instance()
 {
-	if (_window == nullptr)
+	if (p_window == nullptr)
 	{
-		_window = new Window(Settings::WIDTH, Settings::HEIGHT, Settings::TITLE.c_str());
+		p_window = new Window(Settings::WIDTH, Settings::HEIGHT, Settings::TITLE.c_str());
 	}
 
-	return _window;
+	return p_window;
 }
 
-Window::Window(unsigned int width, unsigned int height, const char* title)
+Window::Window(std::uint32_t width, std::uint32_t height, const char* title)
 {
-	_width = width;
-	_height = height;
-	_title = title;
+	m_width = width;
+	m_height = height;
+	m_title = title;
 
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 4);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	_glfwWindow = glfwCreateWindow(width, height, title, NULL, NULL);
-	glfwMakeContextCurrent(_glfwWindow);
+	p_glfwWindow = glfwCreateWindow(width, height, title, NULL, NULL);
+	glfwMakeContextCurrent(p_glfwWindow);
 }
 
-int Window::Run()
+int Window::run()
 {
-	_render.Load(this->_glfwWindow, glm::vec2(_width, _height));
-	while (!glfwWindowShouldClose(_glfwWindow))
+	m_render.load(this->p_glfwWindow, glm::vec2(m_width, m_height));
+	while (!glfwWindowShouldClose(p_glfwWindow))
 	{
 		glfwPollEvents();
-		_render.Update();
+		m_render.update();
 
-		//Render world and gui
-		_render.RenderFrame();
-		glfwSwapBuffers(_glfwWindow);
+		m_render.renderFrame();
+		glfwSwapBuffers(p_glfwWindow);
 	}
 
-	glfwDestroyWindow(_glfwWindow);
+	glfwDestroyWindow(p_glfwWindow);
 	ImGui::DestroyContext();
 
 	return 0;

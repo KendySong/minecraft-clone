@@ -6,12 +6,12 @@ Block::Block(const glm::vec3& position, float textureID)
 	_textureID = textureID;
 }
 
-glm::vec3 Block::GetPosition() const noexcept
+glm::vec3 Block::getPosition() const noexcept
 {
 	return _position;
 }
 
-float Block::GetTextureID() const noexcept
+float Block::getTextureID() const noexcept
 {
 	return _textureID;
 }

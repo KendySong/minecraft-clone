@@ -1,44 +1,27 @@
-///Author : kndysong@gmail.com
-///Date : 15.04.2022
-///Summary : Manage window
-
 #include "Settings.hpp"
-#include "../render/Render.hpp"
+#include "../Graphics/Render.hpp"
 #include "Timer.hpp"
 #include "Gui.hpp"
 
 #pragma once
 class Window
 {
-	//Attributes and properties
 private :
-	static Window* _window;
+	Window(std::uint32_t width, std::uint32_t height, const char* title);
 
-	const char* _title;
-	unsigned int _width;
-	unsigned int _height;
+public:
+	static Window* instance();
 
-	Gui* _gui;
-	GLFWwindow* _glfwWindow;
-	Render _render;
+	int run();
 
-	/// <summary>
-	/// Constructor
-	/// </summary>
-	/// <param name="width">Width of the window</param>
-	/// <param name="height">Height of thw window</param>
-	/// <param name="title">Title of the window</param>
-	Window(unsigned int width, unsigned int height, const char* title);
-	
-public :
-	/// <summary>
-	/// Create and give pointer to instance
-	/// </summary>
-	/// <returns>Pointer to instance</returns>
-	static Window* GetInstance();
+private :
+	static Window* p_window;
 
-	/// <summary>
-	/// Run the program
-	/// </summary>
-	int Run();
+	const char* m_title;
+	std::uint32_t m_width;
+	std::uint32_t m_height;
+
+	GLFWwindow* p_glfwWindow;
+	Render m_render;
+	Gui* p_gui;
 };
