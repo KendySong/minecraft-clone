@@ -1,6 +1,5 @@
 #include "Shader.hpp"
 #include "Camera.hpp"
-#include "Texture.hpp"
 #include "../world/World.hpp"
 #include "../application/Gui.hpp"
 #include "../application/Timer.hpp"

@@ -1,7 +1,7 @@
-#include "Settings.hpp"
-#include "../Graphics/Render.hpp"
-#include "Timer.hpp"
 #include "Gui.hpp"
+#include "Timer.hpp"
+#include "../Graphics/Render.hpp"
+#include "Settings.hpp"
 
 #pragma once
 class Window

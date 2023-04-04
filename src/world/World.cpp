@@ -1,3 +1,5 @@
+#include <chrono>
+
 #include "World.hpp"
 
 World::World() 
@@ -15,7 +17,7 @@ World::World()
 
 void World::load() 
 {	
-	bool firstChunkNeighbor[] = {false, false, false, false};
+	bool firstChunkNeighbor[4] = { false };
 
 	Chunk firstChunk(glm::vec3(0, 0, 0), p_fastNoise, firstChunkNeighbor);
 	displayChunks.emplace_back(firstChunk);
@@ -132,4 +134,9 @@ float World::getDistanceChunkPlayer(glm::vec3 playerPosition, glm::vec3 chunkPos
 {
 	//Approximated distance for heigher performance
 	return std::abs(playerPosition.x - chunkPosition.x) + std::abs(playerPosition.z - chunkPosition.z);
+}
+
+FastNoiseLite* World::getFastNoise() noexcept
+{
+	return p_fastNoise;
 }

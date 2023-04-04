@@ -1,11 +1,15 @@
+#include <array>
+
+#include <ImGui/imgui.h>
+#include <ImGui/imgui_impl_glfw.h>
+#include <ImGui/imgui_impl_opengl3.h>
+
 #include "Gui.hpp"
 
 Gui::Gui(GLFWwindow* window)
 {
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO();
-	ImGui::StyleColorsClassic();
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 450");
 
@@ -109,11 +113,75 @@ void Gui::manageWorldCamera(Camera* camera, std::uint32_t shaderID) const
 	ImGui::End();
 }
 
-void Gui::displayWorldData(size_t nbChunkRendering)
+void Gui::displayWorldData(size_t nbChunkRendering, FastNoiseLite* fastNoise)
 {
+	//Add std::map for enum and string
+
+	static int seed = fastNoise->GetSeed();
+	static float frequency = fastNoise->GetFrequency();
+	static float lacunarity = fastNoise->GetFractalLacunarity();
+	static int octaves = fastNoise->GetFractalOctaves();
+	static FastNoiseLite::NoiseType noiseType = fastNoise->GetNoiseType();
+	static const char* noiseString[] = { "Open Simplex 2", "Open Simplex 2S", "Cellular", "Perlin", "Value Cubic", "Cubic" };
+	static const char* currentNoiseType = "Open Simplex 2S";
+
+	static FastNoiseLite::FractalType fractalType = fastNoise->GetFractalType();
+	static const char* fractalString[] = { "None", "FBm", "Ridged", "PingPong", "Domain Warp Progressive", "Domain Warp Independent" };
+	static const char* currentFractalType = "FBm";
+
 	ImGui::Begin("World");
 	m_chunkRender = "Number of chunks in render " + std::to_string(nbChunkRendering);
-	ImGui::Text(m_chunkRender.c_str());
+	ImGui::TextUnformatted(m_chunkRender.c_str());
+
+	ImGui::Text("Seed : %i", seed);
+	ImGui::DragFloat("Frequency", &frequency, 0.001f);
+	ImGui::DragFloat("Lacunarity", &lacunarity, 0.001f);
+	ImGui::DragInt("Octaves", &octaves, 0.01f);
+
+	if (ImGui::BeginCombo("Noise Type", currentNoiseType))
+	{
+		for (int i = 0; i < IM_ARRAYSIZE(noiseString); i++)
+		{
+			bool isSelected = currentNoiseType == noiseString[i];
+			if (ImGui::Selectable(noiseString[i], isSelected))
+			{
+				currentNoiseType = noiseString[i];
+			}
+
+			if (isSelected)
+			{
+				ImGui::SetItemDefaultFocus();
+			}
+		}
+		ImGui::EndCombo();
+	}
+
+	if (ImGui::BeginCombo("Fractal Type", currentFractalType))
+	{
+		for (int i = 0; i < IM_ARRAYSIZE(fractalString); i++)
+		{
+			bool isSelected = currentFractalType == fractalString[i];
+			if (ImGui::Selectable(fractalString[i], isSelected))
+			{
+				currentFractalType = fractalString[i];
+			}
+
+			if (isSelected)
+			{
+				ImGui::SetItemDefaultFocus();
+			}
+		}
+		ImGui::EndCombo();
+	}
+
+
+	if (ImGui::Button("Apply"))
+	{
+		fastNoise->SetFrequency(frequency);
+		fastNoise->SetFractalLacunarity(lacunarity);
+		fastNoise->SetFractalOctaves(octaves);
+	}
+
 	ImGui::End();
 }
 

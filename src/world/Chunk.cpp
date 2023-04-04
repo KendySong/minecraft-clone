@@ -1,4 +1,5 @@
 #include "Chunk.hpp"
+#include "../application/Random.hpp"
 
 float Chunk::getTextureHeight(bool upBlock, size_t height)
 {

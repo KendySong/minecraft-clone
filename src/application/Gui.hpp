@@ -1,12 +1,8 @@
 #include <string>
-#include <array>
 
 #include <glad/glad.h>
 #include <glfw/glfw3.h>
-
-#include <ImGui/imgui.h>
-#include <ImGui/imgui_impl_glfw.h>
-#include <ImGui/imgui_impl_opengl3.h>
+#include <FastNoiseLite/FastNoiseLite.h>
 
 #include "Timer.hpp"
 #include "../Graphics/Camera.hpp"
@@ -19,7 +15,7 @@ public:
 	void createFrame() const;
 	void displayRenderData(float& renderDistance, std::uint32_t shaderID);
 	void manageWorldCamera(Camera* camera, std::uint32_t shaderID) const;
-	void displayWorldData(size_t nbChunkRendering);
+	void displayWorldData(size_t nbChunkRendering, FastNoiseLite* fastNoise);
 	void render();
 
 private :

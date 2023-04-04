@@ -40,7 +40,6 @@ int Window::run()
 	}
 
 	glfwDestroyWindow(p_glfwWindow);
-	ImGui::DestroyContext();
 
 	return 0;
 }

@@ -1,3 +1,5 @@
+#include <stb/stb_image.h>
+
 #include "Texture.hpp"
 
 Texture::Texture(const char* texturePath, int slot)

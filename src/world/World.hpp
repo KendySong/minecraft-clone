@@ -10,9 +10,6 @@
 #pragma once
 class World
 {
-private :
-	FastNoiseLite* p_fastNoise;
-
 public :
 	Chunk* nearestChunk;
 	float renderDistance;
@@ -26,4 +23,8 @@ public :
 	void load();
 	void manageChunks(const glm::vec3& playerPosition);
 	float getDistanceChunkPlayer(glm::vec3 playerPosition, glm::vec3 chunkPosition);
+	FastNoiseLite* getFastNoise() noexcept;
+
+private :
+	FastNoiseLite* p_fastNoise;
 };

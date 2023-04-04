@@ -1,3 +1,5 @@
+#include <chrono>
+
 #include "Random.hpp"
 
 Random* Random::p_random = nullptr;

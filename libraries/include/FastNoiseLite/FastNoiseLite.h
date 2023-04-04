@@ -144,6 +144,7 @@ public:
     /// Default: 1337
     /// </remarks>
     void SetSeed(int seed) { mSeed = seed; }
+    int GetSeed() { return mSeed; };
 
     /// <summary>
     /// Sets frequency for all noise types
@@ -152,6 +153,7 @@ public:
     /// Default: 0.01
     /// </remarks>
     void SetFrequency(float frequency) { mFrequency = frequency; }
+    float GetFrequency() { return mFrequency; }
 
     /// <summary>
     /// Sets noise algorithm used for GetNoise(...)
@@ -164,7 +166,8 @@ public:
         mNoiseType = noiseType;
         UpdateTransformType3D();
     }
-
+    NoiseType GetNoiseType() { return mNoiseType; }
+    
     /// <summary>
     /// Sets domain rotation type for 3D Noise and 3D DomainWarp.
     /// Can aid in reducing directional artifacts when sampling a 2D plane in 3D
@@ -187,6 +190,7 @@ public:
     /// Note: FractalType_DomainWarp... only affects DomainWarp(...)
     /// </remarks>
     void SetFractalType(FractalType fractalType) { mFractalType = fractalType; }
+    FractalType GetFractalType() { return mFractalType; }
 
     /// <summary>
     /// Sets octave count for all fractal noise types 
@@ -199,6 +203,7 @@ public:
         mOctaves = octaves;
         CalculateFractalBounding();
     }
+    int GetFractalOctaves() { return mOctaves; }
 
     /// <summary>
     /// Sets octave lacunarity for all fractal noise types
@@ -207,6 +212,7 @@ public:
     /// Default: 2.0
     /// </remarks>
     void SetFractalLacunarity(float lacunarity) { mLacunarity = lacunarity; }
+    float GetFractalLacunarity() { return mLacunarity; }
 
     /// <summary>
     /// Sets octave gain for all fractal noise types

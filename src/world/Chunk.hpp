@@ -1,4 +1,3 @@
-#include <chrono>
 #include <vector>
 
 #include <glad/glad.h>
@@ -6,7 +5,6 @@
 
 #include <FastNoiseLite/FastNoiseLite.h>
 
-#include "../application/Random.hpp"
 #include "Tree.hpp"
 
 #pragma once
@@ -22,13 +20,6 @@ namespace ChunkGen
 
 class Chunk 
 {
-private :
-	std::uint32_t _vao = 0;
-	std::uint32_t _vbo = 0;
-	std::vector<float> _vertex;
-	FastNoiseLite* _fastNoise;
-	void PrepareRender();
-
 public :
 	bool north;
 	bool south;
@@ -48,4 +39,11 @@ public :
 	void generateTree();
 	void addNewBlock(std::vector<float>& chunkMesh, glm::vec3 position, float textureID, bool* faceToRender);
 	std::uint32_t getVao() const noexcept;
+
+private :
+	std::uint32_t _vao = 0;
+	std::uint32_t _vbo = 0;
+	std::vector<float> _vertex;
+	FastNoiseLite* _fastNoise;
+	void PrepareRender();
 };

@@ -22,8 +22,8 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 		return;
 	}
 
-	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+	std::uint32_t vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	std::uint32_t fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(vertexShader, 1, &vSrc, 0);
 	glShaderSource(fragmentShader, 1, &fSrc, 0);
 	glCompileShader(vertexShader);
@@ -68,12 +68,12 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 	glDeleteShader(fragmentShader);
 }
 
-unsigned int Shader::getProgram() noexcept
+std::uint32_t Shader::getProgram() noexcept
 {
 	return m_shaderID;
 }
 
-bool Shader::checkCompileStatus(unsigned int shaderID, std::string name)
+bool Shader::checkCompileStatus(std::uint32_t shaderID, std::string name)
 {
 	int shaderCompileStatus = false;
 	glGetShaderiv(shaderID, GL_COMPILE_STATUS, &shaderCompileStatus);
