@@ -16,7 +16,7 @@ Window::Window(std::uint32_t width, std::uint32_t height, const char* title)
 {
 	m_width = width;
 	m_height = height;
-	m_title = title;
+	p_title = title;
 
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -29,6 +29,7 @@ Window::Window(std::uint32_t width, std::uint32_t height, const char* title)
 int Window::run()
 {
 	m_render.load(this->p_glfwWindow, glm::vec2(m_width, m_height));
+
 	while (!glfwWindowShouldClose(p_glfwWindow))
 	{
 		glfwPollEvents();

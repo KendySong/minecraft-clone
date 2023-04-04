@@ -1,83 +1,124 @@
+#include <sstream>
+#include <fstream>
+#include <vector>
+
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
 #include "Shader.hpp"
+
+#include <iostream>
+#include <filesystem>
 
 Shader::Shader(const char* vertexPath, const char* fragmentPath)
 {
-	//Read shaders and load it 
-	_shaderReader.open(vertexPath);
-	if (_shaderReader.is_open())
+	m_shaderID = 0;
+	std::pair<std::string, bool> vertexSource = this->loadShader(vertexPath);
+	std::pair<std::string, bool> fragmentSource = this->loadShader(fragmentPath);
+	const char* vSrc = vertexSource.first.c_str();
+	const char* fSrc = fragmentSource.first.c_str();
+	if (!vertexSource.second || !fragmentSource.second)
 	{
-		std::cout << "[INFO] Vertex shader is found\n";
-		_vertexStream << _shaderReader.rdbuf();
-		_vertexString = _vertexStream.str();
-		_vertexSource = _vertexString.c_str();
-		_shaderReader.close();
-	}
-	else
-	{
-		std::cout << "[ERROR] Vertex shader is not found\n";
 		return;
 	}
 
-	_shaderReader.open(fragmentPath);
-	if (_shaderReader.is_open())
+	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+	glShaderSource(vertexShader, 1, &vSrc, 0);
+	glShaderSource(fragmentShader, 1, &fSrc, 0);
+	glCompileShader(vertexShader);
+	glCompileShader(fragmentShader);
+
+	if (!this->checkCompileStatus(vertexShader, "vertex shader") ||
+		!this->checkCompileStatus(fragmentShader, "fragment shader"))
 	{
-		std::cout << "[INFO] Fragment shader is found\n";
-		_fragmentStream << _shaderReader.rdbuf();
-		_fragmentString = _fragmentStream.str();
-		_fragmentSource = _fragmentString.c_str();
-		_shaderReader.close();
-	}
-	else
-	{
-		std::cout << "[ERROR] Fragment shader is not found\n";
 		return;
 	}
 
-	_vertex = glCreateShader(GL_VERTEX_SHADER);
-	_fragment = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(_vertex, 1, &_vertexSource, NULL);
-	glShaderSource(_fragment, 1, &_fragmentSource, NULL);
-	glCompileShader(_vertex);
-	glCompileShader(_fragment);
+	m_shaderID = glCreateProgram();
+	glAttachShader(m_shaderID, vertexShader);
+	glAttachShader(m_shaderID, fragmentShader);
+	glLinkProgram(m_shaderID);
 
-	//Check shader compilation
-	int success = 0;
-	char logError[512];
-	glGetShaderiv(_vertex, GL_COMPILE_STATUS, &success);
-	if (success)
+	int linkStatus = false;
+	glGetProgramiv(m_shaderID, GL_LINK_STATUS, &linkStatus);
+	if (!linkStatus)
 	{
-		std::cout << "[INFO] Vertex shader compilation success\n";
-	}
-	else
-	{
-		std::cout << "[ERROR] Vertex shader compilation failed\n";
-		glGetShaderInfoLog(_vertex, sizeof(logError), NULL, logError);
-		std::cout << logError << "\n";
-	}
+		int length = 0;
+		std::string errorMsg = "";
+		std::vector<char> errorMessage(length);
 
-	glGetShaderiv(_fragment, GL_COMPILE_STATUS, &success);
-	if (success)
-	{
-		std::cout << "[INFO] Fragment shader compilation success\n";
-	}
-	else
-	{
-		std::cout << "[ERROR] Fragment shader compilation failed\n";
-		glGetShaderInfoLog(_fragment, sizeof(logError), NULL, logError);
-		std::cout << logError << "\n";
+		glGetProgramiv(m_shaderID, GL_INFO_LOG_LENGTH, &length);
+		glGetProgramInfoLog(m_shaderID, length, &length, errorMessage.data());
+		for (size_t i = 0; i < errorMessage.size(); i++)
+		{
+			errorMsg += errorMessage[i];
+		}
+
+#ifdef DEBUG
+		std::cerr << "[ERROR] link error : " + errorMsg + "\n";
+#endif
+
+		return;
 	}
 
-	_program = glCreateProgram();
-	glAttachShader(_program, _vertex);
-	glAttachShader(_program, _fragment);
-	glLinkProgram(_program);
-	glDetachShader(_program, _vertex);
-	glDetachShader(_program, _fragment);
-	glDeleteShader(_vertex);
-	glDeleteShader(_fragment);
+	glDetachShader(m_shaderID, vertexShader);
+	glDetachShader(m_shaderID, fragmentShader);
+	glDeleteShader(vertexShader);
+	glDeleteShader(fragmentShader);
 }
 
-std::uint32_t Shader::getProgram() const noexcept
+unsigned int Shader::getProgram() noexcept
 {
-	return _program;
+	return m_shaderID;
+}
+
+bool Shader::checkCompileStatus(unsigned int shaderID, std::string name)
+{
+	int shaderCompileStatus = false;
+	glGetShaderiv(shaderID, GL_COMPILE_STATUS, &shaderCompileStatus);
+	if (!shaderCompileStatus)
+	{
+		int length = 0;
+		std::string finalErrorMsg;
+
+		glGetShaderiv(shaderID, GL_INFO_LOG_LENGTH, &length);
+		std::vector<char> errorMessage(length);
+		glGetShaderInfoLog(shaderID, length, &length, errorMessage.data());
+		for (size_t i = 0; i < errorMessage.size(); i++)
+		{
+			finalErrorMsg += errorMessage[i];
+		}
+#ifdef DEBUG
+		std::cerr << "[ERROR] Compilation failed (" + name + ") : " + finalErrorMsg + "\n";
+#endif
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+std::pair<std::string, bool> Shader::loadShader(const char* shaderPath)
+{
+	std::pair<std::string, bool> result("", false);
+	std::fstream fileReader(shaderPath);
+	if (fileReader.is_open())
+	{
+		std::stringstream sStream;
+		sStream << fileReader.rdbuf();
+		std::string sShader = sStream.str();
+		result.first = sShader;
+		result.second = true;
+		fileReader.close();
+	}
+	else
+	{
+#ifdef DEBUG
+		std::cerr << "[ERROR] Fragment shader not found : " + std::string(shaderPath) + "\n";
+#endif
+	}
+
+	return result;
 }

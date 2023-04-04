@@ -11,17 +11,15 @@ private :
 
 public:
 	static Window* instance();
-
 	int run();
 
 private :
 	static Window* p_window;
 
-	const char* m_title;
+	const char* p_title;
 	std::uint32_t m_width;
 	std::uint32_t m_height;
 
 	GLFWwindow* p_glfwWindow;
 	Render m_render;
-	Gui* p_gui;
 };

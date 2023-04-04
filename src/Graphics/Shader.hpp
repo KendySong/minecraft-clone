@@ -1,27 +1,17 @@
-#include <string>
-#include <sstream>
-#include <fstream>
-#include <iostream>
-
-#include <glad/glad.h>
-
 #pragma once
+#include <string>
+
 class Shader
 {
 public:
+	Shader() = default;
 	Shader(const char* vertexPath, const char* fragmentPath);
-	std::uint32_t getProgram() const noexcept;
 
-private :
-	std::uint32_t _vertex;
-	std::uint32_t _fragment;
-	std::uint32_t _program;
+	std::uint32_t getProgram() noexcept;
 
-	std::ifstream _shaderReader;
-	std::stringstream _vertexStream;
-	std::stringstream _fragmentStream;
-	std::string _vertexString;
-	std::string _fragmentString;
-	const char* _vertexSource = "";
-	const char* _fragmentSource = "";
+private:
+	bool checkCompileStatus(std::uint32_t objectID, std::string name);
+	std::pair<std::string, bool> loadShader(const char* shaderPath);
+
+	std::uint32_t m_shaderID;
 };
