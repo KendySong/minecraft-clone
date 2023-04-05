@@ -1,4 +1,5 @@
 #include <array>
+#include <map>
 
 #include <ImGui/imgui.h>
 #include <ImGui/imgui_impl_glfw.h>
@@ -115,19 +116,15 @@ void Gui::manageWorldCamera(Camera* camera, std::uint32_t shaderID) const
 
 void Gui::displayWorldData(size_t nbChunkRendering, FastNoiseLite* fastNoise)
 {
-	//Add std::map for enum and string
-
 	static int seed = fastNoise->GetSeed();
 	static float frequency = fastNoise->GetFrequency();
 	static float lacunarity = fastNoise->GetFractalLacunarity();
 	static int octaves = fastNoise->GetFractalOctaves();
-	static FastNoiseLite::NoiseType noiseType = fastNoise->GetNoiseType();
-	static const char* noiseString[] = { "Open Simplex 2", "Open Simplex 2S", "Cellular", "Perlin", "Value Cubic", "Cubic" };
-	static const char* currentNoiseType = "Open Simplex 2S";
+	static std::string noiseString[] = { "Open Simplex 2", "Open Simplex 2S", "Cellular", "Perlin", "Value Cubic", "Cubic" };
+	static std::string currentNoiseType = "Open Simplex 2S";
 
-	static FastNoiseLite::FractalType fractalType = fastNoise->GetFractalType();
-	static const char* fractalString[] = { "None", "FBm", "Ridged", "PingPong", "Domain Warp Progressive", "Domain Warp Independent" };
-	static const char* currentFractalType = "FBm";
+	static std::string fractalString[] = { "None", "FBm", "Ridged", "PingPong", "Domain Warp Progressive", "Domain Warp Independent" };
+	static std::string currentFractalType = "FBm";
 
 	ImGui::Begin("World");
 	m_chunkRender = "Number of chunks in render " + std::to_string(nbChunkRendering);
@@ -138,12 +135,12 @@ void Gui::displayWorldData(size_t nbChunkRendering, FastNoiseLite* fastNoise)
 	ImGui::DragFloat("Lacunarity", &lacunarity, 0.001f);
 	ImGui::DragInt("Octaves", &octaves, 0.01f);
 
-	if (ImGui::BeginCombo("Noise Type", currentNoiseType))
+	if (ImGui::BeginCombo("Noise Type", currentNoiseType.c_str()))
 	{
 		for (int i = 0; i < IM_ARRAYSIZE(noiseString); i++)
 		{
 			bool isSelected = currentNoiseType == noiseString[i];
-			if (ImGui::Selectable(noiseString[i], isSelected))
+			if (ImGui::Selectable(noiseString[i].c_str(), isSelected))
 			{
 				currentNoiseType = noiseString[i];
 			}
@@ -156,12 +153,12 @@ void Gui::displayWorldData(size_t nbChunkRendering, FastNoiseLite* fastNoise)
 		ImGui::EndCombo();
 	}
 
-	if (ImGui::BeginCombo("Fractal Type", currentFractalType))
+	if (ImGui::BeginCombo("Fractal Type", currentFractalType.c_str()))
 	{
 		for (int i = 0; i < IM_ARRAYSIZE(fractalString); i++)
 		{
 			bool isSelected = currentFractalType == fractalString[i];
-			if (ImGui::Selectable(fractalString[i], isSelected))
+			if (ImGui::Selectable(fractalString[i].c_str(), isSelected))
 			{
 				currentFractalType = fractalString[i];
 			}
@@ -174,12 +171,61 @@ void Gui::displayWorldData(size_t nbChunkRendering, FastNoiseLite* fastNoise)
 		ImGui::EndCombo();
 	}
 
-
 	if (ImGui::Button("Apply"))
 	{
 		fastNoise->SetFrequency(frequency);
 		fastNoise->SetFractalLacunarity(lacunarity);
 		fastNoise->SetFractalOctaves(octaves);
+
+		if (currentNoiseType == "Open Simplex 2")
+		{
+			fastNoise->SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2);
+		}
+		else if (currentNoiseType == "Open Simplex 2S")
+		{
+			fastNoise->SetNoiseType(FastNoiseLite::NoiseType_OpenSimplex2S);
+		}
+		else if (currentNoiseType == "Cellular")
+		{
+			fastNoise->SetNoiseType(FastNoiseLite::NoiseType_Cellular);
+		}
+		else if (currentNoiseType == "Perlin")
+		{
+			fastNoise->SetNoiseType(FastNoiseLite::NoiseType_Perlin);
+		}
+		else if (currentNoiseType == "Value Cubic")
+		{
+			fastNoise->SetNoiseType(FastNoiseLite::NoiseType_ValueCubic);
+		}
+		else if (currentNoiseType == "Cubic")
+		{
+			fastNoise->SetNoiseType(FastNoiseLite::NoiseType_Value);
+		}
+
+		if (currentNoiseType == "None")
+		{
+			fastNoise->SetFractalType(FastNoiseLite::FractalType_None);
+		}
+		else if (currentNoiseType == "FBm")
+		{
+			fastNoise->SetFractalType(FastNoiseLite::FractalType_FBm);
+		}
+		else if (currentNoiseType == "Ridged")
+		{
+			fastNoise->SetFractalType(FastNoiseLite::FractalType_Ridged);
+		}
+		else if (currentNoiseType == "PingPong")
+		{
+			fastNoise->SetFractalType(FastNoiseLite::FractalType_PingPong);
+		}
+		else if (currentNoiseType == "Domain Warp Progressive")
+		{
+			fastNoise->SetFractalType(FastNoiseLite::FractalType_DomainWarpProgressive);
+		}
+		else if (currentNoiseType == "Domain Warp Independent")
+		{
+			fastNoise->SetFractalType(FastNoiseLite::FractalType_DomainWarpIndependent);
+		}
 	}
 
 	ImGui::End();
