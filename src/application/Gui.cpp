@@ -40,12 +40,9 @@ void Gui::createFrame() const
 void Gui::displayRenderData(float& renderDistance, std::uint32_t shaderID)
 {
 	m_fps++;
-	ImGui::Begin("Render");
-
-	ImGui::Text(m_gpu.c_str());
-	ImGui::Text(m_version.c_str());
-
-	//FPS
+	ImGui::Begin("Settings");
+	ImGui::TextUnformatted(m_gpu.c_str());
+	ImGui::TextUnformatted(m_version.c_str());
 	if (m_timer.getElapsedTime() > 1)
 	{
 		m_framerate = std::to_string(m_fps) + " fps";
@@ -53,57 +50,68 @@ void Gui::displayRenderData(float& renderDistance, std::uint32_t shaderID)
 		m_timer.restart();
 	}
 	ImGui::Text(m_framerate.c_str());	
-
-	//Render distance
 	ImGui::SliderFloat("Render distance", &renderDistance, 10, 1000);
 
-	//Light
-	std::array<const char*, 2> lightTypes{ "Fake", "Diffuse" };
+	static std::array<const char*, 2> lightTypes{ "Fake", "Diffuse" };
 	static const char* currentLight = lightTypes[0];
-
 	if (ImGui::BeginCombo("Light", currentLight))
 	{
-		for (int i = 0; i < lightTypes.size(); i++)
+		for (size_t i = 0; i < lightTypes.size(); i++)
 		{
 			bool isSelected = (currentLight == lightTypes[i]);
 			if (ImGui::Selectable(lightTypes[i], isSelected))
+			{
 				currentLight = lightTypes[i];
+			}
 		
 			if (isSelected)
+			{
 				ImGui::SetItemDefaultFocus();  		
+			}
 		}
 		ImGui::EndCombo();
 	}
 
-	//Render mode
 	ImGui::Checkbox("Wireframe Render", &m_wireframe);
 	ImGui::Checkbox("Face culling", &m_faceCulling);
-
 	if (ImGui::Button("Apply"))
 	{
 		if (m_wireframe)
+		{
 			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-		else 
+		}
+		else
+		{
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+		}
 
 		if (m_faceCulling)
+		{
 			glEnable(GL_CULL_FACE);
+		}
 		else
+		{
 			glDisable(GL_CULL_FACE);
+		}
 
 		int lightModeLocation = glGetUniformLocation(shaderID, "diffuseLight");
-		if (currentLight == "Diffuse")		
-			glUniform1i(lightModeLocation, true);		
+		if (currentLight == "Diffuse")
+		{
+			glUniform1i(lightModeLocation, true);
+		}
 		else
+		{
 			glUniform1i(lightModeLocation, false);
+		}
 	}
-
-	ImGui::End();
+	ImGui::Separator();
 }
 
 void Gui::manageWorldCamera(Camera* camera, std::uint32_t shaderID) const
 {
-	ImGui::Begin("Camera");
+	ImGui::TextUnformatted("Camera");
+	ImGui::Separator();
+
 	ImGui::InputFloat3("Position", &camera->position.x);
 	ImGui::SliderFloat("Speed", &camera->speed, 1, 100);
 	ImGui::DragFloat("FOV", &camera->fov, 0.1f, 0, 180);
@@ -111,7 +119,7 @@ void Gui::manageWorldCamera(Camera* camera, std::uint32_t shaderID) const
 	{
 		camera->reconstruct(shaderID);
 	}
-	ImGui::End();
+	ImGui::Separator();
 }
 
 void Gui::displayWorldData(size_t nbChunkRendering, FastNoiseLite* fastNoise)
@@ -126,7 +134,8 @@ void Gui::displayWorldData(size_t nbChunkRendering, FastNoiseLite* fastNoise)
 	static std::string fractalString[] = { "None", "FBm", "Ridged", "PingPong", "Domain Warp Progressive", "Domain Warp Independent" };
 	static std::string currentFractalType = "FBm";
 
-	ImGui::Begin("World");
+	ImGui::TextUnformatted("World");
+	ImGui::Separator();
 	m_chunkRender = "Number of chunks in render " + std::to_string(nbChunkRendering);
 	ImGui::TextUnformatted(m_chunkRender.c_str());
 

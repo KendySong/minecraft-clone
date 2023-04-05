@@ -9,7 +9,6 @@ World::World()
 	p_fastNoise = new FastNoiseLite(Random::instance()->fastRand());
 	p_fastNoise->SetNoiseType(FastNoiseLite::NoiseType::NoiseType_OpenSimplex2S);
 	p_fastNoise->SetFractalType(FastNoiseLite::FractalType::FractalType_FBm);
-
 	p_fastNoise->SetFractalLacunarity(2);
 	p_fastNoise->SetFrequency(0.008);
 	p_fastNoise->SetFractalOctaves(4);
@@ -18,7 +17,6 @@ World::World()
 void World::load() 
 {	
 	bool firstChunkNeighbor[4] = { false };
-
 	Chunk firstChunk(glm::vec3(0, 0, 0), p_fastNoise, firstChunkNeighbor);
 	displayChunks.emplace_back(firstChunk);
 	borderMapChunk.emplace_back(firstChunk);
