@@ -90,6 +90,7 @@ void Render::renderFrame()
 		glBindVertexArray(m_world.displayChunks[i].getVao());
 		glDrawArrays(GL_TRIANGLES, 0, m_world.displayChunks[i].verticesDraw);
 	}
+
 	p_gui->displayRenderData(m_world.renderDistance, p_shader->getProgram());
 	p_gui->manageWorldCamera(p_camera, p_shader->getProgram());
 	p_gui->displayWorldData(m_world.displayChunks.size(), m_world.getFastNoise());
