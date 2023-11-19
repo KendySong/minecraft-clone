@@ -24,13 +24,13 @@ float Chunk::getTextureHeight(bool upBlock, size_t height)
 
 float Chunk::getHeight(float x, float z)
 {
-	float height = _fastNoise->GetNoise(x, z);
-	height = std::abs(height) * 40;
+	float height = _fastNoise->noise2D(Vec2(x, z));
+	height = std::abs(height) * 25;
 	height++;
 	return height;
 }
 
-Chunk::Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor)
+Chunk::Chunk(glm::vec3 position, Perlin* fastNoise, bool* neighbor)
 {
 	north = neighbor[0];
 	south = neighbor[1];

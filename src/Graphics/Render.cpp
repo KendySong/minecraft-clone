@@ -1,3 +1,7 @@
+#include <ImGui/imgui.h>
+#include <ImGui/imgui_impl_glfw.h>
+#include <ImGui/imgui_impl_opengl3.h>
+
 #include <glm/gtc/type_ptr.hpp>
 
 #include "Render.hpp"
@@ -91,8 +95,5 @@ void Render::renderFrame()
 		glDrawArrays(GL_TRIANGLES, 0, m_world.displayChunks[i].verticesDraw);
 	}
 
-	p_gui->displayRenderData(m_world.renderDistance, p_shader->getProgram());
-	p_gui->manageWorldCamera(p_camera, p_shader->getProgram());
-	p_gui->displayWorldData(m_world.displayChunks.size(), m_world.getFastNoise());
 	p_gui->render();
 }
