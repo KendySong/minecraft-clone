@@ -4,6 +4,7 @@
 #include <glm/glm.hpp>
 
 #include <FastNoiseLite/FastNoiseLite.h>
+#include "Perlin.hpp"
 
 #include "Tree.hpp"
 
@@ -32,7 +33,7 @@ public :
 	std::vector<glm::vec3> blocks;
 
 	Chunk() = default;
-	Chunk(glm::vec3 position, FastNoiseLite* fastNoise, bool* neighbor);
+	Chunk(glm::vec3 position, Perlin* fastNoise, bool* neighbor);
 	float getTextureHeight(bool upBlock, size_t height);
 	float getHeight(float x, float z);
 	
@@ -44,6 +45,6 @@ private :
 	std::uint32_t _vao = 0;
 	std::uint32_t _vbo = 0;
 	std::vector<float> _vertex;
-	FastNoiseLite* _fastNoise;
+	Perlin* _fastNoise;
 	void PrepareRender();
 };

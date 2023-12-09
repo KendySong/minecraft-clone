@@ -4,14 +4,15 @@
 
 World::World() 
 {
-	renderDistance = 100;
+	renderDistance = 500;
 	Random::instance()->setSeed(time(nullptr));
-	p_fastNoise = new FastNoiseLite(Random::instance()->fastRand());
+	p_fastNoise = new Perlin();
+	/*p_fastNoise = new FastNoiseLite(Random::instance()->fastRand());
 	p_fastNoise->SetNoiseType(FastNoiseLite::NoiseType::NoiseType_OpenSimplex2S);
 	p_fastNoise->SetFractalType(FastNoiseLite::FractalType::FractalType_FBm);
 	p_fastNoise->SetFractalLacunarity(2);
 	p_fastNoise->SetFrequency(0.008);
-	p_fastNoise->SetFractalOctaves(4);
+	p_fastNoise->SetFractalOctaves(4);*/
 }
 
 void World::load() 
@@ -134,7 +135,7 @@ float World::getDistanceChunkPlayer(glm::vec3 playerPosition, glm::vec3 chunkPos
 	return std::abs(playerPosition.x - chunkPosition.x) + std::abs(playerPosition.z - chunkPosition.z);
 }
 
-FastNoiseLite* World::getFastNoise() noexcept
+Perlin* World::getFastNoise() noexcept
 {
 	return p_fastNoise;
 }
